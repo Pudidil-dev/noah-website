@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sahabat NOAH - Komunitas Resmi (Wireframe)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-white font-mono text-black">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-black">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1200px] mx-auto">
+<!-- Left: Logo -->
+<div class="flex-shrink-0">
+<a class="text-2xl font-bold tracking-tighter text-black" href="#">NOAH</a>
+</div>
+<!-- Center: Navigation Links -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-xs font-bold uppercase tracking-widest text-black hover:underline" href="#">Cerita Band</a>
+<a class="text-xs font-bold uppercase tracking-widest text-black hover:underline" href="#">Diskografi</a>
+<a class="text-xs font-bold uppercase tracking-widest text-black hover:underline" href="#">Tur &amp; Event</a>
+<a class="text-xs font-bold uppercase tracking-widest text-black hover:underline" href="#">Berita &amp; Media</a>
+<a class="text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-1" href="#">Sahabat NOAH</a>
+<a class="text-xs font-bold uppercase tracking-widest text-black hover:underline" href="#">Toko</a>
+</nav>
+<!-- Right: Search and Language Toggle -->
+<div class="flex items-center gap-6">
+<button class="text-black hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="text-xs font-bold uppercase tracking-widest text-black cursor-pointer">
+ID / EN
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-gray-100 text-black py-[120px] relative overflow-hidden border-b border-black">
+<div class="max-w-[1200px] mx-auto px-8 relative z-10 flex flex-col items-center text-center">
+<h1 class="text-5xl md:text-7xl font-bold mb-6">Gabung Sahabat NOAH</h1>
+<p class="text-lg md:text-xl max-w-2xl mb-12">Komunitas resmi penggemar NOAH. Terhubung dengan sesama Sahabat di seluruh Indonesia dan dapatkan akses eksklusif konten band kesayanganmu.</p>
+<div class="flex flex-col md:flex-row gap-6 mb-16">
+<button class="px-12 py-4 bg-transparent border-2 border-black text-xs font-bold uppercase tracking-widest text-black hover:bg-black hover:text-white transition-all">Daftar Sekarang</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-black pt-12 w-full max-w-4xl">
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold">50K+</span>
+<span class="text-xs font-bold uppercase tracking-widest mt-2">Anggota</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold">32</span>
+<span class="text-xs font-bold uppercase tracking-widest mt-2">Chapter</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl md:text-5xl font-bold">100+</span>
+<span class="text-xs font-bold uppercase tracking-widest mt-2">Event/Tahun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Fan Stories -->
+<section class="py-[120px] max-w-[1200px] mx-auto px-8">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cerita Sahabat</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Card 1 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Andhika Prasetya</h4>
+<p class="text-sm">Jakarta</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"NOAH mengubah hidup saya. Lirik-liriknya selalu menemani saat saya berada di titik terendah."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Siti Rahma</h4>
+<p class="text-sm">Bandung</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"Menemukan keluarga baru di komunitas ini. Sahabat NOAH Bandung sangat suportif dan kreatif."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Reza Kurniawan</h4>
+<p class="text-sm">Surabaya</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"Koleksi merchandise saya sudah mencapai 100 item. Semua berawal dari kecintaan pada melodi Ariel."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Maya Indah</h4>
+<p class="text-sm">Yogyakarta</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"Konser NOAH di Jogja adalah momen yang tak akan pernah saya lupakan seumur hidup saya."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 5 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Bambang S.</h4>
+<p class="text-sm">Medan</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"Dari Peterpan sampai NOAH, dedikasi band ini pada musik Indonesia benar-benar luar biasa."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 6 -->
+<div class="bg-white p-8 border border-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-gray-300"></div>
+<div>
+<h4 class="text-lg font-bold">Fajar Ramadhan</h4>
+<p class="text-sm">Makassar</p>
+</div>
+</div>
+<p class="text-base italic mb-6">"Menjadi admin chapter Makassar mengajarkan saya banyak hal tentang loyalitas dan kerja keras."</p>
+<a class="text-sm font-bold underline" href="#">Baca Selengkapnya</a>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="px-12 py-4 bg-transparent border-2 border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Bagikan Ceritamu</button>
+</div>
+</section>
+<!-- Fan Art & Covers -->
+<section class="py-[120px] bg-gray-100 border-y border-black">
+<div class="max-w-[1200px] mx-auto px-8">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Karya Sahabat</h2>
+<div class="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6 mb-16">
+<!-- Item 1 -->
+<div class="break-inside-avoid relative group border border-black bg-white">
+<div class="w-full h-64 bg-gray-300"></div>
+<div class="p-4 border-t border-black">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest border border-black px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">2.4k</span>
+</div>
+</div>
+<p class="text-xs font-bold">Dimas Aditya</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="break-inside-avoid relative group border border-black bg-white">
+<div class="w-full h-48 bg-gray-300"></div>
+<div class="p-4 border-t border-black">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest border border-black px-2 py-1">Cover Song</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">1.8k</span>
+</div>
+</div>
+<p class="text-xs font-bold">Sarah Aliyah</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="break-inside-avoid relative group border border-black bg-white">
+<div class="w-full h-72 bg-gray-300"></div>
+<div class="p-4 border-t border-black">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest border border-black px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">3.1k</span>
+</div>
+</div>
+<p class="text-xs font-bold">Rian Wijaya</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="break-inside-avoid relative group border border-black bg-white">
+<div class="w-full h-56 bg-gray-300"></div>
+<div class="p-4 border-t border-black">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest border border-black px-2 py-1">Cover Song</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">950</span>
+</div>
+</div>
+<p class="text-xs font-bold">Eka Putra</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="break-inside-avoid relative group border border-black bg-white">
+<div class="w-full h-64 bg-gray-300"></div>
+<div class="p-4 border-t border-black">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest border border-black px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">1.2k</span>
+</div>
+</div>
+<p class="text-xs font-bold">Dewi Sartika</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="px-12 py-4 bg-transparent border-2 border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Kirim Karyamu</button>
+</div>
+</div>
+</section>
+<!-- Regional Chapters -->
+<section class="py-[120px] max-w-[1200px] mx-auto px-8">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Chapter Regional</h2>
+<div class="w-full h-[400px] bg-gray-200 mb-16 relative flex items-center justify-center border border-black">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-4xl font-bold text-gray-400">PETA INDONESIA</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Chapter Cards -->
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Jakarta</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">8,420</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Hendry Kusuma</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Bandung</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">6,150</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Asep Kurnia</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Surabaya</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">4,890</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Budi Santoso</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Yogyakarta</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">3,720</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Rarasati</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Medan</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">2,900</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Iwan Ginting</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white border border-black">
+<h3 class="text-xl font-bold mb-4">Makassar</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm">Anggota: <span class="font-bold">2,140</span></p>
+<p class="text-sm">Ketua: <span class="font-bold">Zulkifli</span></p>
+</div>
+<a class="text-sm font-bold underline" href="#">Gabung Chapter</a>
+</div>
+</div>
+</section>
+<!-- Fan Events -->
+<section class="py-[120px] bg-white border-t border-black">
+<div class="max-w-[1200px] mx-auto px-8">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Event Komunitas</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row bg-white border border-black">
+<div class="md:w-1/3 bg-gray-100 border-b md:border-b-0 md:border-r border-black p-8 flex flex-col justify-center items-center text-center">
+<span class="text-5xl font-bold leading-none mb-2">24</span>
+<span class="text-sm font-bold uppercase tracking-widest">Oktober</span>
+</div>
+<div class="p-8 md:w-2/3">
+<span class="text-xs font-bold uppercase mb-2 block border border-black inline-block px-2 py-1">Gathnas 2024</span>
+<h3 class="text-xl font-bold mb-4 mt-2">Sahabat NOAH Nasional</h3>
+<p class="mb-6">Pertemuan akbar tahunan seluruh chapter di Jakarta. Sesi jamming, diskusi, dan kejutan spesial.</p>
+<button class="px-8 py-3 bg-transparent border border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">Daftar</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row bg-white border border-black">
+<div class="md:w-1/3 bg-gray-100 border-b md:border-b-0 md:border-r border-black p-8 flex flex-col justify-center items-center text-center">
+<span class="text-5xl font-bold leading-none mb-2">12</span>
+<span class="text-sm font-bold uppercase tracking-widest">November</span>
+</div>
+<div class="p-8 md:w-2/3">
+<span class="text-xs font-bold uppercase mb-2 block border border-black inline-block px-2 py-1">Bandung</span>
+<h3 class="text-xl font-bold mb-4 mt-2">Workshop Musik &amp; Kopi</h3>
+<p class="mb-6">Bedah instrumen lagu-lagu NOAH bersama musisi lokal dan sharing session antar Sahabat.</p>
+<button class="px-8 py-3 bg-transparent border border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">Daftar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Submission Form -->
+<section class="py-[120px] bg-gray-100 border-t border-black">
+<div class="max-w-[800px] mx-auto px-8 text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-12">Kirim Cerita atau Karyamu</h2>
+<div class="bg-white p-12 border border-black text-left">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest">Nama Lengkap</label>
+<input class="w-full border border-black px-4 py-3 text-sm bg-transparent" placeholder="Masukkan nama" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest">Alamat Email</label>
+<input class="w-full border border-black px-4 py-3 text-sm bg-transparent" placeholder="email@domain.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest">Kategori</label>
+<select class="w-full border border-black px-4 py-3 text-sm bg-transparent">
+<option>Pilih Kategori</option>
+<option>Cerita Fan</option>
+<option>Fan Art</option>
+<option>Cover Song</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest">Upload Karya</label>
+<div class="border border-dashed border-black p-8 text-center bg-transparent cursor-pointer hover:bg-gray-50">
+<span class="material-symbols-outlined mb-2 block">cloud_upload</span>
+<p class="text-xs">Drag &amp; drop file di sini atau klik untuk memilih file</p>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest">Pesan / Deskripsi</label>
+<textarea class="w-full border border-black px-4 py-3 text-sm bg-transparent" placeholder="Ceritakan sedikit tentang karyamu..." rows="4"></textarea>
+</div>
+<button class="w-full bg-transparent border-2 border-black text-black py-4 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Kirim</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-black w-full py-20 text-black">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1200px] mx-auto px-8">
+<div class="space-y-6">
+<div class="text-xl font-bold">NOAH</div>
+<p class="text-sm">Komunitas resmi Sahabat NOAH. Terhubung dalam satu harmoni musik Indonesia.</p>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6">Menu Utama</h4>
+<ul class="space-y-4">
+<li><a class="hover:underline text-sm" href="#">Cerita Band</a></li>
+<li><a class="hover:underline text-sm" href="#">Diskografi</a></li>
+<li><a class="hover:underline text-sm" href="#">Tur &amp; Event</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6">Informasi</h4>
+<ul class="space-y-4">
+<li><a class="hover:underline text-sm" href="#">Privacy Policy</a></li>
+<li><a class="hover:underline text-sm" href="#">Terms of Service</a></li>
+<li><a class="hover:underline text-sm" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6">Ikuti Kami</h4>
+<div class="flex gap-4">
+<a class="hover:opacity-70 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="hover:opacity-70 transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="hover:opacity-70 transition-all" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-8 mt-20 pt-8 border-t border-black flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-sm">© 2024 NOAH. All Rights Reserved.</div>
+<div class="flex gap-8">
+<a class="hover:underline text-sm" href="#">Contact</a>
+<a class="hover:underline text-sm" href="#">English / Indonesia</a>
+</div>
+</div>
+</footer>
+</body></html>

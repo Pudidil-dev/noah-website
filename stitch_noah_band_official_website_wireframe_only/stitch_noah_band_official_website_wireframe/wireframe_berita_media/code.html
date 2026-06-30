@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-item { break-inside: avoid; margin-bottom: 24px; }
+        .masonry-grid { columns: 1; }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+        .photo-masonry { columns: 2; }
+        @media (min-width: 768px) { .photo-masonry { columns: 4; } }
+    </style>
+</head>
+<body class="bg-white text-black font-mono overflow-x-hidden">
+<!-- TOP NAVBAR -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-black">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
+<div class="text-2xl font-bold tracking-tighter text-black">NOAH</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-black text-sm uppercase tracking-tight hover:underline" href="#">Cerita Band</a>
+<a class="text-black text-sm uppercase tracking-tight hover:underline" href="#">Diskografi</a>
+<a class="text-black text-sm uppercase tracking-tight hover:underline" href="#">Tur &amp; Event</a>
+<a class="text-black border-b-2 border-black pb-1 text-sm uppercase tracking-tight font-bold" href="#">Berita &amp; Media</a>
+<a class="text-black text-sm uppercase tracking-tight hover:underline" href="#">Sahabat NOAH</a>
+<a class="text-black text-sm uppercase tracking-tight hover:underline" href="#">Toko</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-black hover:underline">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="flex items-center gap-2 text-sm tracking-tight text-black border border-black px-2 py-1">
+<span class="font-bold">ID</span>
+<span>/</span>
+<a class="hover:underline" href="#">EN</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- FEATURED ARTICLE (HERO) -->
+<section class="relative w-full aspect-[16/9] md:h-[700px] bg-gray-200 border-b border-black flex flex-col justify-end p-6 md:p-16">
+<div class="absolute inset-0 flex items-center justify-center text-gray-400 text-4xl font-bold opacity-50">HERO IMAGE PLACEHOLDER</div>
+<div class="max-w-[1200px] mx-auto w-full relative z-10 bg-white p-8 border border-black">
+<span class="border border-black text-black px-4 py-1.5 mb-6 inline-block uppercase text-sm font-bold">Pengumuman</span>
+<h1 class="text-black text-4xl md:text-[64px] max-w-4xl mb-4 leading-tight font-bold">NOAH Umumkan Hiatus: Apa yang Terjadi Selanjutnya?</h1>
+<p class="text-black text-lg max-w-2xl mb-8 line-clamp-2">Setelah dekade penuh kesuksesan, Ariel dan kawan-kawan memutuskan untuk mengambil jeda panjang untuk eksplorasi kreatif baru.</p>
+<div class="flex items-center gap-6">
+<span class="text-black uppercase text-sm">15 Januari 2024</span>
+<button class="border border-black bg-white text-black hover:bg-gray-100 px-10 py-4 uppercase tracking-widest font-bold">Baca Selengkapnya</button>
+</div>
+</div>
+</section>
+<!-- NEWS GRID -->
+<section class="max-w-[1200px] mx-auto px-6 py-[120px]">
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-3xl uppercase border-l-4 border-black pl-6 font-bold">Berita Terbaru</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<article class="bg-white border border-black">
+<div class="aspect-[16/9] bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="border border-black text-black px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Musik</span>
+</div>
+<h3 class="text-xl font-bold mb-3 line-clamp-2">Kolaborasi Spesial NOAH dengan Orkestra Nasional</h3>
+<p class="text-black text-xs uppercase mb-4">12 Januari 2024</p>
+<p class="text-black line-clamp-2 mb-6">Sebuah mahakarya baru yang menggabungkan elemen rock alternatif dengan kemegahan simfoni klasik.</p>
+<a class="text-black border-b border-black uppercase text-sm tracking-widest hover:bg-gray-100 inline-block pb-1" href="#">Read More</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white border border-black">
+<div class="aspect-[16/9] bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="border border-black text-black px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Konser</span>
+</div>
+<h3 class="text-xl font-bold mb-3 line-clamp-2">Tiket Konser 'The Final Show' Terjual Habis dalam 5 Menit</h3>
+<p class="text-black text-xs uppercase mb-4">08 Januari 2024</p>
+<p class="text-black line-clamp-2 mb-6">Antusiasme fans memuncak menyambut pertunjukan terakhir sebelum masa hiatus resmi dimulai.</p>
+<a class="text-black border-b border-black uppercase text-sm tracking-widest hover:bg-gray-100 inline-block pb-1" href="#">Read More</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white border border-black">
+<div class="aspect-[16/9] bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="border border-black text-black px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Personal</span>
+</div>
+<h3 class="text-xl font-bold mb-3 line-clamp-2">Ariel Berbagi Cerita Dibalik Lirik Lagu Teranyar</h3>
+<p class="text-black text-xs uppercase mb-4">05 Januari 2024</p>
+<p class="text-black line-clamp-2 mb-6">Wawancara eksklusif mengenai proses kreatif dan refleksi perjalanan karir musiknya selama dua dekade.</p>
+<a class="text-black border-b border-black uppercase text-sm tracking-widest hover:bg-gray-100 inline-block pb-1" href="#">Read More</a>
+</div>
+</article>
+</div>
+<!-- PAGINATION -->
+<div class="mt-20 flex justify-center gap-2">
+<button class="w-12 h-12 flex items-center justify-center border border-black bg-gray-300 text-black font-bold">1</button>
+<button class="w-12 h-12 flex items-center justify-center border border-black bg-white hover:bg-gray-100 text-black font-bold">2</button>
+<button class="w-12 h-12 flex items-center justify-center border border-black bg-white hover:bg-gray-100 text-black font-bold">3</button>
+<button class="px-6 h-12 flex items-center justify-center border border-black bg-white hover:bg-gray-100 uppercase text-xs tracking-widest font-bold">Next</button>
+</div>
+</section>
+<!-- BEHIND THE SCENES -->
+<section class="bg-white border-y border-black py-[120px]">
+<div class="max-w-[1200px] mx-auto px-6">
+<h2 class="text-3xl uppercase border-l-4 border-black pl-6 mb-16 text-black font-bold">Di Balik Layar</h2>
+<div class="masonry-grid gap-6">
+<div class="masonry-item bg-white border border-black">
+<div class="w-full aspect-[4/3] bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-500 text-6xl">play_circle</span>
+</div>
+<div class="p-6">
+<span class="border border-black text-black text-[10px] font-bold px-2 py-1 uppercase mb-2 inline-block">Video</span>
+<h4 class="text-xl font-bold mb-2">Proses Rekaman Studio</h4>
+<p class="text-black text-sm">Melihat lebih dekat pembuatan album terakhir.</p>
+</div>
+</div>
+<div class="masonry-item bg-white border border-black">
+<div class="w-full aspect-square bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="p-6">
+<span class="border border-black text-black text-[10px] font-bold px-2 py-1 uppercase mb-2 inline-block">Foto</span>
+<h4 class="text-xl font-bold mb-2">Backstage Moments</h4>
+<p class="text-black text-sm">Persiapan sebelum naik ke panggung megah.</p>
+</div>
+</div>
+<div class="masonry-item bg-white border border-black">
+<div class="w-full aspect-[4/3] bg-gray-300 border-b border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-500 text-6xl">play_circle</span>
+</div>
+<div class="p-6">
+<span class="border border-black text-black text-[10px] font-bold px-2 py-1 uppercase mb-2 inline-block">Video</span>
+<h4 class="text-xl font-bold mb-2">The Making of 'Wanitaku'</h4>
+<p class="text-black text-sm">Eksplorasi sound design yang mendalam.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PHOTO GALLERY -->
+<section class="max-w-[1200px] mx-auto px-6 py-[120px]">
+<h2 class="text-3xl uppercase border-l-4 border-black pl-6 mb-12 font-bold">Galeri Foto</h2>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="border border-black bg-gray-300 text-black px-6 py-2 text-xs font-bold uppercase tracking-wider">Semua</button>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-6 py-2 text-xs font-bold uppercase tracking-wider">Peterpan Era</button>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-6 py-2 text-xs font-bold uppercase tracking-wider">NOAH Era</button>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-6 py-2 text-xs font-bold uppercase tracking-wider">Konser</button>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-6 py-2 text-xs font-bold uppercase tracking-wider">Studio</button>
+</div>
+<div class="photo-masonry gap-4">
+<div class="mb-4 bg-gray-300 border border-black aspect-[3/4] flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="mb-4 bg-gray-300 border border-black aspect-square flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="mb-4 bg-gray-300 border border-black aspect-[4/3] flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+<div class="mb-4 bg-gray-300 border border-black aspect-[16/9] flex items-center justify-center">
+<span class="text-gray-500 font-bold">IMG</span>
+</div>
+</div>
+</section>
+<!-- PRESS KIT -->
+<section class="max-w-[1200px] mx-auto px-6 py-[120px]">
+<h2 class="text-3xl uppercase border-l-4 border-black pl-6 mb-12 font-bold">Press Kit &amp; Sumber Media</h2>
+<div class="bg-white border border-black">
+<div class="divide-y divide-black">
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 border border-black flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">description</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Biografi Resmi</h4>
+<p class="text-black text-sm uppercase">PDF • 2.4 MB</p>
+</div>
+</div>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-8 py-3 text-xs uppercase tracking-widest font-bold">Download</button>
+</div>
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 border border-black flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">photo_library</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Foto Hi-Res Pack</h4>
+<p class="text-black text-sm uppercase">ZIP • 145.0 MB</p>
+</div>
+</div>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-8 py-3 text-xs uppercase tracking-widest font-bold">Download</button>
+</div>
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 border border-black flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">token</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Logo Pack</h4>
+<p class="text-black text-sm uppercase">SVG/PNG • 12.0 MB</p>
+</div>
+</div>
+<button class="border border-black bg-white hover:bg-gray-100 text-black px-8 py-3 text-xs uppercase tracking-widest font-bold">Download</button>
+</div>
+</div>
+<div class="bg-white border-t border-black p-8 text-center">
+<p class="text-black text-xs uppercase tracking-[0.2em]">Untuk permintaan media khusus, hubungi <span class="font-bold border-b border-black">press@noah-band.com</span></p>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-white w-full py-16 px-6 border-t border-black">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<div class="text-xl font-bold text-black mb-6 uppercase tracking-tighter">Vanguard Echo</div>
+<p class="text-black max-w-sm mb-8 leading-relaxed">Representasi visual dan berita terkini dari perjalanan musikalitas NOAH. Eksplorasi tanpa batas, kualitas tanpa kompromi.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-black text-black hover:bg-gray-100" href="#">
+<span class="material-symbols-outlined text-xl">brand_awareness</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-black text-black hover:bg-gray-100" href="#">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-black text-black hover:bg-gray-100" href="#">
+<span class="material-symbols-outlined text-xl">headset</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex flex-wrap gap-8 md:justify-end mb-8">
+<a class="text-black text-xs tracking-widest uppercase hover:underline" href="#">Privacy Policy</a>
+<a class="text-black text-xs tracking-widest uppercase hover:underline" href="#">Terms of Use</a>
+<a class="text-black text-xs tracking-widest uppercase hover:underline" href="#">Contact</a>
+<a class="text-black text-xs tracking-widest uppercase hover:underline" href="#">Booking</a>
+</div>
+<p class="text-black text-[10px] tracking-widest uppercase md:text-right">© 2024 Vanguard Echo. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

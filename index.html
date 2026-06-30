@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOAH - Official Website</title>
+  <!-- Menghubungkan file CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    CATATAN GAMBAR (untuk pelajar):
+    - Semua gambar disimpan di folder "images/" dengan nama sederhana
+      (contoh: noah-band.jpg, hero-concert.jpg, gallery-1.jpg).
+    - Untuk mengganti gambar: timpa file di folder images/ dengan
+      nama yang sama, ATAU ubah nama file pada atribut src di bawah.
+    - Jika gambar belum punya, bisa pakai placeholder sementara:
+      <img src="https://via.placeholder.com/600x400" alt="Placeholder">
+  -->
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <!-- Bagian atas berisi logo dan menu navigasi -->
+  <header class="navbar">
+    <div class="container navbar-isi">
+      <a href="index.html" class="logo">NOAH</a>
+
+      <nav class="menu">
+        <a href="cerita-band.html">Cerita Band</a>
+        <a href="diskografi.html">Diskografi</a>
+        <a href="tur-event.html">Tur &amp; Event</a>
+        <a href="berita-media.html">Berita &amp; Media</a>
+        <a href="sahabat-noah.html">Sahabat NOAH</a>
+        <a href="toko.html">Toko</a>
+      </nav>
+
+      <div class="navbar-kanan">
+        <span class="search-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <span class="lang">ID / EN</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <!-- Bagian pembuka dengan gambar besar dan judul utama -->
+  <section class="hero">
+    <div class="hero-isi">
+      <h1 class="hero-judul">NOAH - Suara Satu Generasi</h1>
+      <p class="hero-subjudul">Band Rock Terlaris Indonesia | 9 Juta+ Album Terjual</p>
+      <div class="hero-tombol">
+        <button class="btn btn-merah">Dengarkan Sekarang</button>
+        <button class="btn btn-outline-putih">Selengkapnya</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MUSIC PLAYER SECTION ===== -->
+  <!-- Kartu pemutar musik sederhana -->
+  <section class="player-wrap">
+    <div class="player card-border-merah">
+      <!-- Gambar album -->
+      <div class="player-cover"><img src="images/album-cover.jpg" alt="Cover Album"></div>
+
+      <div class="player-info">
+        <h3 class="lagu-judul">Menghapus Jejakmu</h3>
+        <p class="lagu-artis">NOAH</p>
+
+        <!-- Garis progress lagu -->
+        <div class="progress">
+          <div class="progress-isi"></div>
+        </div>
+
+        <!-- Tombol kontrol pemutar -->
+        <div class="player-kontrol">
+          <div class="tombol-kiri">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 6v12l-8.5-6L18 6z"/><rect x="5" y="6" width="2" height="12"/></svg></span>
+            <span class="play"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg></span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 6v12l8.5-6L6 6z"/><rect x="17" y="6" width="2" height="12"/></svg></span>
+          </div>
+          <div class="tombol-kanan">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONSER MENDATANG (CARD/WIDGET) ===== -->
+  <section class="container section">
+    <div class="section-header">
+      <h2 class="section-title">Konser Mendatang</h2>
+      <a href="#" class="link-merah">Lihat Semua Jadwal</a>
+    </div>
+
+    <div class="grid-3">
+      <!-- Card 1 -->
+      <div class="card card-border-merah">
+        <div class="card-atas">
+          <div>
+            <p class="tanggal-besar">24</p>
+            <p class="bulan">OKT</p>
+          </div>
+          <span class="label-tersedia">Tersedia</span>
+        </div>
+        <div class="card-tengah">
+          <h3 class="kota">Jakarta</h3>
+          <p class="venue">JIExpo Kemayoran</p>
+        </div>
+        <button class="btn btn-merah lebar">Beli Tiket</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card card-border-merah">
+        <div class="card-atas">
+          <div>
+            <p class="tanggal-besar">02</p>
+            <p class="bulan">NOV</p>
+          </div>
+          <span class="label-habis">Habis</span>
+        </div>
+        <div class="card-tengah">
+          <h3 class="kota">Bandung</h3>
+          <p class="venue">Siliwangi Stadium</p>
+        </div>
+        <button class="btn btn-nonaktif lebar">Terjual Habis</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card card-border-merah">
+        <div class="card-atas">
+          <div>
+            <p class="tanggal-besar">15</p>
+            <p class="bulan">DES</p>
+          </div>
+          <span class="label-tersedia">Tersedia</span>
+        </div>
+        <div class="card-tengah">
+          <h3 class="kota">Surabaya</h3>
+          <p class="venue">Grand City Hall</p>
+        </div>
+        <button class="btn btn-merah lebar">Beli Tiket</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROFIL BAND ===== -->
+  <!-- Section dengan latar abu-abu, gambar di kiri dan teks di kanan -->
+  <section class="section bg-abu">
+    <div class="container grid-2">
+      <!-- Foto band -->
+      <div class="band-foto"><img src="images/noah_band.jpg" alt="Foto Band NOAH"></div>
+
+      <div class="band-teks">
+        <h2 class="section-title">Evolusi Musik Indonesia</h2>
+        <p class="paragraf">
+          Berawal dari Peterpan hingga bertransformasi menjadi NOAH, perjalanan Ariel,
+          Lukman, dan David adalah sejarah hidup musik Indonesia. Dengan dedikasi untuk
+          terus berinovasi dalam aransemen dan lirik yang puitis, NOAH berhasil
+          mempertahankan posisinya sebagai ikon pop-rock selama lebih dari dua dekade.
+          Mereka bukan sekadar band, melainkan representasi semangat satu generasi yang
+          terus tumbuh dan bermimpi lewat untaian nada-nada legendaris.
+        </p>
+        <button class="btn btn-merah">Baca Cerita Lengkap</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BERITA TERBARU ===== -->
+  <section class="container section">
+    <h2 class="section-title mb">Berita Terbaru</h2>
+
+    <div class="grid-3">
+      <!-- Berita 1 -->
+      <div class="berita">
+        <div class="berita-gambar"><img src="images/news-1.jpg" alt="Berita Album"></div>
+        <span class="pill">Album</span>
+        <p class="berita-tanggal">12 September 2024</p>
+        <h3 class="berita-judul">Dibalik Layar Pembuatan Aransemen Baru "Keterkaitan Keterikatan"</h3>
+        <p class="paragraf-kecil">Eksplorasi sound terbaru NOAH yang menggabungkan elemen orkestra dengan synthesizer modern...</p>
+      </div>
+
+      <!-- Berita 2 -->
+      <div class="berita">
+        <div class="berita-gambar"><img src="images/news-2.jpg" alt="Berita Tur"></div>
+        <span class="pill">Tur</span>
+        <p class="berita-tanggal">05 September 2024</p>
+        <h3 class="berita-judul">Pengalaman Tak Terlupakan Tur "The Great Journey" di Singapura</h3>
+        <p class="paragraf-kecil">Ribuan Sahabat NOAH memadati Star Performing Arts Centre dalam malam yang penuh haru...</p>
+      </div>
+
+      <!-- Berita 3 -->
+      <div class="berita">
+        <div class="berita-gambar"><img src="images/news-3.jpg" alt="Berita Media"></div>
+        <span class="pill">Media</span>
+        <p class="berita-tanggal">28 Agustus 2024</p>
+        <h3 class="berita-judul">Eksklusif: Sesi Jamming NOAH Bersama Musisi Legendaris Mancanegara</h3>
+        <p class="paragraf-kecil">Kolaborasi lintas genre yang memberikan warna baru pada lagu-lagu klasik NOAH...</p>
+      </div>
+    </div>
+
+    <div class="tengah">
+      <a href="#" class="link-merah">Baca Semua Berita</a>
+    </div>
+  </section>
+
+  <!-- ===== KOMUNITAS / NEWSLETTER ===== -->
+  <!-- Section gelap berisi form berlangganan dan galeri Instagram -->
+  <section class="section bg-gelap">
+    <div class="container grid-2">
+      <div>
+        <h2 class="judul-putih">Bergabung dengan Komunitas</h2>
+        <p class="teks-abu">
+          Dapatkan update eksklusif mengenai tur, rilis lagu terbaru, dan konten
+          eksklusif lainnya langsung di inbox Anda.
+        </p>
+
+        <!-- Tombol media sosial sederhana -->
+        <div class="sosial">
+          <div class="sosial-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <div class="sosial-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <div class="sosial-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="sosial-box"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        </div>
+
+        <!-- Form newsletter -->
+        <form class="newsletter">
+          <input type="email" placeholder="Alamat Email Anda">
+          <button type="submit" class="btn btn-merah">Berlangganan</button>
+        </form>
+      </div>
+
+      <!-- Galeri foto Instagram. Ganti file feed-1.jpg s/d feed-4.jpg di folder images/ -->
+      <div class="galeri">
+        <div class="galeri-item"><img src="images/feed-1.jpg" alt="Instagram 1"></div>
+        <div class="galeri-item"><img src="images/feed-2.jpg" alt="Instagram 2"></div>
+        <div class="galeri-item"><img src="images/feed-3.jpg" alt="Instagram 3"></div>
+        <div class="galeri-item"><img src="images/feed-4.jpg" alt="Instagram 4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container grid-4">
+      <div>
+        <div class="logo-footer">NOAH</div>
+        <p class="teks-abu">
+          Representasi musik pop-rock terbaik Indonesia. Menjangkau hati lewat melodi
+          dan lirik yang melampaui waktu.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-judul">Navigasi</h4>
+        <ul>
+          <li><a href="cerita-band.html">Tentang Band</a></li>
+          <li><a href="tur-event.html">Tur Mendatang</a></li>
+          <li><a href="berita-media.html">Berita</a></li>
+          <li><a href="sahabat-noah.html">Fanbase</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-judul">Musik</h4>
+        <ul>
+          <li><a href="#">Spotify</a></li>
+          <li><a href="#">Apple Music</a></li>
+          <li><a href="#">YouTube Music</a></li>
+          <li><a href="#">Deezer</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-judul">Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Press Kit</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bagian bawah footer -->
+    <div class="container footer-bawah">
+      <p>&copy; 2024 NOAH. All Rights Reserved.</p>
+      <div class="footer-ikon">
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

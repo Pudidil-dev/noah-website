@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#000000",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed": "#000000",
+                        "surface-container-low": "#ffffff",
+                        "surface-container-highest": "#f5f5f5",
+                        "background": "#ffffff",
+                        "primary-fixed": "#e5e5e5",
+                        "outline": "#000000",
+                        "inverse-surface": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#000000",
+                        "error-container": "#e5e5e5",
+                        "primary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#000000",
+                        "on-surface-variant": "#404040",
+                        "surface-container": "#f5f5f5",
+                        "on-secondary-container": "#000000",
+                        "on-tertiary-fixed-variant": "#000000",
+                        "surface-variant": "#e5e5e5",
+                        "outline-variant": "#000000",
+                        "surface-container-high": "#e5e5e5",
+                        "on-tertiary-fixed": "#000000",
+                        "error": "#000000",
+                        "tertiary-fixed": "#e5e5e5",
+                        "on-secondary-fixed-variant": "#000000",
+                        "on-background": "#000000",
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary-container": "#ffffff",
+                        "surface": "#ffffff",
+                        "secondary-fixed-dim": "#e5e5e5",
+                        "on-primary-fixed-variant": "#000000",
+                        "surface-tint": "#000000",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#e5e5e5",
+                        "inverse-on-surface": "#ffffff",
+                        "secondary": "#000000",
+                        "surface-bright": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#e5e5e5",
+                        "tertiary-container": "#000000",
+                        "primary-container": "#000000",
+                        "secondary-fixed": "#e5e5e5",
+                        "on-primary-fixed": "#000000",
+                        "secondary-container": "#000000",
+                        "primary-fixed-dim": "#e5e5e5",
+                        "surface-dim": "#e5e5e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-black">
+<nav class="flex justify-between items-center h-20 px-6 lg:px-12 max-w-[1200px] mx-auto tracking-tight">
+<div class="text-2xl font-black text-black cursor-pointer">NOAH</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="text-black border border-transparent font-medium hover:border-black transition-colors cursor-pointer px-2 py-1" href="#">Cerita Band</a>
+<a class="text-black font-bold border border-black px-2 py-1 cursor-pointer" href="#">Diskografi</a>
+<a class="text-black border border-transparent font-medium hover:border-black transition-colors cursor-pointer px-2 py-1" href="#">Tur &amp; Event</a>
+<a class="text-black border border-transparent font-medium hover:border-black transition-colors cursor-pointer px-2 py-1" href="#">Berita &amp; Media</a>
+<a class="text-black border border-transparent font-medium hover:border-black transition-colors cursor-pointer px-2 py-1" href="#">Sahabat NOAH</a>
+<a class="text-black border border-transparent font-medium hover:border-black transition-colors cursor-pointer px-2 py-1" href="#">Toko</a>
+</div>
+<div class="flex items-center gap-6 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">S</span></div>
+<button class="text-sm font-bold border border-black px-2 py-1">ID / EN</button>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Page Header & Filters -->
+<section class="max-w-[1200px] mx-auto px-6 pt-20 pb-12">
+<div class="mb-12">
+<h1 class="text-h1 font-h1 text-on-surface mb-2 border border-black p-2 inline-block">Diskografi</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant border border-black p-2 inline-block mt-2">Koleksi Lengkap Musik NOAH dan Peterpan</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-8 border-y border-black">
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap gap-3 items-center">
+<span class="text-label font-label text-on-surface-variant uppercase border border-black p-1">Era:</span>
+<button class="px-6 py-2 bg-white border border-black text-black text-label font-label transition-all">Semua</button>
+<button class="px-6 py-2 bg-white border border-black text-black text-label font-label transition-all">Peterpan 2000-2008</button>
+<button class="px-6 py-2 bg-white border border-black text-black text-label font-label transition-all">NOAH 2012-Now</button>
+</div>
+<div class="flex flex-wrap gap-3 items-center">
+<span class="text-label font-label text-on-surface-variant uppercase border border-black p-1">Tipe:</span>
+<button class="px-5 py-1.5 bg-white border border-black text-black text-label font-label transition-all">Studio</button>
+<button class="px-5 py-1.5 bg-white border border-black text-black text-label font-label transition-all">Soundtrack</button>
+<button class="px-5 py-1.5 bg-white border border-black text-black text-label font-label transition-all">Kompilasi</button>
+<button class="px-5 py-1.5 bg-white border border-black text-black text-label font-label transition-all">Singles</button>
+</div>
+</div>
+<div class="relative">
+<select class="appearance-none bg-white border border-black px-6 py-3 pr-12 text-label font-label outline-none cursor-pointer">
+<option>Terbaru Dulu</option>
+<option>Terlama Dulu</option>
+<option>A-Z</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 border border-black flex items-center justify-center pointer-events-none"><span class="text-[8px]">v</span></div>
+</div>
+</div>
+</section>
+<!-- Album Grid -->
+<section class="max-w-[1200px] mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Keterkaitan Keterikatan</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2019 • 8 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Studio</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Wanitaku</li>
+<li>2. Kupeluk Hatimu</li>
+<li>3. Mendekati Lugu</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Bintang di Surga Second Chance</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2021 • 10 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Studio</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Bintang di Surga</li>
+<li>2. Khayalan Tingkat Tinggi</li>
+<li>3. Ku Katakan Dengan Indah</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Sings Legends</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2016 • 9 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Kompilasi</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Andaikan Kau Datang</li>
+<li>2. Sajadah Panjang</li>
+<li>3. Biarlah Sendiri</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Second Chance</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2014 • 12 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Studio</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Hero</li>
+<li>2. Seperti Kemarin</li>
+<li>3. Suara Pikiranku</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+<!-- Card 5 (1M+ Badge) -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+<div class="absolute top-4 left-4 bg-white border border-black text-black text-[10px] font-bold px-3 py-1">1M+ TERJUAL</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Seperti Seharusnya</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2012 • 10 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Studio</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Separuh Aku</li>
+<li>2. Hidup Untukmu, Mati Tanpamu</li>
+<li>3. Jika Engkau</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+<!-- Card 6 (3.2M Badge) -->
+<div class="group bg-white p-4 border border-black">
+<div class="relative aspect-square mb-6 overflow-hidden bg-gray-200 border border-black flex items-center justify-center">
+<span class="text-gray-500">Image</span>
+<div class="absolute top-4 left-4 bg-white border border-black text-black text-[10px] font-bold px-3 py-1">3.2 JUTA TERJUAL</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1 border border-black p-1 inline-block">Bintang di Surga</h3>
+<p class="text-label text-on-surface-variant border border-black p-1 mt-1 inline-block">2004 • 10 Tracks</p>
+</div>
+<span class="bg-white border border-black text-black text-[10px] uppercase font-bold px-2 py-1">Studio</span>
+</div>
+<ul class="text-label text-black mb-6 space-y-1 border border-black p-2">
+<li>1. Mungkin Nanti</li>
+<li>2. Ada Apa Denganmu</li>
+<li>3. Kukatakan Dengan Indah</li>
+</ul>
+<button class="w-full py-3 bg-white border border-black text-black font-label uppercase tracking-widest hover:bg-gray-100 transition-colors">Lihat Album</button>
+</div>
+</div>
+</section>
+<!-- Singles and Video Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-20">
+<div class="flex gap-8 border-b border-black mb-12">
+<button class="pb-4 text-h3 font-h3 border-b-4 border-black text-black">Singles</button>
+<button class="pb-4 text-h3 font-h3 text-on-surface-variant hover:text-black transition-colors">Video Musik</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-label font-label text-black border-b border-black uppercase tracking-widest">
+<th class="py-4 px-4 border border-black">Judul</th>
+<th class="py-4 px-4 border border-black">Tahun</th>
+<th class="py-4 px-4 border border-black">Album</th>
+<th class="py-4 px-4 text-right border border-black">Streaming</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="border-b border-black group">
+<td class="py-6 px-4 font-bold flex items-center gap-4 border border-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">&gt;</span></div>
+                                Separuh Aku
+                            </td>
+<td class="py-6 px-4 text-black border border-black">2012</td>
+<td class="py-6 px-4 text-black italic border border-black">Seperti Seharusnya</td>
+<td class="py-6 px-4 border border-black">
+<div class="flex justify-end gap-4 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-black group">
+<td class="py-6 px-4 font-bold flex items-center gap-4 border border-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">&gt;</span></div>
+                                Tak Bisakah
+                            </td>
+<td class="py-6 px-4 text-black border border-black">2005</td>
+<td class="py-6 px-4 text-black italic border border-black">OST Alexandria</td>
+<td class="py-6 px-4 border border-black">
+<div class="flex justify-end gap-4 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-black group">
+<td class="py-6 px-4 font-bold flex items-center gap-4 border border-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">&gt;</span></div>
+                                Menunggumu
+                            </td>
+<td class="py-6 px-4 text-black border border-black">2008</td>
+<td class="py-6 px-4 text-black italic border border-black">Sebuah Nama, Sebuah Cerita</td>
+<td class="py-6 px-4 border border-black">
+<div class="flex justify-end gap-4 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-black group">
+<td class="py-6 px-4 font-bold flex items-center gap-4 border border-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">&gt;</span></div>
+                                Khayalan Tingkat Tinggi
+                            </td>
+<td class="py-6 px-4 text-black border border-black">2004</td>
+<td class="py-6 px-4 text-black italic border border-black">Bintang di Surga</td>
+<td class="py-6 px-4 border border-black">
+<div class="flex justify-end gap-4 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-black group">
+<td class="py-6 px-4 font-bold flex items-center gap-4 border border-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">&gt;</span></div>
+                                Wanitaku
+                            </td>
+<td class="py-6 px-4 text-black border border-black">2019</td>
+<td class="py-6 px-4 text-black italic border border-black">Keterkaitan Keterikatan</td>
+<td class="py-6 px-4 border border-black">
+<div class="flex justify-end gap-4 text-black">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Icon</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Mini Player -->
+<div class="fixed bottom-0 left-0 w-full h-24 bg-white border-t border-black text-black flex items-center px-6 md:px-12 z-[100]">
+<div class="flex items-center gap-4 w-1/3">
+<div class="w-16 h-16 bg-gray-200 border border-black flex items-center justify-center shrink-0">
+<span class="text-[10px]">Img</span>
+</div>
+<div class="hidden sm:block overflow-hidden">
+<div class="text-label font-label text-black truncate border border-black p-1 inline-block">Now Playing</div>
+<div class="text-body-md font-bold truncate border border-black p-1 inline-block mt-1">Separuh Aku - NOAH</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/3">
+<div class="flex items-center gap-6">
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">|&lt;</span></div>
+<div class="w-10 h-10 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">&gt;</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">&gt;|</span></div>
+</div>
+<div class="w-full max-w-md bg-white border border-black h-2 relative cursor-pointer">
+<div class="absolute top-0 left-0 h-full bg-black w-2/5"></div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-6 w-1/3">
+<div class="hidden md:flex items-center gap-2 w-32">
+<div class="w-6 h-6 border border-black flex items-center justify-center"><span class="text-[10px]">Vol</span></div>
+<div class="w-full bg-white border border-black h-2 overflow-hidden">
+<div class="bg-black h-full w-3/4"></div>
+</div>
+</div>
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">List</span></div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-white w-full py-16 border-t border-black mt-24 pb-40">
+<div class="flex flex-col items-center gap-8 px-6 max-w-[1200px] mx-auto text-center text-sm">
+<div class="text-xl font-bold text-black border border-black p-2 uppercase tracking-tighter">NOAH</div>
+<div class="flex flex-wrap justify-center gap-8 text-black border border-black p-2">
+<a class="hover:underline transition-colors" href="#">Privacy Policy</a>
+<a class="hover:underline transition-colors" href="#">Terms of Service</a>
+<a class="hover:underline transition-colors" href="#">Press Kit</a>
+</div>
+<div class="flex gap-6 mt-4 border border-black p-2">
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">Soc</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">Cam</span></div>
+<div class="w-6 h-6 border border-black flex items-center justify-center cursor-pointer"><span class="text-[10px]">&gt;</span></div>
+</div>
+<p class="text-black border border-black p-2 mt-4">© 2024 NOAH Band. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>

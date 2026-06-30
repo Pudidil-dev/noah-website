@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdad8",
+                    "inverse-surface": "#3e2c2b",
+                    "surface-dim": "#f1d3d2",
+                    "inverse-primary": "#ffb3b1",
+                    "outline": "#8f6f6e",
+                    "outline-variant": "#e4bebc",
+                    "on-primary-container": "#fffbff",
+                    "on-primary-fixed": "#410007",
+                    "background": "#fff8f7",
+                    "tertiary-container": "#008379",
+                    "on-background": "#271717",
+                    "on-secondary-fixed": "#410007",
+                    "surface": "#fff8f7",
+                    "surface-container-low": "#fff0ef",
+                    "on-tertiary-container": "#f3fffc",
+                    "secondary-container": "#fd8584",
+                    "secondary-fixed-dim": "#ffb3b1",
+                    "on-secondary-fixed-variant": "#81262a",
+                    "on-surface-variant": "#5b403f",
+                    "surface-container-highest": "#f9dcda",
+                    "tertiary-fixed": "#8cf4e8",
+                    "on-error": "#ffffff",
+                    "primary-container": "#db313f",
+                    "surface-tint": "#bb152c",
+                    "surface-container-high": "#ffe1e0",
+                    "on-primary": "#ffffff",
+                    "primary": "#b7102a",
+                    "error": "#ba1a1a",
+                    "secondary": "#a03d40",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#271717",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "tertiary-fixed-dim": "#6fd8cc",
+                    "on-secondary-container": "#741d22",
+                    "inverse-on-surface": "#ffedeb",
+                    "surface-variant": "#f9dcda",
+                    "on-tertiary-fixed-variant": "#00504a",
+                    "surface-container": "#ffe9e8",
+                    "primary-fixed": "#ffdad8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-primary-fixed-variant": "#92001c",
+                    "surface-bright": "#fff8f7",
+                    "tertiary": "#006860",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "section-padding": "120px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "label": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display": ["Inter"],
+                    "h3": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-underline {
+            position: relative;
+        }
+        .active-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #b7102a;
+        }
+        .hero-gradient {
+            background: linear-gradient(0deg, rgba(39, 23, 23, 0.9) 0%, rgba(39, 23, 23, 0.4) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Predicted TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-white border-b border-zinc-200 h-20 font-['Inter']">
+<div class="flex justify-between items-center h-full px-8 max-w-[1200px] mx-auto">
+<div class="flex-1 flex justify-start">
+<a class="text-2xl font-black text-on-surface tracking-tighter" href="#">NOAH</a>
+</div>
+<div class="hidden md:flex gap-8 items-center justify-center flex-grow">
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Cerita Band</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Diskografi</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Tur &amp; Event</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Berita &amp; Media</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Sahabat NOAH</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Toko</a>
+</div>
+<div class="flex-1 flex justify-end items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="search">search</span>
+<span class="font-label text-xs font-bold text-on-surface-variant cursor-pointer">ID / EN</span>
+</div>
+</div>
+</nav>
+<!-- HERO SECTION -->
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="NOAH Live Performance" class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of a rock band performing on a massive stage under dramatic spotlights. The atmosphere is filled with fog and dark silhouettes against a backdrop of deep shadows and intense white beams of light. The overall mood is epic and authoritative, reflecting a high-contrast minimalist aesthetic with professional musical energy and a premium brand feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACvtRDcWD8ZLHSOGsUvtNsVKKb8M5njG_ZCW0RWY9vUYc9IVy9rmXCRm4yl0G7TQciKdhq8yNwl7uhYj6cR0uf8yifzaovowG3rwYJ5Qp6lJ0Pn_s5glh-zuCerDo1r4ugJvcEQGQlikGQ8nxBvHuVvZsDVhRMYitN-K333MHB5SuoHgqHH2g72IiWVX6Bo3tjreGECmCE83H6sohpKGFRyixXV-Y5-tqaZYuLksJ3forJIBpK_NICxjXIfZVkxd1v1rtP7TgjAgxS"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-[1200px] w-full">
+<h1 class="font-display text-white mb-4">NOAH - Suara Satu Generasi</h1>
+<p class="font-body-lg text-white/80 mb-10 max-w-2xl mx-auto uppercase tracking-widest font-semibold">Band Rock Terlaris Indonesia | 9 Juta+ Album Terjual</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="bg-primary text-on-primary px-10 py-4 font-label uppercase text-sm hover:bg-primary-container transition-all w-full md:w-auto">Dengarkan Sekarang</button>
+<button class="border-2 border-white text-white px-10 py-4 font-label uppercase text-sm hover:bg-white/10 transition-all w-full md:w-auto">Selengkapnya</button>
+</div>
+</div>
+</section>
+<!-- MUSIC PLAYER SECTION -->
+<section class="relative z-20 -mt-24 px-gutter flex justify-center">
+<div class="bg-white p-6 shadow-[0_4px_20px_rgba(29,29,29,0.05)] w-full max-w-[800px] border-l-4 border-primary flex flex-col md:flex-row items-center gap-6">
+<div class="w-24 h-24 flex-shrink-0">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="A minimalist close-up shot of a modern vinyl record album cover featuring clean typography and a monochrome photographic portrait. The image is set against a bright white background to emphasize a premium and professional design. The mood is artistic and focused, maintaining the high-contrast aesthetic of a legendary musical artist's discography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmi54HuWDtqPbb6BXYGcTB07PfibUVWRHk_jVUUJr_F3hxKsv82dHSb7btZJ7v3fmuQuY_1Rh-Au5OJ40N1LptDJyJLBLV8aJ4coRoN4A1plICIG2y8vKOxFLNIbCu8U1-mCjjASovSv-v9UqPnGNiRY7yeVNzeou4-O2dNKMSoL1I1jpGmjk6VNziG9Q-VzYU5SW70a2FM5z9vHuTsDi1lb6SGHbszVvp5TvV4JOhzovq0aR4YfRovZ1gl5qUHxoAGT_5fVMp9U8D"/>
+</div>
+<div class="flex-grow w-full text-center md:text-left">
+<div class="mb-1">
+<h3 class="font-h3 text-on-surface">Menghapus Jejakmu</h3>
+<p class="text-secondary font-label text-xs uppercase tracking-widest">NOAH</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 mt-4 relative">
+<div class="absolute top-0 left-0 h-full bg-primary w-2/3"></div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer" data-icon="skip_previous">skip_previous</span>
+<div class="bg-primary text-white w-10 h-10 flex items-center justify-center rounded-full cursor-pointer">
+<span class="material-symbols-outlined" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</div>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer" data-icon="skip_next">skip_next</span>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-zinc-400 text-lg cursor-pointer" data-icon="music_video">music_video</span>
+<span class="material-symbols-outlined text-zinc-400 text-lg cursor-pointer" data-icon="podcasts">podcasts</span>
+<span class="material-symbols-outlined text-zinc-400 text-lg cursor-pointer" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONCERTS SECTION -->
+<section class="py-section-padding max-w-[1200px] mx-auto px-gutter">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-on-surface">Konser Mendatang</h2>
+<a class="text-primary font-label text-xs uppercase border-b border-primary pb-1" href="#">Lihat Semua Jadwal</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-8 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary">
+<div class="flex items-start justify-between mb-6">
+<div>
+<p class="font-display text-primary leading-none">24</p>
+<p class="font-h3 text-on-surface uppercase font-bold">Okt</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Tersedia</span>
+</div>
+<div class="mb-8">
+<p class="font-h3 text-on-surface mb-1">Jakarta</p>
+<p class="text-zinc-500 font-body-md">JIExpo Kemayoran</p>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label uppercase text-xs hover:bg-primary-container transition-all">Beli Tiket</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary">
+<div class="flex items-start justify-between mb-6">
+<div>
+<p class="font-display text-primary leading-none">02</p>
+<p class="font-h3 text-on-surface uppercase font-bold">Nov</p>
+</div>
+<span class="bg-red-100 text-red-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Habis</span>
+</div>
+<div class="mb-8">
+<p class="font-h3 text-on-surface mb-1">Bandung</p>
+<p class="text-zinc-500 font-body-md">Siliwangi Stadium</p>
+</div>
+<button class="w-full border-2 border-zinc-200 text-zinc-400 py-4 font-label uppercase text-xs cursor-not-allowed">Terjual Habis</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary">
+<div class="flex items-start justify-between mb-6">
+<div>
+<p class="font-display text-primary leading-none">15</p>
+<p class="font-h3 text-on-surface uppercase font-bold">Des</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Tersedia</span>
+</div>
+<div class="mb-8">
+<p class="font-h3 text-on-surface mb-1">Surabaya</p>
+<p class="text-zinc-500 font-body-md">Grand City Hall</p>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label uppercase text-xs hover:bg-primary-container transition-all">Beli Tiket</button>
+</div>
+</div>
+</section>
+<!-- BAND INTRO SECTION -->
+<section class="py-section-padding bg-[#F1F1F1]">
+<div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-primary z-0"></div>
+<img alt="NOAH Band Profile" class="relative z-10 grayscale hover:grayscale-0 transition-all duration-700 w-full aspect-[4/5] object-cover shadow-xl" data-alt="A powerful group portrait of a professional rock band standing confidently against a dark, minimalist background. The lighting is dramatic and directional, highlighting the strong facial expressions and sharp textures of their modern black attire. The visual style is premium and cinematic, utilizing a deep monochrome palette with a single focus on professional character and band legacy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX9oqcxAR7Hf-yd72A517hK76G-xvVqQuRRntXvLxmmJFDA3QvDe1uf9Iga-WoMDESRP4EkxuQNJxfLZrVv0xuasFNwffY6Fpw4SL0YXt-NOA1UISAyQCE8I_UUKUVInywP2FRgZNTdLbPsuGKpREUUoAj59MDkukvxgb560cYyYFgHAJ17xW9vAIelpqkzJH5IEaTHVrcIqXzmZ48YHehfkZOcsSLCBc13K0yrFziuDmq6rU9g5E4TyXOVGtYRbHe1odejq664pxV"/>
+</div>
+<div>
+<h2 class="font-h1 text-on-surface mb-8">Evolusi Musik Indonesia</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">
+                    Berawal dari Peterpan hingga bertransformasi menjadi NOAH, perjalanan Ariel, Lukman, dan David adalah sejarah hidup musik Indonesia. Dengan dedikasi untuk terus berinovasi dalam aransemen dan lirik yang puitis, NOAH berhasil mempertahankan posisinya sebagai ikon pop-rock selama lebih dari dua dekade. Mereka bukan sekadar band, melainkan representasi semangat satu generasi yang terus tumbuh dan bermimpi lewat untaian nada-nada legendaris.
+                </p>
+<button class="bg-primary text-on-primary px-10 py-4 font-label uppercase text-sm hover:bg-primary-container transition-all">Baca Cerita Lengkap</button>
+</div>
+</div>
+</section>
+<!-- NEWS SECTION -->
+<section class="py-section-padding max-w-[1200px] mx-auto px-gutter">
+<h2 class="font-h2 text-on-surface mb-12">Berita Terbaru</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- News 1 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-4">
+<img alt="News 1" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wide-angle shot of a vibrant, packed concert arena during a peak performance moment. The air is filled with colorful stage lights and a sea of glowing phone screens from the audience. The style is high-energy and professional, capturing the modern concert experience in a bright, vivid way that aligns with an official media release for a top-tier artist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk0WXRWa1Uuf6oq0TauzroAb_VFZNJcCSQ6GWBnRA1AKiEExJnbHPvgWJeWo7KtVoDTMlrvy8aJm1HzmwPQ9oKe6Hu0pb3YKrluzCr3Nn9E2Dxoa8efhO0ecbFqxYeOpoalKcLCFcmuWVo41rSmjipgK3_RIpoNWISKTsDjTUnuEl62kb-9m2vcNgyhGSzEHai9jUsskHKJIlZbhqoAjmmdTsfBz083kQ-sZT6LhSHKpaKWNl126wji_rUlQrf4dXygfqQOGTNCO5F"/>
+</div>
+<span class="inline-block bg-surface-container text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full mb-4">Album</span>
+<p class="text-zinc-500 font-label text-[12px] mb-2">12 September 2024</p>
+<h3 class="font-h3 group-hover:text-primary transition-colors mb-3">Dibalik Layar Pembuatan Aransemen Baru "Keterkaitan Keterikatan"</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Eksplorasi sound terbaru NOAH yang menggabungkan elemen orkestra dengan synthesizer modern...</p>
+</div>
+<!-- News 2 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-4">
+<img alt="News 2" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused close-up of a high-quality electric guitar being played on a minimalist stage. The lighting is warm and dramatic, highlighting the sleek design of the instrument and the hands of the musician. This professional musical photography uses soft background bokeh to emphasize detail, maintaining a modern and sophisticated aesthetic consistent with a premium band's news feed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt29hZ7RxsquLBPPK6Weh7DEMNkDgoraKlb9uQGAyw1HbKsatSMc1WLi5UOYaf4h-ImXAkkjZ8R2P8McBzczKEU18OTLA5Vxwx3WMjX-3owLtp9O2M0nsLPVVf6KP6AwDLpAD3n67QK4oOOh7B_F1nbMuY76E8ZMbpgzeWX_VcaFFM3Yffz6vTYt_e9j9fBSZNui3Ba5SNqDYlaQxwO-RxwNvQ6F_n4E_EOuFwg-63KMQYL6PHifcZp9ggFX0kyaNn-5mjWe_j4sd3"/>
+</div>
+<span class="inline-block bg-surface-container text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full mb-4">Tur</span>
+<p class="text-zinc-500 font-label text-[12px] mb-2">05 September 2024</p>
+<h3 class="font-h3 group-hover:text-primary transition-colors mb-3">Pengalaman Tak Terlupakan Tur "The Great Journey" di Singapura</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Ribuan Sahabat NOAH memadati Star Performing Arts Centre dalam malam yang penuh haru...</p>
+</div>
+<!-- News 3 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-4">
+<img alt="News 3" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An interior shot of a world-class professional recording studio filled with vintage analog consoles and modern digital equipment. The room is warmly lit with soft ambient light, creating an atmosphere of creativity and excellence. The design is clean and high-end, representing the behind-the-scenes professionalism of a major musical entity's production process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH9EfMtGYiUoFigwheWdnqYjgEsSkslCUHw9jvDJaCPbeodVWFlUY5hmXH-kwBnGUX4yaJ_VEEojLYcqUoOSxL6_SgRGmmWDUrtbj1nimpHuIUHi18g34Wxzl4qPjcVQdoofIpnW_a5cFDuLBp8TUuVVPNW2CAuTpA45gq7ny4vK09Y5PyVw9ssG3n33kiFNn7-tYljMotViCnKke72mx0uaY6Pg4VTWGkEkXAyGpB-h5vIPzGE8yuD9MoJGEvrll8nlmw0e8dmqYR"/>
+</div>
+<span class="inline-block bg-surface-container text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full mb-4">Media</span>
+<p class="text-zinc-500 font-label text-[12px] mb-2">28 Agustus 2024</p>
+<h3 class="font-h3 group-hover:text-primary transition-colors mb-3">Eksklusif: Sesi Jamming NOAH Bersama Musisi Legendaris Mancanegara</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Kolaborasi lintas genre yang memberikan warna baru pada lagu-lagu klasik NOAH...</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a class="font-label text-primary uppercase text-xs tracking-widest hover:underline" href="#">Baca Semua Berita</a>
+</div>
+</section>
+<!-- SOCIAL & NEWSLETTER SECTION -->
+<section class="py-section-padding bg-zinc-900 text-white overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h2 class="font-h2 mb-6">Bergabung dengan Komunitas</h2>
+<p class="font-body-lg text-zinc-400 mb-10">Dapatkan update eksklusif mengenai tur, rilis lagu terbaru, dan konten eksklusif lainnya langsung di inbox Anda.</p>
+<div class="flex gap-4 mb-12">
+<div class="bg-zinc-800 p-3 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</div>
+<div class="bg-zinc-800 p-3 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</div>
+<div class="bg-zinc-800 p-3 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<div class="bg-zinc-800 p-3 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-0">
+<input class="bg-zinc-800 border-none px-6 py-4 w-full focus:ring-2 focus:ring-primary text-white outline-none" placeholder="Alamat Email Anda" type="email"/>
+<button class="bg-primary text-white px-8 py-4 font-label uppercase text-xs whitespace-nowrap hover:bg-primary-container transition-all">Berlangganan</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img alt="IG Feed 1" class="w-full aspect-square object-cover" data-alt="A square, high-contrast photograph of a silhouetted musician playing a guitar against a bright stage light. The image has a grainy, artistic texture that reflects a modern social media aesthetic. The lighting creates a halo effect around the figure, emphasizing energy and movement in a minimalist way that feels authentic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSlzpD7INXFN0FupQrEG1Gmq3LDwbd4pqCfrSrzZHI15Y6w7jTeoKDae_SH-rZKAOfp8gW49X2OH6OAquAyNVOYv7snr90mYDvfj49FM2UMI2s_sjzAAVf-3lq6-jrwEBkZiZfM8Wcvz7I61f_FGRzclM4FY9vW7dLOEDoH_ZS0wk6g3Vc1jqiwvjk6TZDGalfmJao_PL0jDedtKKB3nDTmk1vxq_k_OM6j7DaBWH5uCFkfin44EN_jIEiosEsaAiujfL9lDm2vpo7"/>
+<img alt="IG Feed 2" class="w-full aspect-square object-cover" data-alt="A close-up photographic shot of a massive crowd with hands raised during an outdoor music festival at sunset. The sky is a beautiful deep orange and purple, contrasting with the dark silhouettes of the audience. The style is high-impact and emotional, capturing the spirit of a community-driven musical event with professional clarity and scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMLb8Xb3u324AUKgLTWZYKGL8mD9Vzub52obl8rNCI7sMnU_7h4zAQnB4egYVS2HT6hbK6euY_m2rkikuVGLA8TO4wYhui1T2HR8OOB4-AMD3IwoD1faPdu9EZgrgi3SjIToc1O36Yk7ed-1t8QM7yV2GZR9XSpJzXYLOJqvw2oGCduS-QqT43irYreUK--T53vNCFXkNlTH0h8iqJMrTpUZ0CDbVfjmrnWrItklu_kDDI2LZdE8j5LJqfxRS3qrQq9zYhkagKPAO5"/>
+<img alt="IG Feed 3" class="w-full aspect-square object-cover" data-alt="A monochrome portrait of a rock band member tuning their instrument backstage. The setting is intimate and moody, with soft light falling on the metallic parts of the equipment. This candid-style photography adds depth and personality to the band's brand, focusing on the meticulous preparation and raw talent behind their polished public image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPnZu6lerU2SyTU_IxHR6Sg8pmzldUhxzH4nq9LWZbrwY54XjJxzAOJrCHRbzAaSHLwDEP5dBXhJD1ftBv6VGOIqafSiuyH7OZGBj1EJQIeaJMHBP-b2h9zRz0tOs7A5LUwts2GyCY_8PK6mRLcNuZpmbiSmWvpbeTkqZ_f6ZRKKvxfzL6XW_nbCTbuGgJlMmwiAdQ6mjgt2UPMYLmgslMubqH4bJy0HC5HhLg5_kpFk-a4fHtLqbt_VctBzg25g97VwAi2fUOo2DP"/>
+<img alt="IG Feed 4" class="w-full aspect-square object-cover" data-alt="A wide, cinematic shot of a modern concert stage with complex lighting rigging and large LED screens. The view is from the perspective of the front row, looking up at the technological marvel of a contemporary rock production. The atmosphere is expectant and electric, utilizing a clean, high-contrast color palette of blacks and vibrant whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQhFT92BtB-SymfP8SODBOkfAu1tVV_IuADvpsZDysD0TDvF7txIwnfmlQaomHx-3oPG-Ocwdfk0Kzb__zH64zQpJo3-D_92Hwu2HyUV_dq9xvYJcVpcJ2LBjo1VeBxYVAXtIwuot9LhwNT_iK_KPdChlRf-NJtCXElAdS58--FpMTTQUv3gpHFM4dv5EBidaZxZ9gjnMS_QTegXQeH9Bx6UUkyaGSXexl-Bh5Ve1j0J-l-TkIaRMFxMUQ3s9altz-5gPe1OT9_ew1"/>
+</div>
+</div>
+</section>
+<!-- Predicted Footer -->
+<footer class="bg-zinc-900 dark:bg-black w-full py-20 border-t border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1200px] mx-auto px-8">
+<div class="space-y-6">
+<div class="text-xl font-black text-white">NOAH</div>
+<p class="font-body-md text-zinc-500 leading-relaxed">Representasi musik pop-rock terbaik Indonesia. Menjangkau hati lewat melodi dan lirik yang melampaui waktu.</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm uppercase tracking-widest">Navigasi</h4>
+<ul class="space-y-2">
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Tentang Band</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Tur Mendatang</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Berita</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Fanbase</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm uppercase tracking-widest">Musik</h4>
+<ul class="space-y-2">
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Spotify</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Apple Music</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">YouTube Music</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Deezer</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm uppercase tracking-widest">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Contact</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md" href="#">Press Kit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-8 mt-20 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-zinc-500 text-sm">© 2024 NOAH. All Rights Reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-500 text-lg hover:text-white cursor-pointer" data-icon="language">language</span>
+<span class="material-symbols-outlined text-zinc-500 text-lg hover:text-white cursor-pointer" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,1377 @@
+
+/* Reset dasar supaya tampilan sama di semua browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #271717;          /* warna teks gelap */
+  background-color: #fff8f7;
+  line-height: 1.6;
+}
+
+/* Container untuk membatasi lebar konten dan menengahkan */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Jarak atas-bawah tiap section */
+.section {
+  padding: 80px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== IKON SVG (ikon garis modern, warna ikut teks) ===== */
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ikon ukuran besar (empty state, technical rider) */
+.icon-besar {
+  width: 56px;
+  height: 56px;
+}
+
+/* ikon di judul putih (lonceng banner hiatus) sedikit lebih besar */
+.judul-putih .icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+}
+
+/* ikon di bar info toko dibuat lebih kecil agar sejajar teks */
+.info-isi .icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+/* warna ikon besar mengikuti warna utama (merah) */
+.kosong-ikon {
+  color: #b7102a;
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;        /* menu menempel di atas saat scroll */
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-isi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #271717;
+  letter-spacing: -1px;
+}
+
+.menu a {
+  margin: 0 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5b403f;
+}
+
+.menu a:hover {
+  color: #b7102a;          /* berubah merah saat disentuh kursor */
+}
+
+.navbar-kanan {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  color: #5b403f;
+}
+
+
+/* ===== HERO ===== */
+.hero {
+  /* gradasi gelap + gambar latar agar teks putih terbaca */
+  background: linear-gradient(rgba(39,23,23,0.6), rgba(39,23,23,0.9)),
+              url("images/hero-concert.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 140px 20px;
+}
+
+.hero-judul {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-subjudul {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #f0e0e0;
+}
+
+.hero-tombol {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ===== TOMBOL ===== */
+.btn {
+  padding: 14px 30px;
+  border: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn-merah {
+  background-color: #b7102a;
+  color: #ffffff;
+}
+
+.btn-merah:hover {
+  background-color: #db313f;
+}
+
+.btn-outline-putih {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-nonaktif {
+  background-color: #ffffff;
+  border: 2px solid #e5e5e5;
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.lebar {
+  width: 100%;             /* tombol memenuhi lebar kartu */
+}
+
+
+/* ===== MUSIC PLAYER ===== */
+.player-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: -40px;       /* kartu naik menumpuk ke hero */
+  position: relative;
+  z-index: 50;
+}
+
+.player {
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(29,29,29,0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* border merah di sisi kiri (dipakai juga oleh card) */
+.card-border-merah {
+  border-left: 4px solid #b7102a;
+}
+
+.player-cover {
+  width: 90px;
+  height: 90px;
+  background-color: #f1d3d2;
+  color: #b7102a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.player-info {
+  flex-grow: 1;
+}
+
+.lagu-judul {
+  font-size: 20px;
+}
+
+.lagu-artis {
+  color: #a03d40;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* garis progress lagu */
+.progress {
+  background-color: #f1d3d2;
+  height: 4px;
+  margin: 12px 0;
+}
+
+.progress-isi {
+  background-color: #b7102a;
+  height: 100%;
+  width: 65%;
+}
+
+.player-kontrol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tombol-kiri,
+.tombol-kanan {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #999999;
+  font-size: 18px;
+}
+
+/* tombol play berbentuk lingkaran merah */
+.play {
+  background-color: #b7102a;
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+
+/* ===== JUDUL SECTION ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 32px;
+}
+
+.mb {
+  margin-bottom: 40px;     /* mb = margin bottom */
+}
+
+.link-merah {
+  color: #b7102a;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #b7102a;
+  padding-bottom: 2px;
+}
+
+
+/* ===== GRID (layout kolom) ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+
+/* ===== CARD KONSER ===== */
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(29,29,29,0.08);
+  padding: 30px;
+}
+
+.card-atas {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.tanggal-besar {
+  font-size: 48px;
+  font-weight: bold;
+  color: #b7102a;
+  line-height: 1;
+}
+
+.bulan {
+  font-weight: bold;
+}
+
+.card-tengah {
+  margin-bottom: 25px;
+}
+
+.kota {
+  font-size: 22px;
+}
+
+.venue {
+  color: #888888;
+}
+
+/* label status tiket (pill kecil) */
+.label-tersedia,
+.label-habis {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.label-tersedia {
+  background-color: #d6f5d6;
+  color: #2e7d32;
+}
+
+.label-habis {
+  background-color: #ffd6d6;
+  color: #c62828;
+}
+
+
+/* ===== PROFIL BAND ===== */
+.bg-abu {
+  background-color: #f1f1f1;   /* latar abu pembeda section */
+}
+
+.band-foto {
+  background-color: #ddd;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  border-left: 8px solid #b7102a;
+}
+
+.paragraf {
+  color: #5b403f;
+  margin: 20px 0 30px;
+}
+
+
+/* ===== BERITA ===== */
+.berita-gambar {
+  background-color: #ddd;
+  color: #777;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* pill kategori berita */
+.pill {
+  display: inline-block;
+  background-color: #ffe9e8;
+  color: #b7102a;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.berita-tanggal {
+  color: #888888;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.berita-judul {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.berita-judul:hover {
+  color: #b7102a;
+}
+
+.paragraf-kecil {
+  color: #5b403f;
+  font-size: 15px;
+}
+
+.tengah {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+/* ===== KOMUNITAS / NEWSLETTER ===== */
+.bg-gelap {
+  background-color: #18181b;   /* section gelap */
+  color: #ffffff;
+}
+
+.judul-putih {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.teks-abu {
+  color: #999999;
+}
+
+/* kotak ikon media sosial */
+.sosial {
+  display: flex;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.sosial-box {
+  background-color: #2a2a2e;
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sosial-box:hover {
+  background-color: #b7102a;
+}
+
+/* form newsletter (input + tombol berdampingan) */
+.newsletter {
+  display: flex;
+}
+
+.newsletter input {
+  flex-grow: 1;
+  background-color: #2a2a2e;
+  border: none;
+  padding: 14px;
+  color: #ffffff;
+}
+
+/* galeri instagram 2x2 */
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.galeri-item {
+  background-color: #2a2a2e;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #18181b;
+  color: #999999;
+  padding: 60px 0 30px;
+}
+
+.logo-footer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-judul {
+  color: #ffffff;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;        /* hilangkan bullet */
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: #999999;
+}
+
+.footer ul li a:hover {
+  color: #b7102a;
+}
+
+/* garis bawah footer */
+.footer-bawah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.footer-ikon span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+
+/* ============================================
+   RESPONSIVE SEDERHANA (untuk layar HP)
+   Saat layar kecil, grid berubah jadi 1 kolom
+   ============================================ */
+@media (max-width: 768px) {
+  .menu {
+    display: none;          /* sembunyikan menu panjang di HP */
+  }
+
+  .hero-judul {
+    font-size: 32px;
+  }
+
+  .grid-3,
+  .grid-2,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .player {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bawah {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* ============================================
+   GAMBAR DI DALAM KOTAK
+   Membuat <img> mengisi penuh kotak placeholder
+   tanpa gepeng (object-fit: cover)
+   ============================================ */
+.player-cover img,
+.band-foto img,
+.berita-gambar img,
+.album-cover img,
+.galeri-item img,
+.produk-gambar img,
+.banner-gambar img,
+.avatar img,
+.avatar-kecil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* avatar berbentuk bulat, sembunyikan sudut gambar */
+.avatar,
+.avatar-kecil {
+  overflow: hidden;
+}
+
+
+/* ============================================
+   BAGIAN HALAMAN LAIN (cerita band, diskografi,
+   tur, berita, sahabat, toko)
+   ============================================ */
+
+/* menu yang sedang aktif diberi warna merah + garis bawah */
+.menu a.aktif {
+  color: #b7102a;
+  border-bottom: 2px solid #b7102a;
+  padding-bottom: 4px;
+}
+
+/* kelas bantu posisi tengah */
+.tengah {
+  text-align: center;
+}
+
+
+/* ===== PAGE HEADER (judul halaman) ===== */
+.page-header {
+  background-color: #f1f1f1;
+  padding: 60px 0;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #888888;
+  margin-bottom: 15px;
+}
+
+.breadcrumb a {
+  color: #888888;
+}
+
+.breadcrumb span {
+  color: #b7102a;
+}
+
+.page-judul {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.page-sub {
+  font-size: 18px;
+  color: #5b403f;
+  max-width: 600px;
+}
+
+/* section dengan jarak lebih kecil */
+.section-kecil {
+  padding: 20px 0;
+}
+
+/* judul dengan garis merah di kiri */
+.judul-garis {
+  border-left: 4px solid #b7102a;
+  padding-left: 15px;
+}
+
+/* label kecil merah di atas judul */
+.label-merah {
+  color: #b7102a;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+
+/* ===== TIMELINE (milestones) ===== */
+.timeline {
+  border-left: 3px solid #e4bebc;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+}
+
+.tahun {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #b7102a;
+  margin-bottom: 5px;
+}
+
+
+/* ===== AVATAR (foto anggota) ===== */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f1d3d2;
+  color: #b7102a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 14px;
+}
+
+.avatar-kecil {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #f1d3d2;
+  color: #b7102a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+
+/* ===== TAG / PILL ===== */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+
+/* ===== STATISTIK (penghargaan, komunitas) ===== */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.stat {
+  min-width: 120px;
+}
+
+.stat-angka {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  color: #b7102a;
+  margin-bottom: 5px;
+}
+
+/* garis pemisah di atas statistik (halaman sahabat) */
+.stats-garis {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+
+/* ===== FILTER (diskografi, galeri) ===== */
+.filter-bar {
+  border-top: 1px solid #e4bebc;
+  border-bottom: 1px solid #e4bebc;
+  padding: 20px 0;
+}
+
+.filter-grup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.filter-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #5b403f;
+  margin-right: 5px;
+}
+
+.filter-btn {
+  background-color: #ffe9e8;
+  color: #5b403f;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filter-btn.aktif {
+  background-color: #b7102a;
+  color: #ffffff;
+}
+
+
+/* ===== ALBUM (diskografi) ===== */
+.album-cover {
+  background-color: #ddd;
+  color: #777;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.album-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* daftar lagu / setlist */
+.tracklist {
+  color: #999999;
+  font-size: 14px;
+  margin: 12px 0 20px 18px;
+}
+
+.tracklist li {
+  margin-bottom: 4px;
+}
+
+
+/* ===== TABEL (singles) ===== */
+.tabel {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabel th,
+.tabel td {
+  text-align: left;
+  padding: 16px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabel th {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #5b403f;
+  letter-spacing: 1px;
+}
+
+.tabel td {
+  color: #5b403f;
+}
+
+
+/* ===== BANNER MERAH (hiatus) ===== */
+.banner-merah {
+  background-color: #b7102a;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.banner-merah p {
+  margin-bottom: 20px;
+}
+
+.banner-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.banner-form input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  min-width: 280px;
+}
+
+
+/* ===== EMPTY STATE (konser kosong) ===== */
+.kosong {
+  border: 1px solid #ffe1e0;
+  background-color: #fff0ef;
+  border-radius: 8px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.kosong-ikon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.kosong-form {
+  background-color: #ffe9e8;
+  padding: 25px;
+  border-radius: 6px;
+  max-width: 400px;
+  margin: 20px auto 0;
+}
+
+
+/* ===== CARD BORDER KUNING (event historic) ===== */
+.card-border-kuning {
+  border-left: 4px solid #e0a500;
+}
+
+.label-kuning {
+  display: block;
+  color: #b8860b;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+
+/* ===== SETLIST (accordion sederhana) ===== */
+.setlist {
+  border: 1px solid #e4bebc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.setlist-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px;
+  font-weight: bold;
+  background-color: #ffe9e8;
+}
+
+/* item yang tertutup tampil polos */
+.setlist-head.tertutup {
+  background-color: #ffffff;
+  color: #5b403f;
+}
+
+.setlist-body {
+  padding: 30px 24px;
+}
+
+.detail-show {
+  background-color: #fff0ef;
+  padding: 18px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+
+/* ===== FORM (booking, kirim cerita) ===== */
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e4bebc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #b7102a;  /* garis merah saat diklik */
+}
+
+.form label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5b403f;
+  margin-bottom: 5px;
+}
+
+/* dua input berdampingan */
+.form-baris {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-besar {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* ===== TOMBOL TAMBAHAN ===== */
+.btn-gelap {
+  background-color: #271717;
+  color: #ffffff;
+}
+
+.btn-putih {
+  background-color: #ffffff;
+  color: #b7102a;
+  font-weight: bold;
+}
+
+.btn-outline-merah {
+  background-color: transparent;
+  border: 2px solid #b7102a;
+  color: #b7102a;
+}
+
+
+/* ===== HERO BERITA ===== */
+.berita-hero {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85)),
+              url("images/hero-news.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 120px 0 60px;
+}
+
+/* subjudul rata kiri (dipakai di hero berita & toko) */
+.hero-subjudul-kiri {
+  font-size: 18px;
+  color: #ddd;
+  max-width: 600px;
+  margin: 15px 0 25px;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* pill merah penuh */
+.pill-merah {
+  display: inline-block;
+  background-color: #b7102a;
+  color: #ffffff;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  border: 2px solid #eee;
+  background-color: #ffffff;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.page-btn.aktif {
+  background-color: #b7102a;
+  border-color: #b7102a;
+  color: #ffffff;
+}
+
+
+/* ===== GALERI FOTO (grid 4 kolom) ===== */
+.galeri-foto {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.galeri-foto .galeri-item {
+  background-color: #ddd;
+  color: #777;
+  height: 160px;
+}
+
+
+/* ===== PRESS KIT ===== */
+.presskit-baris {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* ===== HERO SAHABAT (gradasi merah ke hitam) ===== */
+.hero-sahabat {
+  background: linear-gradient(135deg, #b7102a 0%, #271717 100%);
+  color: #ffffff;
+  padding: 90px 0;
+}
+
+/* kepala kartu cerita (avatar + nama) */
+.cerita-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.kutipan {
+  font-style: italic;
+  color: #5b403f;
+  margin-bottom: 15px;
+}
+
+
+/* ===== EVENT KOMUNITAS ===== */
+.event-card {
+  display: flex;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(29,29,29,0.08);
+  overflow: hidden;
+}
+
+.event-tanggal {
+  color: #ffffff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.event-angka {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.event-isi {
+  padding: 25px;
+}
+
+.bg-merah {
+  background-color: #b7102a;
+}
+
+.bg-hitam {
+  background-color: #271717;
+}
+
+
+/* ===== TOKO: BANNER ===== */
+.toko-banner {
+  background: linear-gradient(90deg, #b7102a, #db313f);
+  color: #ffffff;
+  padding: 70px 0;
+}
+
+.banner-gambar {
+  background-color: rgba(255,255,255,0.15);
+  color: #ffffff;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* bar info pengiriman */
+.info-bar {
+  background-color: #fff0ef;
+  border-bottom: 1px solid #e4bebc;
+  padding: 18px 0;
+}
+
+.info-isi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #5b403f;
+}
+
+
+/* ===== TOKO: LAYOUT (sidebar + produk) ===== */
+.toko-layout {
+  display: flex;
+  gap: 40px;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  margin: 25px 0 15px;
+}
+
+.kategori-list {
+  list-style: none;
+}
+
+.kategori-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #5b403f;
+  cursor: pointer;
+}
+
+.kategori-list li.aktif {
+  color: #b7102a;
+  font-weight: bold;
+}
+
+.range {
+  width: 100%;
+  accent-color: #b7102a;
+}
+
+.range-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.sidebar select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e4bebc;
+  border-radius: 4px;
+}
+
+/* grid produk */
+.produk-grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.produk-gambar {
+  position: relative;
+  background-color: #ffe9e8;
+  color: #b7102a;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+/* badge di pojok gambar produk */
+.badge-baru,
+.badge-limited {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  color: #ffffff;
+}
+
+.badge-baru {
+  background-color: #b7102a;
+}
+
+.badge-limited {
+  background-color: #271717;
+}
+
+.harga {
+  color: #b7102a;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.harga-besar {
+  color: #b7102a;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* kartu edisi terbatas */
+.le-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label-emas {
+  background-color: #d4af37;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 12px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================
+   RESPONSIVE TAMBAHAN untuk halaman baru
+   ============================================ */
+@media (max-width: 768px) {
+  .page-judul {
+    font-size: 30px;
+  }
+
+  .galeri-foto,
+  .info-isi,
+  .produk-grid,
+  .form-baris {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* sidebar toko jadi menumpuk di atas produk */
+  .toko-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .event-card {
+    flex-direction: column;
+  }
+
+  .stats {
+    gap: 25px;
+  }
+}

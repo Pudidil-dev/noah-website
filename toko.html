@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko - NOAH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="container navbar-isi">
+      <a href="index.html" class="logo">NOAH</a>
+      <nav class="menu">
+        <a href="cerita-band.html">Cerita Band</a>
+        <a href="diskografi.html">Diskografi</a>
+        <a href="tur-event.html">Tur &amp; Event</a>
+        <a href="berita-media.html">Berita &amp; Media</a>
+        <a href="sahabat-noah.html">Sahabat NOAH</a>
+        <a href="toko.html" class="aktif">Toko</a>
+      </nav>
+      <div class="navbar-kanan">
+        <span class="search-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <span class="lang">ID / EN</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BANNER PROMO ===== -->
+  <section class="toko-banner">
+    <div class="container grid-2">
+      <div>
+        <h1 class="hero-judul">Koleksi Terbaru NOAH 2024</h1>
+        <p class="hero-subjudul-kiri">Merchandise resmi eksklusif - Edisi terbatas tersedia!</p>
+        <button class="btn btn-putih">Belanja Sekarang</button>
+      </div>
+      <div class="banner-gambar"><img src="images/shop-banner.jpg" alt="Merchandise NOAH"></div>
+    </div>
+  </section>
+
+  <!-- ===== INFO PENGIRIMAN ===== -->
+  <section class="info-bar">
+    <div class="container info-isi">
+      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Gratis Ongkir di atas Rp 500.000</div>
+      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garansi Produk Resmi</div>
+      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 30 Hari Pengembalian</div>
+    </div>
+  </section>
+
+  <!-- ===== FILTER + PRODUK ===== -->
+  <section class="container section">
+    <div class="toko-layout">
+      <!-- Sidebar filter -->
+      <aside class="sidebar">
+        <h3 class="berita-judul">Kategori</h3>
+        <ul class="kategori-list">
+          <li class="aktif">Semua <span>42</span></li>
+          <li>Kaos <span>12</span></li>
+          <li>Hoodie <span>8</span></li>
+          <li>Jaket <span>5</span></li>
+          <li>Aksesoris <span>10</span></li>
+          <li>CD &amp; Vinyl <span>4</span></li>
+          <li>Edisi Terbatas <span>3</span></li>
+        </ul>
+
+        <h3 class="berita-judul">Rentang Harga</h3>
+        <input type="range" min="0" max="2000000" class="range">
+        <div class="range-label">
+          <span>Rp 0</span>
+          <span>Rp 2.000.000+</span>
+        </div>
+
+        <h3 class="berita-judul">Urutkan</h3>
+        <select>
+          <option>Terbaru</option>
+          <option>Harga Terendah</option>
+          <option>Harga Tertinggi</option>
+          <option>Populer</option>
+        </select>
+      </aside>
+
+      <!-- Grid produk -->
+      <div class="produk-grid">
+        <!-- Produk 1 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar">
+            <span class="badge-baru">New</span>
+            <img src="images/product-1.jpg" alt="NOAH Logo Tee Black">
+          </div>
+          <h4 class="berita-judul">NOAH Logo Tee Black</h4>
+          <p class="paragraf-kecil">Kaos katun premium dengan logo NOAH minimalis.</p>
+          <p class="harga">Rp 250.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+        <!-- Produk 2 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar"><img src="images/product-2.jpg" alt="NOAH Logo Tee White"></div>
+          <h4 class="berita-judul">NOAH Logo Tee White</h4>
+          <p class="paragraf-kecil">Varian warna putih ikonik untuk tampilan bersih.</p>
+          <p class="harga">Rp 250.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+        <!-- Produk 3 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar">
+            <span class="badge-limited">Limited</span>
+            <img src="images/product-3.jpg" alt="Anniversary Hoodie">
+          </div>
+          <h4 class="berita-judul">Bintang di Surga Anniversary Hoodie</h4>
+          <p class="paragraf-kecil">Edisi spesial perayaan album legendaris.</p>
+          <p class="harga">Rp 550.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+        <!-- Produk 4 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar"><img src="images/product-4.jpg" alt="NOAH Snapback Cap"></div>
+          <h4 class="berita-judul">NOAH Snapback Cap</h4>
+          <p class="paragraf-kecil">Topi snapback kualitas premium dengan bordir 3D.</p>
+          <p class="harga">Rp 185.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+        <!-- Produk 5 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar"><img src="images/product-5.jpg" alt="Keterkaitan Keterikatan Vinyl"></div>
+          <h4 class="berita-judul">Keterkaitan Keterikatan Vinyl</h4>
+          <p class="paragraf-kecil">Piringan hitam kualitas audiophile untuk kolektor.</p>
+          <p class="harga">Rp 450.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+        <!-- Produk 6 -->
+        <div class="card card-border-merah produk">
+          <div class="produk-gambar"><img src="images/product-6.jpg" alt="NOAH Tote Bag"></div>
+          <h4 class="berita-judul">NOAH Tote Bag</h4>
+          <p class="paragraf-kecil">Tas kanvas tebal tahan lama untuk kegiatan sehari-hari.</p>
+          <p class="harga">Rp 120.000</p>
+          <button class="btn btn-merah lebar">Tambah ke Keranjang</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDISI TERBATAS ===== -->
+  <section class="section bg-abu">
+    <div class="container">
+      <p class="label-merah">Collector's Choice</p>
+      <h2 class="section-title mb">Edisi Terbatas</h2>
+      <div class="grid-2">
+        <div class="card card-border-merah le-card">
+          <div class="produk-gambar"><img src="images/limited-1.jpg" alt="Limited Edition Box Set"></div>
+          <div class="le-isi">
+            <div class="le-head">
+              <span class="label-emas">LIMITED</span>
+              <span class="link-merah">Sisa 23 item</span>
+            </div>
+            <h3 class="berita-judul">Limited Edition Box Set</h3>
+            <p class="paragraf-kecil mb">Paket eksklusif berisi 3 vinyl, buku foto dokumentasi tur, dan sertifikat keaslian bertandatangan personil.</p>
+            <p class="harga-besar">Rp 1.500.000</p>
+            <button class="btn btn-merah lebar">Beli Sekarang</button>
+          </div>
+        </div>
+        <div class="card card-border-merah le-card">
+          <div class="produk-gambar"><img src="images/limited-2.jpg" alt="Peterpan Legacy Tee"></div>
+          <div class="le-isi">
+            <div class="le-head">
+              <span class="label-emas">LIMITED</span>
+              <span class="link-merah">Sisa 12 item</span>
+            </div>
+            <h3 class="berita-judul">Peterpan Legacy Tee</h3>
+            <p class="paragraf-kecil mb">Kaos edisi khusus mengenang perjalanan awal karir dengan desain grafis arsip original tahun 2003.</p>
+            <p class="harga-besar">Rp 350.000</p>
+            <button class="btn btn-merah lebar">Beli Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container grid-4">
+      <div>
+        <div class="logo-footer">NOAH</div>
+        <p class="teks-abu">Platform resmi untuk semua merchandise eksklusif dan berita terbaru dari NOAH Band.</p>
+      </div>
+      <div>
+        <h4 class="footer-judul">Menu Utama</h4>
+        <ul>
+          <li><a href="cerita-band.html">Cerita Band</a></li>
+          <li><a href="diskografi.html">Diskografi</a></li>
+          <li><a href="tur-event.html">Tur &amp; Event</a></li>
+          <li><a href="toko.html">Toko</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-judul">Bantuan</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Press Kit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-judul">Newsletter</h4>
+        <p class="teks-abu mb">Dapatkan info rilisan terbatas lebih awal.</p>
+        <form class="newsletter">
+          <input type="email" placeholder="Email Anda">
+          <button type="submit" class="btn btn-merah">Daftar</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bawah">
+      <p>&copy; 2024 NOAH. All Rights Reserved.</p>
+      <div class="footer-ikon"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span></div>
+    </div>
+  </footer>
+
+</body>
+</html>

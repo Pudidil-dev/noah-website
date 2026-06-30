@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#ffedeb",
+                    "on-background": "#271717",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#8cf4e8",
+                    "tertiary-fixed-dim": "#66d8cc",
+                    "inverse-primary": "#ffb3b1",
+                    "surface-tint": "#bb152c",
+                    "primary-container": "#db313f",
+                    "on-primary-fixed": "#410007",
+                    "tertiary": "#006860",
+                    "surface-container-high": "#ffe1e0",
+                    "on-error": "#ffffff",
+                    "secondary": "#a03d40",
+                    "primary-fixed": "#ffdad8",
+                    "background": "#fff8f7",
+                    "surface-bright": "#fff8f7",
+                    "inverse-surface": "#3e2c2b",
+                    "on-tertiary-fixed": "#00201d",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "tertiary-container": "#008379",
+                    "outline": "#8f6f6e",
+                    "secondary-fixed": "#ffdad8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#81262a",
+                    "on-primary-fixed-variant": "#92001c",
+                    "error": "#ba1a1a",
+                    "surface": "#fff8f7",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fd8584",
+                    "on-tertiary-container": "#f3fffc",
+                    "on-surface-variant": "#5b403f",
+                    "surface-variant": "#f9dcda",
+                    "surface-container": "#ffe9e8",
+                    "outline-variant": "#e4bebc",
+                    "surface-container-low": "#fff0ef",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-highest": "#f9dcda",
+                    "primary": "#b7102a",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#00504a",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#271717",
+                    "on-secondary-fixed": "#410007",
+                    "secondary-fixed-dim": "#ffb3b1",
+                    "on-secondary-container": "#741d22",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#f1d3d2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Inter"],
+                    "display": ["Inter"],
+                    "label": ["Inter"],
+                    "h3": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-item { break-inside: avoid; margin-bottom: 24px; }
+        .masonry-grid { columns: 1; }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+        .photo-masonry { columns: 2; }
+        @media (min-width: 768px) { .photo-masonry { columns: 4; } }
+    </style>
+</head>
+<body class="bg-white text-on-background font-body-md overflow-x-hidden">
+<!-- TOP NAVBAR -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
+<div class="text-2xl font-black tracking-tighter text-gray-900">NOAH</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-gray-600 font-label text-sm uppercase tracking-tight hover:text-primary transition-colors duration-200" href="#">Cerita Band</a>
+<a class="text-gray-600 font-label text-sm uppercase tracking-tight hover:text-primary transition-colors duration-200" href="#">Diskografi</a>
+<a class="text-gray-600 font-label text-sm uppercase tracking-tight hover:text-primary transition-colors duration-200" href="#">Tur &amp; Event</a>
+<a class="text-primary border-b-2 border-[#E63946] pb-1 font-label text-sm uppercase tracking-tight" href="#">Berita &amp; Media</a>
+<a class="text-gray-600 font-label text-sm uppercase tracking-tight hover:text-primary transition-colors duration-200" href="#">Sahabat NOAH</a>
+<a class="text-gray-600 font-label text-sm uppercase tracking-tight hover:text-primary transition-colors duration-200" href="#">Toko</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-gray-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="flex items-center gap-2 font-label text-sm tracking-tight text-gray-600">
+<span class="text-primary font-bold">ID</span>
+<span class="text-gray-300">/</span>
+<a class="hover:text-primary transition-colors" href="#">EN</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- FEATURED ARTICLE (HERO) -->
+<section class="relative w-full aspect-[16/9] md:h-[700px] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic widescreen shot of the Indonesian band NOAH standing on a minimalist stage with dramatic high-contrast lighting. The lead singer is positioned centrally against a backdrop of glowing red geometric shapes and cool white stage fog. The atmosphere is professional, energetic, and modern, reflecting the band's premium musical brand. Sharp shadows and pristine highlights define the silhouettes of the members." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBacQ02CB5-_DoSOXdNfnU8318oqM8SNvsi0gMxZ9TZrZdDpXhqkvpYf5x8UFjyLpjodGwBi0teQoYbP2GFQlOYbQiGV2SWvu2RLN9_TlM-L2-1hT9W9-gAyfWXJIJeSIxL6XWKXOvA79RBjc96pgk2M_j36dBW7WX9LwePL0NnmPDN_1Rjy8hlkSTrOuFxl6NnBCCVcuj0GGN5kprn53wjx9_NXQkuxmYgAOy0Gdg4pLl__bxpGqEMBr7U2kHLqP6_Po5yX1JJkcux"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-16">
+<div class="max-w-[1200px] mx-auto w-full">
+<span class="bg-primary text-white text-label px-4 py-1.5 rounded-full mb-6 inline-block uppercase">Pengumuman</span>
+<h1 class="text-white font-display text-h1 md:text-[64px] max-w-4xl mb-4 leading-tight">NOAH Umumkan Hiatus: Apa yang Terjadi Selanjutnya?</h1>
+<p class="text-gray-300 font-body-lg max-w-2xl mb-8 line-clamp-2">Setelah dekade penuh kesuksesan, Ariel dan kawan-kawan memutuskan untuk mengambil jeda panjang untuk eksplorasi kreatif baru.</p>
+<div class="flex items-center gap-6">
+<span class="text-gray-400 font-label uppercase text-sm">15 Januari 2024</span>
+<button class="bg-primary hover:bg-primary-container text-white px-10 py-4 font-label uppercase tracking-widest transition-all">Baca Selengkapnya</button>
+</div>
+</div>
+</div>
+</section>
+<!-- NEWS GRID -->
+<section class="max-w-[1200px] mx-auto px-6 py-section-padding">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-h2 uppercase border-l-4 border-primary pl-6">Berita Terbaru</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<article class="bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] transition-transform hover:-translate-y-2">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-detail close-up of a professional electric guitar against a blurred background of a modern recording studio. Soft red accent lights highlight the sleek chrome hardware of the instrument. The lighting is moody and sophisticated, predominantly deep blacks and neutral greys with vibrant red flashes. This image captures the precision and artistry of high-end music production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcIZvKLEcBMnwPuYEHQ_aOlwSivJp2XOPsSG3sYaDxPW_635xc4N4QmjuqfOCVQm7YIyN_28DM2PF_OzU7BHlbQZQzS1VI6zCR8ZqvoyR9PeAGnwaJVKytLWyApPQEHfYi4EP6YiewNv7Ntlc3KrLEqwt6PQcYaw4o2oAm6Ul591XkWqnngSoGT3uzBC1L8Y4aXwCiMTlsYbxMLCAzfYiOsUZw31341d8Bqaiu5S7bcWm7PSVAwB2Co-JNlOtuA9EGw5um7M9fDue"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-gray-100 text-gray-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full">Musik</span>
+</div>
+<h3 class="font-h3 text-h3 mb-3 line-clamp-2">Kolaborasi Spesial NOAH dengan Orkestra Nasional</h3>
+<p class="text-gray-500 font-label text-xs uppercase mb-4">12 Januari 2024</p>
+<p class="text-gray-600 line-clamp-2 mb-6">Sebuah mahakarya baru yang menggabungkan elemen rock alternatif dengan kemegahan simfoni klasik.</p>
+<a class="text-primary font-label uppercase text-sm tracking-widest hover:underline" href="#">Read More</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] transition-transform hover:-translate-y-2">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A wide-angle shot of a massive concert stadium during a live performance by NOAH. Thousands of fans hold up glowing white phones, creating a sea of light under a dark night sky. Intense red laser beams cut across the stage, illuminating the band members in silhouette. The energy is electric and overwhelming, emphasizing the band's massive cultural impact and high-production value." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1b5eZFZdxJtKvHytPT0W8312I1dpy0lDL7DoJwyT24peccFohYNfzdlqtONbybbllw2qZG19eu3DTHpDcpoXFcETNk0Z46AUfZ92WrtYP1GzN7FCgP51vnIWwPyyWfSoQ8DV66KnResDrk5UWWPSZ-GQHGfatzqEC_IxVJXHjAkAkBUKRAiot3LOAxu0LuUAyjqFV3vzxFpsNCk3pKHCQCNSmBoqvKvspQEjF55CWd8zVshXz49mVoqgOqyNAilveAWbT5NGg0S6o"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-gray-100 text-gray-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full">Konser</span>
+</div>
+<h3 class="font-h3 text-h3 mb-3 line-clamp-2">Tiket Konser 'The Final Show' Terjual Habis dalam 5 Menit</h3>
+<p class="text-gray-500 font-label text-xs uppercase mb-4">08 Januari 2024</p>
+<p class="text-gray-600 line-clamp-2 mb-6">Antusiasme fans memuncak menyambut pertunjukan terakhir sebelum masa hiatus resmi dimulai.</p>
+<a class="text-primary font-label uppercase text-sm tracking-widest hover:underline" href="#">Read More</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] transition-transform hover:-translate-y-2">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist portrait of a musician in a candid moment backstage. The lighting is dramatic high-key black and white, with a subtle red filter on the shadows. He is adjusting a professional microphone stand in a pristine white studio space. The atmosphere is focused and intimate, showcasing the dedication behind the professional music industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAohjYcVnON7c74L7mnC-ZnDqSw_Ymv5y9dode42UWamzRPFLBH98VBKhh1wn134xit8d6d6VMV5GFo3pzd1cNwsYSnSzIMIkL-pvVTL-dWBU25xH0aOK9QtRynU-d8aDTpXne9zSlFhgkHKu89wk3GveTwyfZ8VPLNnIOzfRz4pMGlUrANA7yYeso1pvrMbwZpRRlQu1b8dn5Rc8RpGQnxaLD-giG81D1VKOjWujS7deDq2k1S1sgsK_baCDh4KDez4vtLR3EbNsx"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-gray-100 text-gray-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full">Personal</span>
+</div>
+<h3 class="font-h3 text-h3 mb-3 line-clamp-2">Ariel Berbagi Cerita Dibalik Lirik Lagu Teranyar</h3>
+<p class="text-gray-500 font-label text-xs uppercase mb-4">05 Januari 2024</p>
+<p class="text-gray-600 line-clamp-2 mb-6">Wawancara eksklusif mengenai proses kreatif dan refleksi perjalanan karir musiknya selama dua dekade.</p>
+<a class="text-primary font-label uppercase text-sm tracking-widest hover:underline" href="#">Read More</a>
+</div>
+</article>
+<!-- More Cards could follow same structure... -->
+</div>
+<!-- PAGINATION -->
+<div class="mt-20 flex justify-center gap-2">
+<button class="w-12 h-12 flex items-center justify-center border-2 border-primary bg-primary text-white font-bold">1</button>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-gray-100 hover:border-primary transition-colors font-bold">2</button>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-gray-100 hover:border-primary transition-colors font-bold">3</button>
+<button class="px-6 h-12 flex items-center justify-center border-2 border-gray-100 hover:border-primary transition-colors font-label uppercase text-xs tracking-widest">Next</button>
+</div>
+</section>
+<!-- BEHIND THE SCENES -->
+<section class="bg-[#F1F1F1] py-section-padding">
+<div class="max-w-[1200px] mx-auto px-6">
+<h2 class="font-h2 text-h2 uppercase border-l-4 border-primary pl-6 mb-16 text-on-background">Di Balik Layar</h2>
+<div class="masonry-grid gap-6">
+<div class="masonry-item relative group cursor-pointer overflow-hidden bg-white shadow-md">
+<img class="w-full object-cover" data-alt="A behind-the-scenes photograph of a band rehearsing in a high-tech studio. Soft sunlight streams through large windows, mixing with warm indoor lamps and cold blue monitor light. The scene is cluttered with high-end audio equipment, cables, and instruments, creating an authentic and busy creative environment. The color palette is natural but clean, with subtle red accents on the equipment controls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADoW-amLqflnY9oDPrQZIG-pRnTt1gIqdJ2Yw0qrufm8SIp1IoLDCYBHNuxIUVJDtRVAZQjJ_jvvV2j7cBoOumCxMMOiYkUAoiCZfOY57U8LgoHmRFNy_t0O6ev3H8s8BU8uF0L0mR_7HQgfzUpinFv7Pq5vWL4iU_JbIHV4ncbIqsRwHIhvyd75gU2sT45_TKlTqmuIuAWG7lWqRm0JZtumJYsgO9qu_GklMjGMO8Y9NpMvQ-pIZXajBMMUL_qi3IB7xE9vRpeI3k"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl" data-weight="fill">play_circle</span>
+</div>
+<div class="p-6">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase rounded-sm mb-2 inline-block">Video</span>
+<h4 class="font-h3 text-xl mb-2">Proses Rekaman Studio</h4>
+<p class="text-gray-600 text-sm">Melihat lebih dekat pembuatan album terakhir.</p>
+</div>
+</div>
+<div class="masonry-item bg-white overflow-hidden shadow-md">
+<img class="w-full object-cover" data-alt="A black and white candid photo of band members laughing in a minimalist green room before a show. The room is modern with clean lines and sharp lighting. One member is wearing a red jacket, providing the only splash of color in the monochrome composition. The mood is relaxed and brotherly, showcasing the human side of the music icons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc5SC_y974GvC0pz25RV2KpeKUJD-LngFsXR94ebz3NgOlNjIaxkAaXqe6EnvoUYSb3C-qu4CG8vL-JJdfDKGG6_QeFR1OkiCcC2ckxFGTKpacYGmaMKwN3Ka_hv43Uss7Oc6fCbNFnNmHK7kJ332KuuQc3XwnV6doZFrKJJOY4-FYSo80DGAhW06sGoGcdMZANPcGfX0ns0J1gf1Mg0XUjPma4dBPy4PAChwVCogH1492TF2VA3LsqJ4bpuCCKSncHRY1DpsRpwJK"/>
+<div class="p-6">
+<span class="bg-gray-200 text-gray-700 text-[10px] font-bold px-2 py-1 uppercase rounded-sm mb-2 inline-block">Foto</span>
+<h4 class="font-h3 text-xl mb-2">Backstage Moments</h4>
+<p class="text-gray-600 text-sm">Persiapan sebelum naik ke panggung megah.</p>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden bg-white shadow-md">
+<img class="w-full object-cover" data-alt="A focused close-up of a soundboard in a recording studio. Hundreds of tiny lights and knobs are illuminated in a dark room. The primary colors are deep blacks and glowing reds. The image has a shallow depth of field, focusing on a single hand adjusting a slider. This visual represents the technical excellence and modern production standards of the band." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-2hwnoJyq_Ou9Mp_hzuSfbTZlwHTAK-lvp8K0w7RxnU412O0JmvaqAU233ZLYzl_vabrhMuCjK7lIiPyghG1kRI7YDpaooyiSO7ti3tj4WD7K1Ez5e0uypk9mJqno9DuOXbQsVhxHFG62DGzMd1DuugEOZRDk5tamdC5KKjvw8FLYtqBvVDIzgV5xZJrwKAweOuvcGRjvPG7b-9-7Ud6wvCpxyKUipqJjYDGkj0cc9mA_OugHUwkWPismrBrXNH9RWL74W55L4PLB"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl" data-weight="fill">play_circle</span>
+</div>
+<div class="p-6">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase rounded-sm mb-2 inline-block">Video</span>
+<h4 class="font-h3 text-xl mb-2">The Making of 'Wanitaku'</h4>
+<p class="text-gray-600 text-sm">Eksplorasi sound design yang mendalam.</p>
+</div>
+</div>
+<!-- 3 more items for grid -->
+</div>
+</div>
+</section>
+<!-- PHOTO GALLERY -->
+<section class="max-w-[1200px] mx-auto px-6 py-section-padding">
+<h2 class="font-h2 text-h2 uppercase border-l-4 border-primary pl-6 mb-12">Galeri Foto</h2>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Semua</button>
+<button class="bg-gray-100 text-gray-500 hover:bg-gray-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors">Peterpan Era</button>
+<button class="bg-gray-100 text-gray-500 hover:bg-gray-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors">NOAH Era</button>
+<button class="bg-gray-100 text-gray-500 hover:bg-gray-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors">Konser</button>
+<button class="bg-gray-100 text-gray-500 hover:bg-gray-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors">Studio</button>
+</div>
+<div class="photo-masonry gap-4">
+<div class="mb-4 overflow-hidden group">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105" data-alt="A dramatic low-angle shot of a lead singer reaching out to a crowd during a night concert. Intense white spotlights create a halo effect around him, while deep red stage lights illuminate the hands of the audience below. The composition is energetic and powerful, emphasizing the connection between the artist and fans in a modern, minimalist concert setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD036nRHgGMBg6MuvZttmIYbh5kStwYMdpUPM4DgmTRmmLx2CaclDtBF8DpvsmCUZQhu5yvfGUx5wszGdVgOrZ1vjSHQUN-iHnvoBujSX--68zEifQIX80wA5103k-0TDwL7fOY5x89lpUPG0-k44sN-fWXUDPoLC6wgvSa-pAH7Uzc-rlQ062TTZUjpB6ZYV8ow4SrkDXr2TQ-q8SnRZyHnKSMH-3F_D5exI0C0RKHDgaRiunRsrWL4iduJbUz7LqsLPI8Ra_VmFaW"/>
+</div>
+<div class="mb-4 overflow-hidden group">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105" data-alt="An artistic high-contrast portrait of four band members standing in a line against a stark white wall. They are wearing sharp, modern black suits with a single red pocket square on each. The lighting is clean and architectural, creating a minimalist and professional look that defines the band's contemporary identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrRkDwrEod4DSQUHkVcD4rMg6UFhHXsvhUwJVg54XQf40hE4NwujjWwkJ7tD-tbMREH_2RK6w5RGcaDo_1JOw5MmfPqk6RcPZSM4tHG6JXRK-UCdxy9mrUZXQH6elSbbb_PgcBHOvLBC8fUY3FOmE21ksvQQo8c-AwPLcjFStB8FFnkj7I7X1byc_pJn_aCkIjLLq1YZ9D6_XKJKG9tUJA5XfaFx_92gsFPIEoEIe6slnXy6ngjtwf9ePDgzmEQiNa9Ee-P4UTSpcy"/>
+</div>
+<div class="mb-4 overflow-hidden group">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105" data-alt="A close-up action shot of a drummer during an intense performance. Drumsticks are captured in a blur of motion, with beads of sweat flying through the air. The scene is illuminated by strobe lights and a dominant red wash from the stage floor lamps. The atmosphere is kinetic and raw, showcasing the energy of a live NOAH show." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq1LKXB6z6ifJlKQPspmTMQXDg3of07hRIYaFC6CtvbRyBUPP6aj7ZX4BgKiJJSOGvk-8kfckOKwjpo0lSvrgvSrAvaaqWzLDxo-Yg5VazwPmQkk534Va9LgHjFC53cDLprbiqrZ_vH1laX2Y37VpGGhj-d-IzEzhKhrn0i0Y04XirknNxri4Esy6aWeEHeVVtkVT-GGNDmS_rYosUw5VPzoGSq0r8U5Gqa1t2-rWzcdv7JN0j0KBi3XXi6J8kkCtezMdfh2C-ocpN"/>
+</div>
+<div class="mb-4 overflow-hidden group">
+<img class="w-full grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105" data-alt="A wide, sweeping shot of a band standing on top of a modern skyscraper at dusk. The city lights of Jakarta flicker in the background under a deep violet sky. The band members are silhouetted against the horizon, with a single bright red neon light strip behind them. The mood is epic, sophisticated, and urban." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SJneTu_Bqe2POX7uuCCu3vu5kLvI2BZmEv2V9XCiWeIoNsGQcQcMo56dfDnghVBu2IgEcoN4VvOSydzfi-urF-nF5NxGZES1dZw4WmYtXrxYSbyI0dMjMU2J1SlsrDv0yc2lrWYyekfhIZn5bJVsMscRCZ0ArqZLNRZHzTZSO-7xGRyv5tQiQNZjAtNU4exqhnHAc8BUewcCWdpVPucn8I3-T-1CnSeunKWHQdsjwhsB2qW4QzrlxH_r9atYyHE1gUdReIoC21T1"/>
+</div>
+<!-- 6 more images would continue the grid -->
+</div>
+</section>
+<!-- PRESS KIT -->
+<section class="max-w-[1200px] mx-auto px-6 py-section-padding">
+<h2 class="font-h2 text-h2 uppercase border-l-4 border-primary pl-6 mb-12">Press Kit &amp; Sumber Media</h2>
+<div class="bg-white border border-gray-100 shadow-[0_4px_20px_rgba(29,29,29,0.05)] overflow-hidden">
+<div class="divide-y divide-gray-100">
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6 group hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 bg-red-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">description</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-1">Biografi Resmi</h4>
+<p class="text-gray-500 text-sm uppercase font-label">PDF • 2.4 MB</p>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Download</button>
+</div>
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6 group hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 bg-red-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">photo_library</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-1">Foto Hi-Res Pack</h4>
+<p class="text-gray-500 text-sm uppercase font-label">ZIP • 145.0 MB</p>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Download</button>
+</div>
+<div class="p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6 group hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-8 flex-1">
+<div class="w-16 h-16 bg-red-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">token</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-1">Logo Pack</h4>
+<p class="text-gray-500 text-sm uppercase font-label">SVG/PNG • 12.0 MB</p>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Download</button>
+</div>
+</div>
+<div class="bg-gray-900 p-8 text-center">
+<p class="text-gray-400 font-label text-xs uppercase tracking-[0.2em]">Untuk permintaan media khusus, hubungi <span class="text-primary font-bold">press@noah-band.com</span></p>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-gray-900 w-full py-16 px-6 border-t border-gray-800">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<div class="text-xl font-bold text-white mb-6 uppercase tracking-tighter">Vanguard Echo</div>
+<p class="text-gray-500 font-body-md max-w-sm mb-8 leading-relaxed">Representasi visual dan berita terkini dari perjalanan musikalitas NOAH. Eksplorasi tanpa batas, kualitas tanpa kompromi.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-gray-800 text-gray-500 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">brand_awareness</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-gray-800 text-gray-500 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-gray-800 text-gray-500 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">headset</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex flex-wrap gap-8 md:justify-end mb-8">
+<a class="text-gray-500 font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-500 font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Terms of Use</a>
+<a class="text-gray-500 font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Contact</a>
+<a class="text-gray-500 font-label text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#">Booking</a>
+</div>
+<p class="text-gray-600 font-label text-[10px] tracking-widest uppercase md:text-right">© 2024 Vanguard Echo. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

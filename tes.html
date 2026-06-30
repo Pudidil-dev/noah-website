@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "spacing": {
+                        "base": "8px",
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-black font-mono overflow-x-hidden">
+    <!-- Predicted TopNavBar -->
+    <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-300 h-20">
+        <div class="flex justify-between items-center h-full px-8 max-w-[1200px] mx-auto">
+            <div class="flex-1 flex justify-start">
+                <a class="text-2xl font-black text-black tracking-tighter" href="#">LOGO</a>
+            </div>
+            <div class="hidden md:flex gap-8 items-center justify-center flex-grow">
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+                <a class="text-xs uppercase tracking-widest text-gray-600 hover:text-black transition-colors"
+                    href="#">Menu Item</a>
+            </div>
+            <div class="flex-1 flex justify-end items-center gap-6">
+                <span class="material-symbols-outlined text-gray-600 cursor-pointer" data-icon="search">search</span>
+                <span class="text-xs font-bold text-gray-600 cursor-pointer">LANG</span>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section
+        class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20 border-b border-gray-300 bg-gray-100">
+        <div class="absolute inset-0 z-0 flex items-center justify-center opacity-10">
+            <span class="material-symbols-outlined text-9xl text-black">image</span>
+        </div>
+        <div class="relative z-10 text-center px-gutter max-w-[1200px] w-full">
+            <h1 class="text-5xl font-bold text-black mb-4">Main Headline Text</h1>
+            <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto uppercase tracking-widest font-semibold">Subheadline
+                text goes here</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <button
+                    class="border border-black bg-white text-black px-10 py-4 uppercase text-sm hover:bg-gray-100 transition-all w-full md:w-auto">Primary
+                    Action</button>
+                <button
+                    class="border border-black bg-white text-black px-10 py-4 uppercase text-sm hover:bg-gray-100 transition-all w-full md:w-auto">Secondary
+                    Action</button>
+            </div>
+        </div>
+    </section>
+    <!-- MUSIC PLAYER SECTION -->
+    <section class="relative z-20 -mt-24 px-gutter flex justify-center">
+        <div class="bg-white p-6 border border-black w-full max-w-[800px] flex flex-col md:flex-row items-center gap-6">
+            <div class="w-24 h-24 flex-shrink-0 bg-gray-200 border border-gray-300 flex items-center justify-center">
+                <span class="material-symbols-outlined text-gray-400">image</span>
+            </div>
+            <div class="flex-grow w-full text-center md:text-left">
+                <div class="mb-1">
+                    <h3 class="text-xl font-bold text-black">Track Title</h3>
+                    <p class="text-gray-600 text-xs uppercase tracking-widest">Artist Name</p>
+                </div>
+                <div class="w-full bg-gray-200 h-1 mt-4 relative">
+                    <div class="absolute top-0 left-0 h-full bg-black w-2/3"></div>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-gray-500 cursor-pointer"
+                            data-icon="skip_previous">skip_previous</span>
+                        <div
+                            class="border border-black bg-white text-black w-10 h-10 flex items-center justify-center cursor-pointer">
+                            <span class="material-symbols-outlined" data-icon="play_arrow"
+                                data-weight="fill">play_arrow</span>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500 cursor-pointer"
+                            data-icon="skip_next">skip_next</span>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <span class="material-symbols-outlined text-gray-500 text-lg cursor-pointer"
+                            data-icon="music_video">music_video</span>
+                        <span class="material-symbols-outlined text-gray-500 text-lg cursor-pointer"
+                            data-icon="podcasts">podcasts</span>
+                        <span class="material-symbols-outlined text-gray-500 text-lg cursor-pointer"
+                            data-icon="play_circle">play_circle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONCERTS SECTION -->
+    <section class="py-section-padding max-w-[1200px] mx-auto px-gutter border-b border-gray-300">
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-3xl font-bold text-black">Section Title</h2>
+            <a class="text-black text-xs uppercase border-b border-black pb-1" href="#">View All Link</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 border border-black">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <p class="text-4xl font-bold text-black leading-none">24</p>
+                        <p class="text-xl text-gray-600 uppercase font-bold">Okt</p>
+                    </div>
+                    <span
+                        class="border border-black text-black bg-gray-100 text-[10px] font-bold uppercase tracking-widest px-3 py-1">Status</span>
+                </div>
+                <div class="mb-8">
+                    <p class="text-xl font-bold text-black mb-1">Location Title</p>
+                    <p class="text-gray-600">Venue Details</p>
+                </div>
+                <button
+                    class="w-full border border-black bg-white text-black py-4 uppercase text-xs hover:bg-gray-100 transition-all">Action
+                    Button</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-8 border border-black">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <p class="text-4xl font-bold text-black leading-none">02</p>
+                        <p class="text-xl text-gray-600 uppercase font-bold">Nov</p>
+                    </div>
+                    <span
+                        class="border border-black text-black bg-gray-100 text-[10px] font-bold uppercase tracking-widest px-3 py-1">Status</span>
+                </div>
+                <div class="mb-8">
+                    <p class="text-xl font-bold text-black mb-1">Location Title</p>
+                    <p class="text-gray-600">Venue Details</p>
+                </div>
+                <button
+                    class="w-full border border-gray-300 text-gray-400 py-4 uppercase text-xs cursor-not-allowed">Disabled
+                    Action</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-8 border border-black">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <p class="text-4xl font-bold text-black leading-none">15</p>
+                        <p class="text-xl text-gray-600 uppercase font-bold">Des</p>
+                    </div>
+                    <span
+                        class="border border-black text-black bg-gray-100 text-[10px] font-bold uppercase tracking-widest px-3 py-1">Status</span>
+                </div>
+                <div class="mb-8">
+                    <p class="text-xl font-bold text-black mb-1">Location Title</p>
+                    <p class="text-gray-600">Venue Details</p>
+                </div>
+                <button
+                    class="w-full border border-black bg-white text-black py-4 uppercase text-xs hover:bg-gray-100 transition-all">Action
+                    Button</button>
+            </div>
+        </div>
+    </section>
+    <!-- BAND INTRO SECTION -->
+    <section class="py-section-padding bg-gray-100 border-b border-gray-300">
+        <div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 border border-black bg-white z-0"></div>
+                <div
+                    class="relative z-10 w-full aspect-[4/5] bg-gray-200 border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-gray-400">image</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold text-black mb-8">Content Heading</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <button
+                    class="border border-black bg-white text-black px-10 py-4 uppercase text-sm hover:bg-gray-200 transition-all">Read
+                    More Button</button>
+            </div>
+        </div>
+    </section>
+    <!-- NEWS SECTION -->
+    <section class="py-section-padding max-w-[1200px] mx-auto px-gutter border-b border-gray-300">
+        <h2 class="text-3xl font-bold text-black mb-12">Section Title</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- News 1 -->
+            <div class="group cursor-pointer">
+                <div class="mb-4 bg-gray-200 w-full aspect-video border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <span
+                    class="inline-block border border-black text-black bg-white text-[10px] font-bold uppercase px-3 py-1 mb-4">Category</span>
+                <p class="text-gray-500 text-[12px] mb-2">Date String</p>
+                <h3 class="text-xl font-bold text-black mb-3">Article Title Headline Goes Here</h3>
+                <p class="text-base text-gray-600 line-clamp-2">Article excerpt description text giving a brief overview
+                    of the content inside...</p>
+            </div>
+            <!-- News 2 -->
+            <div class="group cursor-pointer">
+                <div class="mb-4 bg-gray-200 w-full aspect-video border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <span
+                    class="inline-block border border-black text-black bg-white text-[10px] font-bold uppercase px-3 py-1 mb-4">Category</span>
+                <p class="text-gray-500 text-[12px] mb-2">Date String</p>
+                <h3 class="text-xl font-bold text-black mb-3">Article Title Headline Goes Here</h3>
+                <p class="text-base text-gray-600 line-clamp-2">Article excerpt description text giving a brief overview
+                    of the content inside...</p>
+            </div>
+            <!-- News 3 -->
+            <div class="group cursor-pointer">
+                <div class="mb-4 bg-gray-200 w-full aspect-video border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <span
+                    class="inline-block border border-black text-black bg-white text-[10px] font-bold uppercase px-3 py-1 mb-4">Category</span>
+                <p class="text-gray-500 text-[12px] mb-2">Date String</p>
+                <h3 class="text-xl font-bold text-black mb-3">Article Title Headline Goes Here</h3>
+                <p class="text-base text-gray-600 line-clamp-2">Article excerpt description text giving a brief overview
+                    of the content inside...</p>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <a class="text-black uppercase text-xs tracking-widest border-b border-black pb-1 hover:text-gray-600"
+                href="#">View All Link</a>
+        </div>
+    </section>
+    <!-- SOCIAL & NEWSLETTER SECTION -->
+    <section class="py-section-padding bg-gray-100 text-black border-b border-gray-300 overflow-hidden">
+        <div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Call to Action Heading</h2>
+                <p class="text-lg text-gray-700 mb-10">Supporting text describing the value of subscribing or following
+                    social media channels.</p>
+                <div class="flex gap-4 mb-12">
+                    <div class="border border-black bg-white p-3 hover:bg-gray-200 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined" data-icon="share">share</span>
+                    </div>
+                    <div class="border border-black bg-white p-3 hover:bg-gray-200 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+                    </div>
+                    <div class="border border-black bg-white p-3 hover:bg-gray-200 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined" data-icon="groups">groups</span>
+                    </div>
+                    <div class="border border-black bg-white p-3 hover:bg-gray-200 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined" data-icon="image">image</span>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-0">
+                    <input class="border border-black bg-white px-6 py-4 w-full focus:outline-none text-black"
+                        placeholder="Input Field Placeholder" type="email">
+                    <button
+                        class="border border-black bg-white text-black px-8 py-4 uppercase text-xs whitespace-nowrap hover:bg-gray-200 transition-all border-l-0">Submit
+                        Button</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="w-full aspect-square bg-gray-200 border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <div class="w-full aspect-square bg-gray-200 border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <div class="w-full aspect-square bg-gray-200 border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+                <div class="w-full aspect-square bg-gray-200 border border-black flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">image</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Predicted Footer -->
+    <footer class="bg-white w-full py-20 border-t border-gray-300">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1200px] mx-auto px-8">
+            <div class="space-y-6">
+                <div class="text-xl font-black text-black">LOGO</div>
+                <p class="text-base text-gray-600 leading-relaxed">Brief company or entity description text goes here in
+                    the footer section.</p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-black font-bold text-sm uppercase tracking-widest">Footer Column</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-black font-bold text-sm uppercase tracking-widest">Footer Column</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-black font-bold text-sm uppercase tracking-widest">Footer Column</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                    <li><a class="text-gray-600 hover:text-black transition-colors text-base" href="#">Footer Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-[1200px] mx-auto px-8 mt-20 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-base text-gray-500 text-sm">© 2024 Entity Name. All Rights Reserved.</p>
+            <div class="flex gap-6">
+                <span class="material-symbols-outlined text-gray-500 text-lg hover:text-black cursor-pointer"
+                    data-icon="language">language</span>
+                <span class="material-symbols-outlined text-gray-500 text-lg hover:text-black cursor-pointer"
+                    data-icon="share">share</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

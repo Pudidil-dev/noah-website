@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f7; color: #271717; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#3e2c2b",
+                        "secondary-fixed": "#ffdad8",
+                        "inverse-primary": "#ffb3b1",
+                        "surface-dim": "#f1d3d2",
+                        "on-background": "#271717",
+                        "tertiary-container": "#008379",
+                        "on-primary-fixed": "#410007",
+                        "background": "#fff8f7",
+                        "outline-variant": "#e4bebc",
+                        "outline": "#8f6f6e",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-low": "#fff0ef",
+                        "surface": "#fff8f7",
+                        "on-secondary-fixed": "#410007",
+                        "surface-container-highest": "#f9dcda",
+                        "on-surface-variant": "#5b403f",
+                        "on-secondary-fixed-variant": "#81262a",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "secondary-container": "#fd8584",
+                        "on-tertiary-container": "#f3fffc",
+                        "primary": "#b7102a",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#bb152c",
+                        "surface-container-high": "#ffe1e0",
+                        "primary-container": "#db313f",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#8cf4e8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#a03d40",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "on-surface": "#271717",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-secondary-container": "#741d22",
+                        "surface-variant": "#f9dcda",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-container": "#ffe9e8",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#ffdad8",
+                        "tertiary": "#006860",
+                        "surface-bright": "#fff8f7",
+                        "on-primary-fixed-variant": "#92001c",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "h3": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-zinc-200 shadow-sm">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1200px] mx-auto font-['Inter']">
+<!-- Left: Logo -->
+<div class="text-2xl font-black text-zinc-900 tracking-tighter">
+<a href="#">NOAH</a>
+</div>
+<!-- Center: Navigation Links -->
+<div class="hidden md:flex items-center gap-8 uppercase tracking-widest text-xs font-bold">
+<a class="text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Cerita Band</a>
+<a class="text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Diskografi</a>
+<a class="text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Tur &amp; Event</a>
+<a class="text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Berita &amp; Media</a>
+<a class="text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Sahabat NOAH</a>
+<a class="text-[#E63946] border-b-2 border-[#E63946] pb-1" href="#">Toko</a>
+</div>
+<!-- Right: Search and Language -->
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-zinc-900 cursor-pointer text-[22px]">search</span>
+<div class="text-xs font-bold tracking-widest text-zinc-900 cursor-pointer">
+        ID / EN
+      </div>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Promo Banner -->
+<section class="relative w-full h-[500px] overflow-hidden bg-gradient-to-r from-primary to-primary-container flex items-center">
+<div class="max-w-[1200px] mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+<div class="text-white z-10">
+<h1 class="font-display text-display mb-4">Koleksi Terbaru NOAH 2024</h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">Merchandise resmi eksklusif - Edisi terbatas tersedia!</p>
+<button class="bg-white text-primary px-10 py-4 font-label uppercase tracking-widest hover:bg-surface-container-lowest transition-all">Belanja Sekarang</button>
+</div>
+<div class="relative hidden md:block h-full">
+<img alt="NOAH Merchandise" class="object-contain h-full w-full transform scale-110" data-alt="A high-fashion studio photograph of premium band merchandise including a black t-shirt and a hoodie with a minimalist band logo. The lighting is dramatic high-key with soft red rim light against a deep neutral background. The aesthetic is modern, clean, and ultra-professional, following a sonic minimalism theme with sharp focus and cinematic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9B9WicMin7RRKSrKbpq2JvoZxRxk880yAAIY_G0Cb8stfWBNndSueg5GuhzO4DkHCYAljuwzHXEuA7YU01M3QPLCt30Zi_JAIcBXaImmD87To_HujVI1n-p_4S3mJzwpTdGaGfiRURCIaV3SHadI19UUmiqhZ_DVS7kskFmffzeB_sc9AFWbe_krEnSFuHL2G_wBx9VTCF47mTogimVi-EY2zxKH_M1NbAxmR-mKkdXdnndyMMCfET_adXwHcIiEcYJ9k1PQNsWpQ"/>
+</div>
+</div>
+</section>
+<!-- Shipping Info Bar -->
+<section class="bg-surface-container-low py-6 border-b border-outline-variant/30">
+<div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="font-label uppercase text-xs">Gratis Ongkir di atas Rp 500.000</span>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-label uppercase text-xs">Garansi Produk Resmi</span>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-primary">assignment_return</span>
+<span class="font-label uppercase text-xs">30 Hari Pengembalian</span>
+</div>
+</div>
+</section>
+<!-- Filter & Product Section -->
+<section class="max-w-[1200px] mx-auto px-8 py-section-padding">
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Sidebar -->
+<aside class="w-full md:w-64 shrink-0">
+<div class="sticky top-28 space-y-10">
+<div>
+<h3 class="font-h3 text-h3 mb-6">Kategori</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class="flex items-center justify-between group cursor-pointer text-primary font-bold">
+<span>Semua</span>
+<span class="text-xs">42</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>Kaos</span>
+<span class="text-xs text-outline">12</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>Hoodie</span>
+<span class="text-xs text-outline">8</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>Jaket</span>
+<span class="text-xs text-outline">5</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>Aksesoris</span>
+<span class="text-xs text-outline">10</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>CD &amp; Vinyl</span>
+<span class="text-xs text-outline">4</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer hover:text-primary transition-colors">
+<span>Edisi Terbatas</span>
+<span class="text-xs text-outline">3</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-h3 text-h3 mb-6">Rentang Harga</h3>
+<input class="w-full h-1 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" max="2000000" min="0" type="range"/>
+<div class="flex justify-between mt-4 font-label text-xs">
+<span>Rp 0</span>
+<span>Rp 2.000.000+</span>
+</div>
+</div>
+<div>
+<h3 class="font-h3 text-h3 mb-6">Urutkan</h3>
+<select class="w-full bg-white border border-outline-variant p-3 font-body-md focus:ring-primary focus:border-primary outline-none">
+<option>Terbaru</option>
+<option>Harga Terendah</option>
+<option>Harga Tertinggi</option>
+<option>Populer</option>
+</select>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-16">
+<!-- Card 1 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<span class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">New</span>
+<img alt="NOAH Logo Tee Black" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A premium black cotton t-shirt featuring a minimalist white band logo centered on the chest. The shirt is displayed in a bright, clean minimalist studio setting with soft shadows on a white background. The image has high contrast and emphasizes the high-quality fabric texture and crisp logo print." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0OUVddM4rcur210BtTU-L4VgxnlROuOKXKPJ4fvF-CizxEY6D5sD86tVp30SjnsLRiBJzoDy_mHJUctMPRHLOc3sv98XgAlmAQorZLYoTgebgnhB9j2V_cjRO0qpFNNO6TTK1r5_lWlmi2jdvQ436lmPVQ_N1NfoEOrevEMQD8BcjFPgeTzyAPQNcBJaVsX14nUGM5OJ-qQVIg8WQwPdSwDYUMjWJtX5mFbUpiQTCacLCYrhhSkZVLBwmBEpZc7WQCrLeTCk4-mO_"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">NOAH Logo Tee Black</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Kaos katun premium dengan logo NOAH minimalis.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 250.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="NOAH Logo Tee White" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A high-quality white crewneck t-shirt with a sharp red band logo print on a minimalist white studio background. The lighting is bright and clean, showcasing the professional stitching and premium material. The composition is centered, conveying a modern and sophisticated artist merchandise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUKYXoXVwsUDjALgHbE7EKqf0ckguvmDwrwj_KslRZzWJmkN_76TF2zT96xrPglaebuh9aUPNmGBLH4z7JW8nd4tgFh14Pid4x3JLSGjZBpu6T9MmAdttGALwkkzDqqty-AEY20xmh5XPcIAoUcGPGM7xX__WXHxnaWj7WSjHOjaXioDola8zsm4w-KjjKdaGvY5foVtQYD4MOfHtom3w1Ym0VGyC_GNU0wxwYHuJoB_5cLA9rNUbWRuxIR3NnQg9F7bgGyvEVByQN"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">NOAH Logo Tee White</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Varian warna putih ikonik untuk tampilan bersih.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 250.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<span class="absolute top-4 left-4 z-10 bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Limited</span>
+<img alt="Bintang di Surga Anniversary Hoodie" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A heavyweight premium charcoal gray hoodie with intricate embroidery on the back and a small chest logo. The garment is photographed in a high-end minimalist setting with dramatic architectural shadows. The red accents of the logo pop against the dark fabric, emphasizing an exclusive collector's item feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwNAFV68JyZ_PasmvhWnzFNyVESxbWsCsZpJ8FtE_709ySsocJL0-VxMWI-7kaRUWfk3vLnoN8fCwDVxxLvtxJmLxMvHvi-RrNEXLQb4KvUKgLDUwdy-oFdBPmS_deXq6M7zSIrOo7BCZ_A05fPE8b2VtjJY2etLzgwhvkn7gJolkXT7bJdzsH1LPtC9hrvpPAegndegmYYH3zwaS0jHGOSbyYR1x3wnKlPPjNyYIumhOsNT0jjCHRLzhSvcJO10heO034IfLfqjaH"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">Bintang di Surga Anniversary Hoodie</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Edisi spesial perayaan album legendaris.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 550.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="NOAH Snapback Cap" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A sleek black snapback cap featuring a 3D embroidered band logo in vibrant red. The cap is presented on a minimalist platform with sharp, clean studio lighting. The high-contrast palette of black, red, and white reflects a modern streetwear vibe aligned with the band's official brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47TZi0ho_xvHBrj7VjKnJ1JNK9sqBb3S6btWsInsItJpVbHIUMlHpifZg5Y_WOva6-zAX2S78wI-yHbRXt5d12S4b26BC8PaM7DqC4scMOs23lPb2FkmxoUlPz6usR3-kxbwTUbZhx3doZWZ9reKM_cqXhvHU40NIWMItD1feq3qeoiq4jREM8HHmZESEtd-euIRy6lJCxsT72fekWaMOHUkRJY4lVvUvzX0gIsrzuASaO_ZMosOakMfNVhOWwcOy-ZnKKQS5Vy-v"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">NOAH Snapback Cap</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Topi snapback kualitas premium dengan bordir 3D.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 185.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Keterkaitan Keterikatan Vinyl" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A limited edition 12-inch vinyl record with a striking minimalist sleeve design in red and white. The vinyl itself is translucent red, displayed half-out of its sleeve. The setting is a clean, bright white space that highlights the glossy texture of the record and the high-end print quality of the album art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQduh430cbRYP89DkUxeLvD-utubFY2M1_4UsbnRB8qc9ptczRPctpgJBujKjcuTL7qIdKC78k1YIRALRjhA_GX3-T6zt3iAdLDuHGQKSbAlbejHUwAyNM1SqLM8ggzEtwSEpXpkT4r3PPuUqNjXWpMc08A_AYsolOfbwT8IXFbEuiJAsrVzMfDH4VcfDWSQuuqXndwrij2tJ2ZSks7iX07D-6ZU23NZqM1SQB8zgt58evnvpEnx8couB_rp-fX27lM0XXekX00tW"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">Keterkaitan Keterikatan Vinyl</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Piringan hitam kualitas audiophile untuk kolektor.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 450.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative bg-white border-l-4 border-primary shadow-[0_4px_20px_rgba(29,29,29,0.05)] flex flex-col h-full transition-transform hover:-translate-y-2">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="NOAH Tote Bag" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" data-alt="A heavy-duty canvas tote bag in off-white with a bold, vertical red brand logo. The bag is hanging in a minimalist, high-key gallery environment. The focus is on the durable material texture and the clean, high-impact graphic design that fits the band's modern minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7SzZyCCANDSmvJ83G_BGmLp5UME4sGn5_HAaFdReRVWuiAR6-3u9fziTp1docH1SRH4cn_sgXKLU_G5Co4SxDMIvTl-lxHuURT-6rOSugJ_EBoEjwgSmPybrv-votbbz1v15HvbJfI8-HR1dzXlru8VnGGbjmbODczybZ2qfzUIM8R9U5bP7WKKVj_doCYtoiYAY9p1bz2op2wCmL1Ytm5swniOshdjAyJ9fq51VPlfCQLuRMMpyt32er-HQTA35Cv0Tg__WqUYG_"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h4 class="font-h3 text-lg mb-2">NOAH Tote Bag</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-1">Tas kanvas tebal tahan lama untuk kegiatan sehari-hari.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-lg mb-4">Rp 120.000</p>
+<button class="w-full bg-primary text-white py-3 font-label text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Limited Edition Section -->
+<section class="bg-surface-container py-section-padding">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="flex items-end justify-between mb-12">
+<div>
+<span class="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Collector's Choice</span>
+<h2 class="font-h2 text-h2">Edisi Terbatas</h2>
+</div>
+<div class="hidden md:block">
+<p class="font-label text-xs text-primary underline cursor-pointer">Lihat Semua Koleksi</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- LE Card 1 -->
+<div class="group bg-white border-l-8 border-primary shadow-[0_10px_40px_rgba(29,29,29,0.08)] flex flex-col md:flex-row overflow-hidden transition-all hover:shadow-xl">
+<div class="md:w-1/2 aspect-square overflow-hidden bg-zinc-100">
+<img alt="Limited Edition Box Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An ultra-exclusive deluxe music box set featuring multiple vinyls, a photo book, and signed memorabilia. The set is beautifully packaged in a rigid black and red box. Photographed with high-end product lighting that emphasizes the premium matte finish and metallic foil details, creating a sense of luxury and rarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbkc0ATAT-BvByloejC-UvPre-swbxzRoS4k9NfLApEeuGZUVEFqURuasAIeBdKpPUpWxSzlTFh3-G96CI_RjCwIeGCQWmZoKl19ahxa-k6uG8bFvNZar27X-ySOdGufaioy47F666-HAfl2wTMX1JIGJvG7evvamkg_O0hVO-7BHH1GdA2DKlHujXJlGC_qFpiZhDahZqo6wA3Q6fp8a40Qiq1Xk8hgiwQJX2dO_1n6NAHgpHWHbdRsEPqrBjbXEyjwWovvEq8cQP"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-[#D4AF37] text-white text-[10px] font-bold px-4 py-1 uppercase tracking-widest">LIMITED</span>
+<span class="text-primary font-bold text-xs">Sisa 23 item</span>
+</div>
+<h3 class="font-h2 text-2xl mb-4">Limited Edition Box Set</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Paket eksklusif berisi 3 vinyl, buku foto dokumentasi tur, dan sertifikat keaslian bertandatangan personil.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-2xl mb-6">Rp 1.500.000</p>
+<button class="w-full bg-primary text-white py-4 font-label uppercase tracking-widest hover:bg-primary-container transition-all">Beli Sekarang</button>
+</div>
+</div>
+</div>
+<!-- LE Card 2 -->
+<div class="group bg-white border-l-8 border-primary shadow-[0_10px_40px_rgba(29,29,29,0.08)] flex flex-col md:flex-row overflow-hidden transition-all hover:shadow-xl">
+<div class="md:w-1/2 aspect-square overflow-hidden bg-zinc-100">
+<img alt="Peterpan Legacy Tee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vintage-style black band t-shirt with a distressed red and white graphic print commemorating the band's legacy. The shirt is displayed on a minimalist hanger against a clean textured wall. The lighting is moody but clear, highlighting the soft cotton texture and the high-quality screen-printed design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRRg034YT2rjr9fRxaz6m_CoNQzgf2eyq-q8gnB8ZVIAEHwIUt0twDEcmTOhgJrVxl8nBqJx0a28QBS2b-PPDHjyhXIJLopeOqsyKPgxgGvXDIDILhpEW2sZVwVgj_H1TeS7ZXW2qh9riv1XuhSAhbBa2rrrkEBMivjPqWYjxpMei4CAONq2e9uBf1CC3XEHIG4FSJYduZB97OkBCSk59YZAvvVzvRYZBJwUSPpHGw2pnRqd6cDqLNmWF1cPWKPfoVD6PVaLFrCGOZ"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-[#D4AF37] text-white text-[10px] font-bold px-4 py-1 uppercase tracking-widest">LIMITED</span>
+<span class="text-primary font-bold text-xs">Sisa 12 item</span>
+</div>
+<h3 class="font-h2 text-2xl mb-4">Peterpan Legacy Tee</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Kaos edisi khusus mengenang perjalanan awal karir dengan desain grafis arsip original tahun 2003.</p>
+<div class="mt-auto">
+<p class="text-primary font-bold text-2xl mb-6">Rp 350.000</p>
+<button class="w-full bg-primary text-white py-4 font-label uppercase tracking-widest hover:bg-primary-container transition-all">Beli Sekarang</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-900 dark:bg-black w-full py-20 border-t border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1200px] mx-auto px-8 font-['Inter'] text-sm text-zinc-400">
+<div class="space-y-6">
+<div class="text-xl font-black text-white">NOAH</div>
+<p class="leading-relaxed">Platform resmi untuk semua merchandise eksklusif dan berita terbaru dari NOAH Band.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined hover:text-red-500 cursor-pointer">share</span>
+<span class="material-symbols-outlined hover:text-red-500 cursor-pointer">public</span>
+<span class="material-symbols-outlined hover:text-red-500 cursor-pointer">play_circle</span>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Menu Utama</h4>
+<ul class="space-y-4">
+<li class="hover:text-red-500 transition-colors cursor-pointer">Cerita Band</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Diskografi</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Tur &amp; Event</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Toko</li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Bantuan</h4>
+<ul class="space-y-4">
+<li class="hover:text-red-500 transition-colors cursor-pointer">Privacy Policy</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Terms of Service</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Contact</li>
+<li class="hover:text-red-500 transition-colors cursor-pointer">Press Kit</li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+<p class="mb-4">Dapatkan info rilisan terbatas lebih awal.</p>
+<div class="flex">
+<input class="bg-zinc-800 border-none text-white px-4 py-2 w-full focus:ring-1 focus:ring-primary outline-none text-xs" placeholder="Email Anda" type="email"/>
+<button class="bg-primary text-white px-4 py-2 font-bold text-xs uppercase">Daftar</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-8 mt-20 pt-8 border-t border-zinc-800 text-center text-xs opacity-50">
+            © 2024 NOAH. All Rights Reserved.
+        </div>
+</footer>
+</body></html>

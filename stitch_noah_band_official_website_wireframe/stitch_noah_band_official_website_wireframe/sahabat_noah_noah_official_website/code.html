@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sahabat NOAH - Komunitas Resmi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fff8f7",
+                        "on-background": "#271717",
+                        "primary-fixed": "#ffdad8",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#f3fffc",
+                        "surface-container-highest": "#f9dcda",
+                        "on-surface-variant": "#5b403f",
+                        "surface-variant": "#f9dcda",
+                        "on-secondary-fixed-variant": "#81262a",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#e4bebc",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#92001c",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "on-secondary-fixed": "#410007",
+                        "surface-container-high": "#ffe1e0",
+                        "on-surface": "#271717",
+                        "inverse-on-surface": "#ffedeb",
+                        "surface-dim": "#f1d3d2",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#3e2c2b",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdad8",
+                        "outline": "#8f6f6e",
+                        "tertiary": "#006860",
+                        "background": "#fff8f7",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "primary-container": "#db313f",
+                        "primary": "#b7102a",
+                        "tertiary-fixed": "#8cf4e8",
+                        "surface": "#fff8f7",
+                        "on-primary-fixed": "#410007",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary": "#a03d40",
+                        "surface-container": "#ffe9e8",
+                        "surface-tint": "#bb152c",
+                        "surface-container-low": "#fff0ef",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fd8584",
+                        "on-secondary-container": "#741d22",
+                        "inverse-primary": "#ffb3b1",
+                        "tertiary-container": "#008379"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "label": ["Inter"],
+                        "display": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #E63946 0%, #1D1D1D 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(29, 29, 29, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white border-b border-zinc-200 shadow-sm">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1200px] mx-auto font-['Inter']">
+<!-- Left: Logo -->
+<div class="flex-shrink-0">
+<a class="text-2xl font-black text-zinc-900 tracking-tighter" href="#">NOAH</a>
+</div>
+<!-- Center: Navigation Links -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="font-label uppercase tracking-widest text-xs font-bold text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Cerita Band</a>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Diskografi</a>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Tur &amp; Event</a>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Berita &amp; Media</a>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-[#E63946] border-b-2 border-[#E63946] pb-1" href="#">Sahabat NOAH</a>
+<a class="font-label uppercase tracking-widest text-xs font-bold text-zinc-600 hover:text-[#E63946] transition-colors" href="#">Toko</a>
+</nav>
+<!-- Right: Search and Language Toggle -->
+<div class="flex items-center gap-6">
+<button class="text-zinc-600 hover:text-zinc-900 transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="font-label text-xs font-bold uppercase tracking-widest text-zinc-600 cursor-pointer">
+ID / EN
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="hero-gradient text-white py-[120px] relative overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-8 relative z-10 flex flex-col items-center text-center">
+<h1 class="font-display text-display mb-6">Gabung Sahabat NOAH</h1>
+<p class="font-body-lg text-body-lg max-w-2xl mb-12 opacity-90">Komunitas resmi penggemar NOAH. Terhubung dengan sesama Sahabat di seluruh Indonesia dan dapatkan akses eksklusif konten band kesayanganmu.</p>
+<div class="flex flex-col md:flex-row gap-6 mb-16">
+<button class="px-12 py-4 bg-transparent border-2 border-white font-label uppercase tracking-widest text-white hover:bg-white hover:text-primary transition-all">Daftar Sekarang</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/20 pt-12 w-full max-w-4xl">
+<div class="flex flex-col items-center">
+<span class="text-h1 font-h1">50K+</span>
+<span class="font-label uppercase text-xs opacity-70">Anggota</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-h1 font-h1">32</span>
+<span class="font-label uppercase text-xs opacity-70">Chapter</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-h1 font-h1">100+</span>
+<span class="font-label uppercase text-xs opacity-70">Event/Tahun</span>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img alt="background" class="w-full h-full object-cover" data-alt="A massive, energetic crowd at a stadium concert, captured with a dark, high-contrast aesthetic. Bright stage lights pierce through the darkness, creating lens flares and silhouettes of thousands of fans with their hands raised. The atmospheric lighting is dominated by deep blacks and intense red accents, echoing the band's minimalist and high-impact visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAre-J0VmpurGd178vem0ge7OFnBsPeWkdwMyRKiXQWN4mEHBnW9k98mDcMjJnlMCYERm7J8N7wNYm3-pCc_l2ISLTcgJEFTvVsuWkdiKaCrFis3Pvge_NRJVPeLC7fTCS32SxDZ7zidQmtp4IPvi8sysuodNUZ9A6iWud5AGad5nqPiRaA03TsTQAReKAQTWouzPkt4q5EpuDH4mM11wuIpmiBvF_h4mBi1ipjXXdK4lz9sDhKJAQv6PrFnJwXjLIJfAyJQQyZo41n"/>
+</div>
+</section>
+<!-- Fan Stories -->
+<section class="py-[120px] max-w-[1200px] mx-auto px-8">
+<h2 class="font-h2 text-h2 text-center mb-16">Cerita Sahabat</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Card 1 -->
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="A professional studio portrait of a young Indonesian man with a warm smile, wearing a clean white t-shirt. The background is a soft, minimalist neutral gray. The lighting is bright and modern, emphasizing clarity and a friendly, approachable mood that fits the premium community aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdA5GcOIdvHZmTdxryNV0FvIwv3gxe2xqfoX4nqltXGrkhHb2fX4klYNcIaOUvpK6wRqqbS6oaRMfjW9NHzIMENWpqztHVoiXBRamaXlskWKEuYlJ2CRTnbmVWuWIvcEKnOdqDuk5A5wiTC-xVinEjdaZPSy1wrnKdgGnGjz5jmotWywBqApaEfCE-4v-gDyWWbwWUSnzSQH1PA_QtOtXC-KvuC5sKfXhp8DiHoho_6Q5wKvsixZQ3iad7zQCInV6HqkWkSbcZJxer"/>
+<div>
+<h4 class="font-h3 text-[18px]">Andhika Prasetya</h4>
+<p class="text-zinc-500 text-sm">Jakarta</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"NOAH mengubah hidup saya. Lirik-liriknya selalu menemani saat saya berada di titik terendah."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="A portrait of a stylish young Indonesian woman in an urban setting. She has a confident expression and is wearing a modern black jacket. The lighting is crisp and natural, with a focus on high-contrast details and a clean, professional finish that aligns with the brand's sophisticated visual tokens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9G9sFD5YTq2AZ9H0w57scXpONtAbUGA94mFvvzhA8ur_MsryBUtfAYKxo-BqsanTirp-TOyHXe9s__YWMwz4kk5PsdRwKUyrRDQ0NoMUaVjjaSL4hjutQa-rJX0Z3JBMfNjhXcp2W_u0K7V0QL0ATWedhzd5wM5JeX5xoyO1Nw4ExkyM9-bwdi3V2zG8ign4VOPp6CtNehfPZ9jHLTHUH2tXQzHMfqNlP17iJ3EAE17ATzkTMAGXTxTFjCHsGfXYIMnHnMaVUu6a"/>
+<div>
+<h4 class="font-h3 text-[18px]">Siti Rahma</h4>
+<p class="text-zinc-500 text-sm">Bandung</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"Menemukan keluarga baru di komunitas ini. Sahabat NOAH Bandung sangat suportif dan kreatif."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="A minimalist headshot of a young creative man with glasses, looking directly at the camera with a calm demeanor. The background is a stark, clean white, and the lighting is high-key and even. The aesthetic is modern and polished, using a monochromatic base with subtle depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbjbCZqLy9tfdlfqCgejvgg-efcfU-7GvsWNvzWodgKjMCwKdwVsfqJCRlGfTKSMYNEXM86I3shKd8fQ1o-0LvziEZB0Kn0lvFDN7fnFX-sATARtoi9GhBECDKKtkQ8httQnt97Hy-EkCtXEQP3RQw8S7mc8TjCx-mZrpG-dKaIWN_sdv5xgENufeMXVOcmaSieD9VBgrbYptj3isG7ISA7ntdaNefb9k2jmPu8djUMSh7AQ6kEH2zHviNVUkm-qt8_JCwJBM1M5oO"/>
+<div>
+<h4 class="font-h3 text-[18px]">Reza Kurniawan</h4>
+<p class="text-zinc-500 text-sm">Surabaya</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"Koleksi merchandise saya sudah mencapai 100 item. Semua berawal dari kecintaan pada melodi Ariel."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+<!-- Card 4, 5, 6 - Repeated structure for brevity -->
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="Close up portrait of a young woman with a vibrant personality, her face lit by soft, warm light. She is positioned against a simple, textured wall. The visual style is high-end and clean, following the minimalist and authoritative brand guidelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5QGpotOzA7uMdayaz_0C-fTp0I-njeUTL-bnlLBx2B7evYYtA4iWJtnt7Phm6bYcyNzlayHYBYACTaLArTv0H0w1iXKm4jwuYJI55AmHKagYH7X063mQDHhTZYDqHfA7ZDJMH25FkqLxGTYjo-UEhgZgo3KXhrWmz7zavR-csEXv-4s3kgv-VPFlck7-Y3_deYrYYbrRmy-kjrWIh-q2wXtze9V-Os1lQaETszISiRyRGtknR_UL4CTi-jLsAyinXX6Kia3RX__B9"/>
+<div>
+<h4 class="font-h3 text-[18px]">Maya Indah</h4>
+<p class="text-zinc-500 text-sm">Yogyakarta</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"Konser NOAH di Jogja adalah momen yang tak akan pernah saya lupakan seumur hidup saya."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="Headshot of a man with an artistic flair, featuring moody, cinematic lighting that creates deep shadows and bright highlights. The style is professional and stark, using the high-contrast palette of the NOAH brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHw7EW5QpnNtIqLBkra7D6BwYCC-ZU1glRzf_aGGwSLrqegkTYQjaLxaASrvl6zXINJ7k-8u2xXOnadNGjU5SR3z4G5s6jRQjnFoPijBMjXe0UdoddTqJNkCfVbQFxQIcDF0tx_ARf4EFzNO7MOl_U8MRY8rEZ0Ke9OOG4nAmWOnW20HduwHLQcoGsnN4Y5X1WsgkJ9XJmW7smH-CXf6lKqwY2LC3_umLI0DkYNkjNE-5r-0jaoJX8Lw_Z7sfRz8fRd-M_I0REgn6"/>
+<div>
+<h4 class="font-h3 text-[18px]">Bambang S.</h4>
+<p class="text-zinc-500 text-sm">Medan</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"Dari Peterpan sampai NOAH, dedikasi band ini pada musik Indonesia benar-benar luar biasa."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+<div class="bg-white p-8 card-shadow border-l-4 border-primary">
+<div class="flex items-center gap-4 mb-6">
+<img alt="avatar" class="w-16 h-16 rounded-full object-cover" data-alt="Portrait of a young man with a focused expression, set in a brightly lit studio with a clean, light gray backdrop. The lighting is sophisticated and minimal, highlighting the high-quality, modern aesthetic of the official fan page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWVG9GE7EVNF80T6g2cGZ8BQxCPCu1IZhVJw89PLtJ-kLU6KqmcvrXpDIgu_kdxdHcwJrF1qHMIBDtwsY8vFxmJUgFRpJmxa-G_4UnHcEz5dkzkStcu3LC-ITKykq2E5Y0nFfoRr2Aqd20wXD-ztVXIkFbaIBKeOAYYgC3blIf9dvsCbNukwWkNd9bMuFMe9-WldqcrYAQSGA4uKm_tLx2-MTQ8qNg75w1_sgdMdvw6H4GfBttRoPLef7q8bku9CSP5Q15yMa6oMH_"/>
+<div>
+<h4 class="font-h3 text-[18px]">Fajar Ramadhan</h4>
+<p class="text-zinc-500 text-sm">Makassar</p>
+</div>
+</div>
+<p class="font-body-md italic text-zinc-600 mb-6">"Menjadi admin chapter Makassar mengajarkan saya banyak hal tentang loyalitas dan kerja keras."</p>
+<a class="font-label text-primary hover:underline" href="#">Baca Selengkapnya</a>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="px-12 py-4 bg-primary text-white font-label uppercase tracking-widest hover:opacity-90 transition-all">Bagikan Ceritamu</button>
+</div>
+</section>
+<!-- Fan Art & Covers -->
+<section class="py-[120px] bg-zinc-100">
+<div class="max-w-[1200px] mx-auto px-8">
+<h2 class="font-h2 text-h2 text-center mb-16">Karya Sahabat</h2>
+<div class="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6 mb-16">
+<!-- Item 1 -->
+<div class="break-inside-avoid relative group overflow-hidden">
+<img alt="fanart" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A stunning digital painting of a music artist, featuring abstract geometric patterns and a vibrant red and black color scheme. The style is modern and high-impact, with sharp lines and high-contrast lighting that creates a powerful, professional visual statement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUNh86CRTROwfczfm5Bb4mithmYp5rqsQWp86etrtkleNeq-6vFpuMLaOYV8vQg4ggPOxnSvERzjNX63wYh2pG2g_N9DkEiZc33ge7akLefFDwlIQD704QWs1Ztn4nmkFRMs-ZawHNr1lDyzWi1ocCfySubauB9KA5_TAt0Dkh0OKlEnQyh6wAAOADnv0wAlMgrqNjduQn9CiNjB0LmNRkp741Ystk4-j_0pXvrMqNt_BXm-vnCszNdoD59hKql1as_H-eewqpO7RK"/>
+<div class="bg-white p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest bg-zinc-200 px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">2.4k</span>
+</div>
+</div>
+<p class="text-xs font-bold text-zinc-900">Dimas Aditya</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="break-inside-avoid relative group overflow-hidden">
+<img alt="cover" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A clean, minimalist photograph of a music studio setup with a red electric guitar and a condenser microphone. The scene is brightly lit with high-key studio lights, emphasizing a modern, professional, and creative atmosphere that fits the premium community aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyDsRXeie0QMaycmshWY5Sk79Idz7nXKUtHzHZHV5zHg529xKRd12xLtTiypNmza4dDUs37Tv02MLhvhVAW9H9JvO6KExCmah2dyY12ikBXSgYpqgizSCs86wKMTfRraep3rgPK_ivV3PY_gRMVM4p1g04KWOqxQSW3KvTxzD-XMji6CugS2QzZAhXqhFJA-g4MXJdenSLzs1MabJlXbkiqJ0lqPuQZ0UoDnHvZm42SjYg07GZzfiirMtTYlb-Bg5U4xQmaeqn5eeu"/>
+<div class="bg-white p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest bg-zinc-200 px-2 py-1">Cover Song</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">1.8k</span>
+</div>
+</div>
+<p class="text-xs font-bold text-zinc-900">Sarah Aliyah</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="break-inside-avoid relative group overflow-hidden">
+<img alt="fanart" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An artistic digital graphic with sharp, angular shapes and a strong focus on minimalist composition. The palette is strictly high-contrast red and black, evoking a sense of kinetic energy and modern professionalism, aligned with the band's aesthetic identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYkPGCIqSQe8BuiZQBJ4pd1xtaoC6AxkpxURTg13ZsF-AeEEMgEc5geYIn2lVXwWtTfoRd67dScOuj8jnt7bYtvq5LVD73l_1Xpe5GpXmS3TU3BkZztCD7KGnySG8-oJUqap40SShqU4KCyrwTunUHT2tO7tw8XNYMdK2tvaCA6y4R-Wm_nK43m7FSHXBxl1ZGRcZ6IHNoXuQdYEIBJSj5VAhfpS6XLxySxCzl11TUtL-iRABd-j2Q0hPIjSnWtjlgtmnss0jbyjJn"/>
+<div class="bg-white p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest bg-zinc-200 px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">3.1k</span>
+</div>
+</div>
+<p class="text-xs font-bold text-zinc-900">Rian Wijaya</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="break-inside-avoid relative group overflow-hidden">
+<img alt="cover" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Action shot of a young musician performing on stage under red floodlights, with a dark, moody background. The atmosphere is energetic yet controlled, captured with sharp clarity and a professional, high-contrast finish that represents the energetic spirit of the fan community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXdZkEXV78IP4NBli-RD0HMAvmn1CjDX3dyaS240f6OrbQtENF4K9VmzPDejGAfl1s66jDt1PuK_3fWBb7m4x_sGTAJke5nikVVNbnJvgdQ9aSx43oi-XtAsUoZLrTETNguRwZJDgklxRgKpb90_V_6h0vvC_ThSNkc2mFhzSJMWUWXh5Is_RsCPaC2oN1uPdpOnHAejzzS_Cwf3sJoHJr5clO5FOuiLuZMPijFQkYj2dmoVXxG7_DDDtpZ_H44-rsmZuXX9Zg76pK"/>
+<div class="bg-white p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest bg-zinc-200 px-2 py-1">Cover Song</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">950</span>
+</div>
+</div>
+<p class="text-xs font-bold text-zinc-900">Eka Putra</p>
+</div>
+</div>
+<!-- Item 5-8 logic continues with diverse but consistent high-end imagery -->
+<div class="break-inside-avoid relative group overflow-hidden">
+<img alt="fanart" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Minimalist architectural shot that reflects the band's clean design language, used as a backdrop for a fan-designed poster. The lighting is crisp, emphasizing clean lines and a high-contrast palette of red accents on a white and gray foundation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4VVXMy33SzaRPpm_XPnM_eS9132gdQpbWYyy9tpD4XU1lr0YWje7VFHh_tex7y6jQt1-k1_R39kjVcdVxQbXN3Y0fmaIR1I0d0tVmNvYoxVox5ZKfZlr2bwqicAcLn1B0UaFIAlHZo0uBYcvgdhHrtU__aUSVm4q4WGApDikblzSFvBBe6dKO4-CdIYDBmdoU7--SI4gPs1yztwx5td_FIK_2AXvBlL0IBfXFasufpe-LayYy29nswCxHkEsMAyUa83rAXzdk4Onr"/>
+<div class="bg-white p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest bg-zinc-200 px-2 py-1">Fan Art</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-weight="fill">favorite</span>
+<span class="text-xs font-bold">1.2k</span>
+</div>
+</div>
+<p class="text-xs font-bold text-zinc-900">Dewi Sartika</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="px-12 py-4 bg-transparent border-2 border-primary text-primary font-label uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Kirim Karyamu</button>
+</div>
+</div>
+</section>
+<!-- Regional Chapters -->
+<section class="py-[120px] max-w-[1200px] mx-auto px-8">
+<h2 class="font-h2 text-h2 text-center mb-8">Chapter Regional</h2>
+<div class="w-full h-[400px] bg-zinc-50 mb-16 relative flex items-center justify-center overflow-hidden">
+<img alt="Indonesia Map" class="w-full h-full object-cover opacity-20 grayscale" data-alt="A stylized, minimalist map of the Indonesian archipelago rendered in high-contrast tones of gray and white. Red glowing markers are strategically placed on major cities like Jakarta, Bandung, and Surabaya, representing regional fan chapters. The overall aesthetic is clean, professional, and authoritative." data-location="Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBubKL6QELnw7ix_oplq2JvkABO1HXjhg3Kx25YPb1ksgr3NsOoIwT49mAVwIC_Lqb47qYWBUGQBS751KeNfqQ5RauZLrC2H_WYwK2aEZA5GOhUDkDaXei9xRfsssO-7JwhQL0hCTSaRl7qRjrWASqT6s6jtvXO1OoLpYEz4enAXpg83t8BKpCfjhm4cDH6zXJEOkt0oaBupSezx6HFU7h1ZXgas5bUoKO-cBhJm9gJHiTxbQ_Xw_u38O42gXxXQwy1YBei-vblK3GV"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-display text-zinc-200 text-[120px] font-black opacity-10">INDONESIA</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Chapter Cards -->
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Jakarta</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">8,420</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Hendry Kusuma</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Bandung</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">6,150</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Asep Kurnia</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Surabaya</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">4,890</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Budi Santoso</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Yogyakarta</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">3,720</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Rarasati</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Medan</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">2,900</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Iwan Ginting</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+<div class="p-8 bg-white card-shadow border-l-4 border-primary">
+<h3 class="font-h3 text-h3 mb-4">Makassar</h3>
+<div class="space-y-2 mb-6">
+<p class="text-sm text-zinc-500">Anggota: <span class="font-bold text-zinc-900">2,140</span></p>
+<p class="text-sm text-zinc-500">Ketua: <span class="font-bold text-zinc-900">Zulkifli</span></p>
+</div>
+<a class="font-label text-primary hover:underline" href="#">Gabung Chapter</a>
+</div>
+</div>
+</section>
+<!-- Fan Events -->
+<section class="py-[120px] bg-white">
+<div class="max-w-[1200px] mx-auto px-8">
+<h2 class="font-h2 text-h2 mb-16 text-center">Event Komunitas</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row bg-zinc-50 card-shadow overflow-hidden">
+<div class="md:w-1/3 bg-primary text-white p-8 flex flex-col justify-center items-center text-center">
+<span class="text-display font-display text-[48px] leading-none mb-2">24</span>
+<span class="font-label uppercase tracking-widest text-sm">Oktober</span>
+</div>
+<div class="p-8 md:w-2/3">
+<span class="text-xs font-label text-primary uppercase mb-2 block">Gathnas 2024</span>
+<h3 class="font-h3 text-h3 mb-4">Sahabat NOAH Nasional</h3>
+<p class="text-zinc-500 mb-6">Pertemuan akbar tahunan seluruh chapter di Jakarta. Sesi jamming, diskusi, dan kejutan spesial.</p>
+<button class="px-8 py-3 bg-primary text-white font-label uppercase text-xs tracking-widest">Daftar</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row bg-zinc-50 card-shadow overflow-hidden">
+<div class="md:w-1/3 bg-zinc-900 text-white p-8 flex flex-col justify-center items-center text-center">
+<span class="text-display font-display text-[48px] leading-none mb-2">12</span>
+<span class="font-label uppercase tracking-widest text-sm">November</span>
+</div>
+<div class="p-8 md:w-2/3">
+<span class="text-xs font-label text-primary uppercase mb-2 block">Bandung</span>
+<h3 class="font-h3 text-h3 mb-4">Workshop Musik &amp; Kopi</h3>
+<p class="text-zinc-500 mb-6">Bedah instrumen lagu-lagu NOAH bersama musisi lokal dan sharing session antar Sahabat.</p>
+<button class="px-8 py-3 bg-primary text-white font-label uppercase text-xs tracking-widest">Daftar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Submission Form -->
+<section class="py-[120px] bg-zinc-100">
+<div class="max-w-[800px] mx-auto px-8 text-center">
+<h2 class="font-h2 text-h2 mb-12">Kirim Cerita atau Karyamu</h2>
+<div class="bg-white p-12 card-shadow text-left">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-zinc-500">Nama Lengkap</label>
+<input class="w-full border-zinc-200 focus:border-primary focus:ring-0 px-4 py-3 text-sm" placeholder="Masukkan nama" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-zinc-500">Alamat Email</label>
+<input class="w-full border-zinc-200 focus:border-primary focus:ring-0 px-4 py-3 text-sm" placeholder="email@domain.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-zinc-500">Kategori</label>
+<select class="w-full border-zinc-200 focus:border-primary focus:ring-0 px-4 py-3 text-sm">
+<option>Pilih Kategori</option>
+<option>Cerita Fan</option>
+<option>Fan Art</option>
+<option>Cover Song</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-zinc-500">Upload Karya</label>
+<div class="border-2 border-dashed border-zinc-200 p-8 text-center hover:border-primary transition-colors cursor-pointer bg-zinc-50">
+<span class="material-symbols-outlined text-zinc-400 mb-2 block">cloud_upload</span>
+<p class="text-xs text-zinc-500">Drag &amp; drop file di sini atau klik untuk memilih file</p>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-zinc-500">Pesan / Deskripsi</label>
+<textarea class="w-full border-zinc-200 focus:border-primary focus:ring-0 px-4 py-3 text-sm" placeholder="Ceritakan sedikit tentang karyamu..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white py-4 font-label uppercase tracking-widest hover:opacity-90 transition-all">Kirim</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-900 dark:bg-black w-full py-20 border-t border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1200px] mx-auto px-8">
+<div class="space-y-6">
+<div class="text-xl font-black text-white">NOAH</div>
+<p class="font-body-md text-sm text-zinc-400">Komunitas resmi Sahabat NOAH. Terhubung dalam satu harmoni musik Indonesia.</p>
+</div>
+<div>
+<h4 class="text-white font-label uppercase text-xs tracking-widest mb-6">Menu Utama</h4>
+<ul class="space-y-4">
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Cerita Band</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Diskografi</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Tur &amp; Event</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-label uppercase text-xs tracking-widest mb-6">Informasi</h4>
+<ul class="space-y-4">
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 hover:text-red-500 transition-colors font-body-md text-sm" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-label uppercase text-xs tracking-widest mb-6">Ikuti Kami</h4>
+<div class="flex gap-4">
+<a class="text-zinc-500 hover:text-red-500 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-zinc-500 hover:text-red-500 transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="text-zinc-500 hover:text-red-500 transition-all" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-8 mt-20 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label text-sm text-zinc-400">© 2024 NOAH. All Rights Reserved.</div>
+<div class="flex gap-8">
+<a class="text-zinc-500 hover:text-white transition-colors text-sm" href="#">Contact</a>
+<a class="text-zinc-500 hover:text-white transition-colors text-sm" href="#">English / Indonesia</a>
+</div>
+</div>
+</footer>
+</body></html>

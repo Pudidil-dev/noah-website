@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "tertiary": "#006860",
+                        "on-secondary-fixed": "#410007",
+                        "surface-container-low": "#fff0ef",
+                        "surface-container-highest": "#f9dcda",
+                        "background": "#fff8f7",
+                        "primary-fixed": "#ffdad8",
+                        "outline": "#8f6f6e",
+                        "inverse-surface": "#3e2c2b",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#271717",
+                        "error-container": "#ffdad6",
+                        "primary": "#b7102a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#5b403f",
+                        "surface-container": "#ffe9e8",
+                        "on-secondary-container": "#741d22",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-variant": "#f9dcda",
+                        "outline-variant": "#e4bebc",
+                        "surface-container-high": "#ffe1e0",
+                        "on-tertiary-fixed": "#00201d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#8cf4e8",
+                        "on-secondary-fixed-variant": "#81262a",
+                        "on-background": "#271717",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-container": "#f3fffc",
+                        "surface": "#fff8f7",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "on-primary-fixed-variant": "#92001c",
+                        "surface-tint": "#bb152c",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb3b1",
+                        "inverse-on-surface": "#ffedeb",
+                        "secondary": "#a03d40",
+                        "surface-bright": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "tertiary-container": "#008379",
+                        "primary-container": "#db313f",
+                        "secondary-fixed": "#ffdad8",
+                        "on-primary-fixed": "#410007",
+                        "secondary-container": "#fd8584",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "surface-dim": "#f1d3d2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm">
+<nav class="flex justify-between items-center h-20 px-6 lg:px-12 max-w-[1200px] mx-auto font-inter tracking-tight">
+<div class="text-2xl font-black text-zinc-900 cursor-pointer">NOAH</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="text-zinc-600 font-medium hover:text-[#E63946] transition-colors cursor-pointer" href="#">Cerita Band</a>
+<a class="text-[#E63946] font-bold border-b-2 border-[#E63946] pb-1 cursor-pointer" href="#">Diskografi</a>
+<a class="text-zinc-600 font-medium hover:text-[#E63946] transition-colors cursor-pointer" href="#">Tur &amp; Event</a>
+<a class="text-zinc-600 font-medium hover:text-[#E63946] transition-colors cursor-pointer" href="#">Berita &amp; Media</a>
+<a class="text-zinc-600 font-medium hover:text-[#E63946] transition-colors cursor-pointer" href="#">Sahabat NOAH</a>
+<a class="text-zinc-600 font-medium hover:text-[#E63946] transition-colors cursor-pointer" href="#">Toko</a>
+</div>
+<div class="flex items-center gap-6 text-zinc-900">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#E63946] transition-colors">search</span>
+<button class="text-sm font-bold hover:text-[#E63946] transition-colors">ID / EN</button>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Page Header & Filters -->
+<section class="max-w-[1200px] mx-auto px-6 pt-20 pb-12">
+<div class="mb-12">
+<h1 class="text-h1 font-h1 text-on-surface mb-2">Diskografi</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Koleksi Lengkap Musik NOAH dan Peterpan</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-8 border-y border-outline-variant">
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap gap-3 items-center">
+<span class="text-label font-label text-on-surface-variant uppercase">Era:</span>
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-label font-label transition-all">Semua</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">Peterpan 2000-2008</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">NOAH 2012-Now</button>
+</div>
+<div class="flex flex-wrap gap-3 items-center">
+<span class="text-label font-label text-on-surface-variant uppercase">Tipe:</span>
+<button class="px-5 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">Studio</button>
+<button class="px-5 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">Soundtrack</button>
+<button class="px-5 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">Kompilasi</button>
+<button class="px-5 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-label font-label hover:bg-surface-container-high transition-all">Singles</button>
+</div>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface border border-outline px-6 py-3 pr-12 rounded-lg text-label font-label focus:border-primary focus:ring-0 outline-none cursor-pointer">
+<option>Terbaru Dulu</option>
+<option>Terlama Dulu</option>
+<option>A-Z</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Album Grid -->
+<section class="max-w-[1200px] mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="Close up photography of a professional vinyl record player needle on a black spinning record, captured in a moody studio setting with high-contrast red lighting highlights against deep shadows, echoing a minimalist and premium music production aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rAUg-VvpDng5WJ6_0_OYiOCoNfOEr72evUQKSgEYxJwyunmhCRu56qJxq9xHffMl2wJ2my2WZ_pbkBOgYoD83aZodNfw5ExcXqdeGcGIhL_Yknj5kWqtR9tQEgLfJ9iKHr8_72WygL2or56S2x2d4yIRGgFU8c0Aohbl5KODL0EJn-rDw3ZhaQiQjMfH3ZU-gGw3Nk2LNIC_noUlNBJLygCpDFU2TZkIELs60tPyrdcVFJkweTUb4a99bh3r93T7PsfQTfWK0Ibw"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl" data-weight="fill">play_circle</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Keterkaitan Keterikatan</h3>
+<p class="text-label text-on-surface-variant">2019 • 8 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Studio</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Wanitaku</li>
+<li>2. Kupeluk Hatimu</li>
+<li>3. Mendekati Lugu</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="A dynamic shot of a large concert crowd with their hands up in the air, silhouetted against brilliant red stage lights and theatrical smoke. The atmosphere is energetic and professional, with a clean high-contrast visual style and minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUcvnFjbzRsKegixopyRtypu79teasgu0V92iBMRs9L4cqJfww-i6C-XdimT-803CBMoZ65shHTK3Ss86fjxgKyuPsWE6_AsdC8UoREbSp3VFSSILzwyBfjbQrdOC6FnblYjDaD8ZLzHHYR1JT-mWf7uK4WS4MjlzGfw92YtYAEubui7jGPg5-mftUS7cavQgUH68YopcxnSJhxlv0t8LyXJzVh5AflDvTtFcQwmD6MtDKikfxIor8OI6PVVG4ZCvYXvKzpb9ZJSBl"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Bintang di Surga Second Chance</h3>
+<p class="text-label text-on-surface-variant">2021 • 10 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Studio</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Bintang di Surga</li>
+<li>2. Khayalan Tingkat Tinggi</li>
+<li>3. Ku Katakan Dengan Indah</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="A minimalist overhead view of a premium microphone in a professional recording studio, illuminated with a soft red glow. The scene is crisp and clean, using a sophisticated white and dark grey palette to emphasize a modern musical artistic brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0lh5H2G_nJrJSj86v_FjEiuYX9W5CIErrA_vaBtXvhyysraFa9cKs-i2qSjPI47r7fnS74GeStnC4Z-uERICPVYjf4IGebh94jj1NuZNTNEzBjsGZuAC_RCkSuSbQA1s5xc-4PYkDf6TNz1P-df-fs68u-CwfYROCGOA1RkRRG7-B4XPDLffZjmGnbl-yJrNtj_LpcJemYXObf7wr1PAhHTzzXmtJnyff__wkIpogcfXOJ99y7Hesbz-Fd_9qNN6U1h2pKuxKYWGw"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Sings Legends</h3>
+<p class="text-label text-on-surface-variant">2016 • 9 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Kompilasi</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Andaikan Kau Datang</li>
+<li>2. Sajadah Panjang</li>
+<li>3. Biarlah Sendiri</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="Abstract musical waves represented by fluid lines in a vibrant red and deep black gradient, set against a pristine white background. The design is modern, minimalist, and energetic, conveying a sense of professional high-quality audio production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBziFpOj860LmcsxlbAx5QaEnBe14vi1ZbtWuDxbj1w1baG4HFPcO7I2VDv-FEUIJygj16zxzbKETQJDEA8rGDK3LOfEPAu1biR4HA6IzFxu2TLnzv_2VYt1ZVpr39TVG3Ny9CTrtCr0Awg8uNGPMMczhWnuMphwCeHrfBZ46_XP_VTz_akYaa6zE31b2LywSArmY3zUxDuiaJH504jVmC2sNL6BzAW0nK20LaoGARdllOOsE_z7DhxbKPTwC6GClfFW2zoH5GvJ8mm"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Second Chance</h3>
+<p class="text-label text-on-surface-variant">2014 • 12 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Studio</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Hero</li>
+<li>2. Seperti Kemarin</li>
+<li>3. Suara Pikiranku</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+<!-- Card 5 (1M+ Badge) -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="A high-end pair of studio headphones resting on a minimalist white table, with soft red ambient lighting in the background. The aesthetic is clean, professional, and authoritative, using a high-contrast palette of white, red, and charcoal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTbpOq2T6Y3dL1GI7JLhNno53ubeWu2V9nPQNNT_Mb1qlz4R8FhETUc3p3m99thitA6u7VifL5OrGY2EJbsCy4_viZZ2dTMMlhkBq6dVdFwWaEWLNEtK_zeCf51aIcPObconOa96KxgnrO4pajNyd2o5u1n3jHQQORdLnLY6o3jxEdzAREEf0aGobpTc3uhwdfFmlmsq4HuNZqZrNwuZXU7DHolm21BFLI7xrRvnTfYBey4_eelqyippwLr3tRSDPitC1kkzFmtDbN"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">1M+ TERJUAL</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Seperti Seharusnya</h3>
+<p class="text-label text-on-surface-variant">2012 • 10 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Studio</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Separuh Aku</li>
+<li>2. Hidup Untukmu, Mati Tanpamu</li>
+<li>3. Jika Engkau</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+<!-- Card 6 (3.2M Badge) -->
+<div class="group bg-white p-4 shadow-[0_4px_20px_rgba(29,29,29,0.05)] border-l-4 border-primary transition-transform hover:-translate-y-1">
+<div class="relative aspect-square mb-6 overflow-hidden bg-zinc-100">
+<img class="w-full h-full object-cover" data-alt="A minimalist close-up of an electric guitar neck and strings, illuminated by a sharp red stage light. The image is crisp and professional, emphasizing a modern rock and roll aesthetic with a stark black and red color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOOFklKw_E44Wa6j7XFuGPknGNBNuUi2MWfjRFxM5mtzcWCWUcy2cZ1xmZ-tFgRi5VFPa3SIj545xgpGkaXFLFbzdqU8tBQg7mng5BuLEyJ8HyCP3X579_FN4FdT6uz-G-zhdvU_FZa3Kt_cRx8VMrZFK4O9ZK9F_yYtI97ON8aGjCAncwU5dacyB1IiTrN0SFgCSjHXgDW7tGnAse37afESfYGNJp8q-kSqueYKeQhYmwhjRSieM-Hk2ayHOAXh2qYxxZPGHwe5Ha"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">3.2 JUTA TERJUAL</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-h3 font-h3 mb-1">Bintang di Surga</h3>
+<p class="text-label text-on-surface-variant">2004 • 10 Tracks</p>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-[10px] uppercase font-bold px-2 py-1 rounded">Studio</span>
+</div>
+<ul class="text-label text-zinc-400 mb-6 space-y-1">
+<li>1. Mungkin Nanti</li>
+<li>2. Ada Apa Denganmu</li>
+<li>3. Kukatakan Dengan Indah</li>
+</ul>
+<button class="w-full py-3 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-primary-container transition-colors">Lihat Album</button>
+</div>
+</div>
+</section>
+<!-- Singles and Video Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-20">
+<div class="flex gap-8 border-b border-outline-variant mb-12">
+<button class="pb-4 text-h3 font-h3 border-b-4 border-primary text-on-surface">Singles</button>
+<button class="pb-4 text-h3 font-h3 text-on-surface-variant hover:text-on-surface transition-colors">Video Musik</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-label font-label text-on-surface-variant border-b border-outline-variant uppercase tracking-widest">
+<th class="py-4 px-4">Judul</th>
+<th class="py-4 px-4">Tahun</th>
+<th class="py-4 px-4">Album</th>
+<th class="py-4 px-4 text-right">Streaming</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="border-b border-zinc-100 hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-4 font-bold flex items-center gap-4">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span>
+                                Separuh Aku
+                            </td>
+<td class="py-6 px-4 text-on-surface-variant">2012</td>
+<td class="py-6 px-4 text-on-surface-variant italic">Seperti Seharusnya</td>
+<td class="py-6 px-4">
+<div class="flex justify-end gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">podcasts</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">smart_display</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-zinc-100 hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-4 font-bold flex items-center gap-4">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span>
+                                Tak Bisakah
+                            </td>
+<td class="py-6 px-4 text-on-surface-variant">2005</td>
+<td class="py-6 px-4 text-on-surface-variant italic">OST Alexandria</td>
+<td class="py-6 px-4">
+<div class="flex justify-end gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">podcasts</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">smart_display</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-zinc-100 hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-4 font-bold flex items-center gap-4">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span>
+                                Menunggumu
+                            </td>
+<td class="py-6 px-4 text-on-surface-variant">2008</td>
+<td class="py-6 px-4 text-on-surface-variant italic">Sebuah Nama, Sebuah Cerita</td>
+<td class="py-6 px-4">
+<div class="flex justify-end gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">podcasts</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">smart_display</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-zinc-100 hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-4 font-bold flex items-center gap-4">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span>
+                                Khayalan Tingkat Tinggi
+                            </td>
+<td class="py-6 px-4 text-on-surface-variant">2004</td>
+<td class="py-6 px-4 text-on-surface-variant italic">Bintang di Surga</td>
+<td class="py-6 px-4">
+<div class="flex justify-end gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">podcasts</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">smart_display</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-zinc-100 hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-4 font-bold flex items-center gap-4">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span>
+                                Wanitaku
+                            </td>
+<td class="py-6 px-4 text-on-surface-variant">2019</td>
+<td class="py-6 px-4 text-on-surface-variant italic">Keterkaitan Keterikatan</td>
+<td class="py-6 px-4">
+<div class="flex justify-end gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">podcasts</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">smart_display</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Mini Player -->
+<div class="fixed bottom-0 left-0 w-full h-24 bg-[#1D1D1D] text-white flex items-center px-6 md:px-12 z-[100]">
+<div class="flex items-center gap-4 w-1/3">
+<div class="w-16 h-16 bg-zinc-800 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional close-up of a premium minimalist music player album art, featuring high-contrast photography and red accents, illuminated in a dark studio room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1naGvKVkMgtGdXqFXi2dRNLmFykP2et5dK9DblqNN8hAsEa2x0D9O8jYlLKHhQF5JykW3F2G1dDv-mN7AyPpSFKR7AS0JSbm4EBYThJPdGFfG29uW52p6TFOor3AX57WXvvRFA7j5McPEgcttu6ZHzGo7dRoQ92krwMary3_aP7554v--ycdwYfS82fZm0K-n1bJR1HMby0O4V6e8Goi8rn4eAAq1jLXLAweOWWZKX49zPoM-a2gerpH6_PfuvfS-Ckbxkq63qL5L"/>
+</div>
+<div class="hidden sm:block overflow-hidden">
+<div class="text-label font-label text-primary truncate">Now Playing</div>
+<div class="text-body-md font-bold truncate">Separuh Aku - NOAH</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/3">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">skip_previous</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:text-primary transition-colors" data-weight="fill">play_circle</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">skip_next</span>
+</div>
+<div class="w-full max-w-md bg-zinc-700 h-1 rounded-full relative group cursor-pointer">
+<div class="absolute top-0 left-0 h-full bg-primary w-2/5 rounded-full"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-2/5 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-6 w-1/3">
+<div class="hidden md:flex items-center gap-2 w-32">
+<span class="material-symbols-outlined text-zinc-400">volume_up</span>
+<div class="w-full bg-zinc-700 h-1 rounded-full overflow-hidden">
+<div class="bg-zinc-300 h-full w-3/4"></div>
+</div>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">queue_music</span>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-zinc-900 w-full py-16 border-t border-zinc-800 mt-24 pb-40">
+<div class="flex flex-col items-center gap-8 px-6 max-w-[1200px] mx-auto text-center font-inter text-sm">
+<div class="text-xl font-bold text-white uppercase tracking-tighter">NOAH</div>
+<div class="flex flex-wrap justify-center gap-8 text-zinc-400">
+<a class="hover:text-red-500 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-red-500 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-red-500 transition-colors" href="#">Press Kit</a>
+</div>
+<div class="flex gap-6 mt-4">
+<span class="material-symbols-outlined text-zinc-400 hover:text-red-500 cursor-pointer transition-all">social_leaderboard</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-red-500 cursor-pointer transition-all">camera</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-red-500 cursor-pointer transition-all">play_arrow</span>
+</div>
+<p class="text-zinc-400 mt-4">© 2024 NOAH Band. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>
