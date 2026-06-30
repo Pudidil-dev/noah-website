@@ -1139,10 +1139,10 @@ img {
 }
 
 
-/* ===== GALERI FOTO (grid 4 kolom) ===== */
+/* ===== GALERI FOTO (grid responsif) ===== */
 .galeri-foto {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 15px;
 }
 
@@ -1153,11 +1153,12 @@ img {
 }
 
 
-/* ===== PRESS KIT ===== */
+/* ===== MATERI PERS ===== */
 .presskit-baris {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  gap: 16px;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
