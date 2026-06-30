@@ -111,6 +111,115 @@ img {
   color: #5b403f;
 }
 
+.search-box {
+  position: relative;
+}
+
+.search-box summary {
+  list-style: none;
+}
+
+.search-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.search-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.search-icon:hover,
+.search-box[open] .search-icon {
+  background-color: #ffe9e8;
+  color: #b7102a;
+  transform: translateY(-1px);
+}
+
+.search-box[open] .search-icon svg {
+  transform: rotate(-12deg) scale(1.08);
+}
+
+.search-icon svg {
+  transition: transform .2s ease;
+}
+
+.search-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(360px, calc(100vw - 32px));
+  background-color: #ffffff;
+  border: 1px solid #f1d3d2;
+  border-left: 4px solid #b7102a;
+  box-shadow: 0 16px 35px rgba(29,29,29,0.16);
+  padding: 18px;
+  z-index: 150;
+  transform-origin: top right;
+  animation: search-muncul .22s ease;
+}
+
+.search-panel label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5b403f;
+  margin-bottom: 10px;
+}
+
+.search-input-baris {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.search-input-baris input {
+  min-width: 0;
+  border: 1px solid #e4bebc;
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-family: inherit;
+}
+
+.search-input-baris input:focus {
+  outline: none;
+  border-color: #b7102a;
+  box-shadow: 0 0 0 3px rgba(183,16,42,0.12);
+}
+
+.search-saran {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.search-saran a {
+  background-color: #fff0ef;
+  color: #b7102a;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.search-saran a:hover {
+  background-color: #b7102a;
+  color: #ffffff;
+}
+
+@keyframes search-muncul {
+  from { opacity: 0; transform: translateY(-8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 
 /* ===== HERO ===== */
 .hero {
@@ -609,6 +718,14 @@ img {
   .footer-bawah {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .search-panel {
+    right: -44px;
+  }
+
+  .search-input-baris {
+    grid-template-columns: 1fr;
   }
 }
 
