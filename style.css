@@ -775,10 +775,10 @@ img {
 
 /* ===== STATISTIK (penghargaan, komunitas) ===== */
 .stats {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 40px;
+  justify-items: center;
 }
 
 .stat {
@@ -1173,7 +1173,8 @@ img {
 
 /* kepala kartu cerita (avatar + nama) */
 .cerita-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
@@ -1188,7 +1189,8 @@ img {
 
 /* ===== EVENT KOMUNITAS ===== */
 .event-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px 1fr;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(29,29,29,0.08);
   overflow: hidden;
@@ -1406,7 +1408,7 @@ img {
   }
 
   .event-card {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .stats {
