@@ -1262,13 +1262,10 @@ img {
 
 /* ===== TOKO: LAYOUT (sidebar + produk) ===== */
 .toko-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 240px 1fr;
   gap: 40px;
-}
-
-.sidebar {
-  width: 240px;
-  flex-shrink: 0;
+  align-items: start;
 }
 
 .sidebar h3 {
@@ -1313,9 +1310,8 @@ img {
 
 /* grid produk */
 .produk-grid {
-  flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
 }
 
@@ -1368,8 +1364,10 @@ img {
 
 /* kartu edisi terbatas */
 .le-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -1400,11 +1398,7 @@ img {
 
   /* sidebar toko jadi menumpuk di atas produk */
   .toko-layout {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
+    grid-template-columns: 1fr;
   }
 
   .event-card {
