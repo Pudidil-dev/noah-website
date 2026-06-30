@@ -1022,10 +1022,57 @@ img {
   padding: 60px 0;
 }
 
-.embed-musik iframe {
+.musik-native {
+  display: flex;
+  justify-content: center;
+}
+
+.musik-native-card {
+  width: min(100%, 760px);
+  background-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(29,29,29,0.12);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.musik-native-cover {
+  background-color: #ffe9e8;
+  overflow: hidden;
+}
+
+.musik-native-cover img {
   width: 100%;
-  border: 0;
-  border-radius: 12px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.musik-native-info {
+  text-align: left;
+}
+
+.musik-native-list {
+  list-style-position: inside;
+  color: #5b403f;
+  margin: 22px 0;
+}
+
+.musik-native-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1d3d2;
+}
+
+.musik-native-aksi {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 /* peta rasio 16:9 responsif tanpa JS */
@@ -1428,6 +1475,24 @@ img {
   /* sidebar toko jadi menumpuk di atas produk */
   .toko-layout {
     grid-template-columns: 1fr;
+  }
+
+  .musik-native-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .musik-native-info {
+    text-align: center;
+  }
+
+  .musik-native-cover {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .musik-native-aksi {
+    justify-content: center;
   }
 
   .event-card {
