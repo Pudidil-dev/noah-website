@@ -711,15 +711,60 @@ img {
 }
 
 
-/* ===== TIMELINE (milestones) ===== */
+/* ===== TIMELINE TENGAH (alternating kiri-kanan, tanpa JS) ===== */
 .timeline {
-  border-left: 3px solid #e4bebc;
-  padding-left: 30px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* garis vertikal di tengah */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background-color: #e4bebc;
 }
 
 .timeline-item {
-  margin-bottom: 40px;
+  position: relative;
+  width: 50%;
+  padding: 0 45px 50px;
 }
+
+/* entri ganjil -> sisi KIRI, teks rata kanan */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+/* entri genap -> sisi KANAN, teks rata kiri */
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* titik di garis tengah */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #b7102a;
+  border: 4px solid #fff8f7;
+  box-shadow: 0 0 0 1px #e4bebc;
+  z-index: 2;
+  transition: transform .25s ease;   /* polish: titik membesar saat hover */
+}
+.timeline-item:nth-child(odd)::after  { right: -8px; }
+.timeline-item:nth-child(even)::after { left: -8px; }
+.timeline-item:hover::after { transform: scale(1.35); }
 
 .tahun {
   display: inline-block;
@@ -1584,5 +1629,47 @@ img {
   * {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+
+/* ============================================
+   MEGA FOOTER KONTEKSTUAL
+   Sembunyikan link halaman yang SEDANG dibuka dari
+   nav footer. "Interaktif" lewat CSS (class di <body>),
+   tanpa JavaScript. HTML footer tetap identik di semua file.
+   ============================================ */
+.page-cerita    .nav-cerita,
+.page-diskografi .nav-diskografi,
+.page-event     .nav-event,
+.page-media     .nav-media,
+.page-sahabat   .nav-sahabat,
+.page-toko      .nav-toko {
+  display: none;
+}
+
+
+/* ============================================
+   TIMELINE TENGAH - versi layar kecil (HP)
+   Semua entri menumpuk rapi di satu sisi (kiri).
+   ============================================ */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 0 0 40px 35px;
+  }
+
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 0;
+    right: auto;
   }
 }

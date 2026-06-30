@@ -18,3 +18,5 @@ spotify : https://open.spotify.com/album/4EneY8crCrt61L7siIXtkS?si=UTO1NEtATPqdL
 apple music : https://music.apple.com/id/artist/noah/766158889?l=id
 
 mega footer belum interactive yang seharusnya saat page tersebut di tampilkan, maka nama dari halaman tersebut tidak muncul di navigasi footer
+
+fitur search belum ter implementasi masih native belum ada effectenya
