@@ -77,12 +77,12 @@ Definisi "lulus" tiap task ada di step verifikasi masing-masing.
     <div>
       <h4 class="footer-judul">Navigasi</h4>
       <ul>
-        <li><a href="cerita-band.html">Cerita Band</a></li>
-        <li><a href="diskografi.html">Diskografi</a></li>
-        <li><a href="tur-event.html">Event</a></li>
-        <li><a href="berita-media.html">Media</a></li>
-        <li><a href="sahabat-noah.html">Sahabat NOAH</a></li>
-        <li><a href="toko.html">Toko</a></li>
+        <li class="nav-cerita"><a href="cerita-band.html">Cerita Band</a></li>
+        <li class="nav-diskografi"><a href="diskografi.html">Diskografi</a></li>
+        <li class="nav-event"><a href="tur-event.html">Event</a></li>
+        <li class="nav-media"><a href="berita-media.html">Media</a></li>
+        <li class="nav-sahabat"><a href="sahabat-noah.html">Sahabat NOAH</a></li>
+        <li class="nav-toko"><a href="toko.html">Toko</a></li>
       </ul>
     </div>
     <div>
@@ -114,7 +114,23 @@ Definisi "lulus" tiap task ada di step verifikasi masing-masing.
 </footer>
 ```
 
-> **Inilah perbaikan "mega footer" inti (requirement #5):** kolom Navigasi sekarang memuat **keenam** halaman dan **identik di tiap halaman**, jadi link halaman manapun (mis. Media) tidak pernah hilang saat berpindah halaman. Sebelumnya tiap footer hanya memuat 4 link berbeda-beda.
+> **Inilah perbaikan "mega footer" inti (requirement #5):** blok footer di atas **identik di tiap halaman** (DRY), tiap `<li>` Navigasi diberi class (`nav-cerita`, `nav-event`, dst). Perilaku **kontekstual** ditangani CSS, bukan JS — lihat Task 3.
+>
+> **Perilaku yang diinginkan:** saat sebuah halaman dibuka, **nama halaman itu sendiri tidak muncul** di nav footer (karena pengguna sudah ada di situ). Contoh: di halaman Media, kolom Navigasi footer menampilkan Cerita Band · Diskografi · Event · Sahabat NOAH · Toko (link **Media** disembunyikan). Ini dicapai dengan class di `<body>` per halaman + aturan CSS `display:none` — footer HTML tetap sama persis di semua file.
+
+### B2. Peta class `<body>` per halaman (untuk footer kontekstual)
+
+Tiap file diberi class di tag `<body>`:
+
+| File | `<body class="...">` |
+|---|---|
+| `index.html` | `page-index` |
+| `cerita-band.html` | `page-cerita` |
+| `diskografi.html` | `page-diskografi` |
+| `tur-event.html` | `page-event` |
+| `berita-media.html` | `page-media` |
+| `sahabat-noah.html` | `page-sahabat` |
+| `toko.html` | `page-toko` |
 
 ---
 
@@ -191,37 +207,71 @@ git commit -m "feat: ringkas label navbar jadi Event & Media di semua halaman"
 
 ---
 
-## Task 3: Seragamkan mega footer di 7 halaman (requirement #5)
+## Task 3: Mega footer kontekstual + seragam di 7 halaman (requirement #5)
+
+> **Inti requirement (klarifikasi user):** footer harus **kontekstual/"interaktif"** — saat sebuah halaman dibuka, **nama halaman itu sendiri tidak muncul** di nav footer. Mis. di halaman Media, link "Media" tidak ditampilkan di nav footer. Karena **tanpa JS**, ini dicapai dengan: footer HTML identik di semua file + class di `<body>` per halaman + 1 aturan CSS `display:none`.
 
 **Files:**
-- Modify: `index.html`, `cerita-band.html`, `diskografi.html`, `tur-event.html`, `berita-media.html`, `sahabat-noah.html`, `toko.html` (blok `<footer class="footer">...</footer>`)
+- Modify: `index.html`, `cerita-band.html`, `diskografi.html`, `tur-event.html`, `berita-media.html`, `sahabat-noah.html`, `toko.html` (tag `<body>` + blok `<footer class="footer">...</footer>`)
+- Modify: `style.css` (aturan footer kontekstual)
 
-**Step 1: Ganti seluruh blok footer dengan footer kanonik**
+**Step 1: Tambah class halaman di tag `<body>`**
 
-Di tiap file, ganti elemen `<footer class="footer"> ... </footer>` dengan **Blok Kanonik B** persis. Ini sekaligus:
-- Menyeragamkan kolom Navigasi (6 link lengkap) di semua halaman.
+Di tiap file, ubah `<body>` menjadi `<body class="page-XXX">` sesuai peta **Blok Kanonik B2**:
+- `index.html` → `<body class="page-index">`
+- `cerita-band.html` → `<body class="page-cerita">`
+- `diskografi.html` → `<body class="page-diskografi">`
+- `tur-event.html` → `<body class="page-event">`
+- `berita-media.html` → `<body class="page-media">`
+- `sahabat-noah.html` → `<body class="page-sahabat">`
+- `toko.html` → `<body class="page-toko">`
+
+**Step 2: Ganti seluruh blok footer dengan footer kanonik (identik di semua file)**
+
+Di tiap file, ganti elemen `<footer class="footer"> ... </footer>` dengan **Blok Kanonik B** persis (perhatikan tiap `<li>` Navigasi punya class `nav-cerita`/`nav-diskografi`/`nav-event`/`nav-media`/`nav-sahabat`/`nav-toko`). Ini sekaligus:
+- Footer **identik** di semua halaman (DRY) — keenam link selalu ada di sumber HTML.
 - Menerjemahkan teks footer (`Privacy Policy`→`Kebijakan Privasi`, `Terms of Service`→`Ketentuan Layanan`, `Contact`→`Kontak`, `Press Kit`→`Materi Pers`, `All Rights Reserved`→`Hak Cipta Dilindungi`).
 - Memberi link nyata ke streaming (Spotify/Apple/YouTube) + Diskografi.
 
 > Catatan: `sahabat-noah.html` & `toko.html` sebelumnya punya struktur footer berbeda (kolom "Menu Utama", "Newsletter", dll). Tetap **timpa** dengan footer kanonik B agar konsisten. (Newsletter sudah ada di body halaman lain; tidak perlu duplikat di footer.)
 
-**Step 2: Verifikasi konsistensi**
+**Step 3: Tambah aturan CSS footer kontekstual di `style.css`**
 
-Run: `rg -c "tur-event.html\">Event</a>" *.html`
-Expected: tiap file ≥ 1 (link Event ada di footer + navbar). Intinya footer tiap halaman memuat keenam link.
+Tambahkan di bagian footer `style.css`:
+
+```css
+/* ===== MEGA FOOTER KONTEKSTUAL =====
+   Sembunyikan link halaman yang SEDANG dibuka dari nav footer.
+   "Interaktif" lewat CSS (class di <body>), tanpa JS. */
+.page-cerita    .nav-cerita,
+.page-diskografi .nav-diskografi,
+.page-event     .nav-event,
+.page-media     .nav-media,
+.page-sahabat   .nav-sahabat,
+.page-toko      .nav-toko {
+  display: none;
+}
+```
+
+> `page-index` sengaja tidak punya aturan: di beranda keenam link tampil lengkap (beranda diwakili logo, bukan item nav).
+
+**Step 4: Verifikasi perilaku kontekstual**
+
+Run: `rg -c "class=\"nav-media\"" *.html`
+Expected: tiap file = 1 (link Media ada di sumber HTML semua halaman).
+
+Buka `berita-media.html` → scroll footer → kolom Navigasi menampilkan **5** link (Cerita Band, Diskografi, Event, Sahabat NOAH, Toko); **"Media" TIDAK muncul**.
+Buka `toko.html` → footer **tanpa** link "Toko".
+Buka `index.html` → footer menampilkan **6** link lengkap.
 
 Run: `rg "Privacy Policy|Terms of Service|All Rights Reserved" *.html`
 Expected: **0 hasil**.
 
-**Step 3: Verifikasi visual**
-
-Buka 3 halaman berbeda (`index.html`, `berita-media.html`, `toko.html`). Scroll ke footer. Pastikan kolom Navigasi ketiganya **identik** dan memuat 6 link, termasuk **Media** dan **Event**.
-
-**Step 4: Commit**
+**Step 5: Commit**
 
 ```bash
-git add *.html
-git commit -m "feat: seragamkan mega footer (6 link nav lengkap + teks Indonesia) di semua halaman"
+git add *.html style.css
+git commit -m "feat: mega footer kontekstual (sembunyikan link halaman aktif via CSS) + teks Indonesia"
 ```
 
 ---
@@ -800,7 +850,140 @@ git commit -m "polish: transisi & hover halus pada kartu, gambar, tombol, link"
 
 ---
 
-## Task 12: Dokumentasi terstruktur + verifikasi akhir (requirement #9)
+## Task 12: Tonggak Sejarah — timeline tengah (alternating) sesuai mockup (requirement #10)
+
+> **Target:** Section "Tonggak Sejarah" (sebelumnya "Milestones") di `cerita-band.html` diubah dari timeline rata-kiri menjadi **timeline tengah** seperti mockup `stitch_noah_band_official_website_wireframe/.../cerita_band_noah_official_website/screen.png`: satu garis vertikal di tengah, tiap entri **berselang-seling kiri↔kanan**, dengan **titik (dot)** di garis. **Murni CSS, tanpa JS** (memakai `:nth-child(odd/even)` + `::before`/`::after`).
+
+**Files:**
+- Modify: `style.css` (ganti blok `.timeline` & `.timeline-item`, tambah versi responsif)
+- Modify: `cerita-band.html` (HTML hampir tidak berubah; cukup pastikan struktur sesuai Step 2)
+
+**Step 1: Ganti CSS timeline lama dengan timeline tengah**
+
+Di `style.css`, **ganti** blok lama:
+```css
+.timeline {
+  border-left: 3px solid #e4bebc;
+  padding-left: 30px;
+}
+.timeline-item {
+  margin-bottom: 40px;
+}
+```
+menjadi:
+```css
+/* ===== TIMELINE TENGAH (alternating kiri-kanan, tanpa JS) ===== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* garis vertikal di tengah */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background-color: #e4bebc;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 45px 50px;
+}
+
+/* entri ganjil → sisi KIRI, teks rata kanan */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+/* entri genap → sisi KANAN, teks rata kiri */
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* titik di garis tengah */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #b7102a;
+  border: 4px solid #fff8f7;
+  box-shadow: 0 0 0 1px #e4bebc;
+  z-index: 2;
+  transition: transform .25s ease;   /* polish: titik membesar saat hover */
+}
+.timeline-item:nth-child(odd)::after  { right: -8px; }
+.timeline-item:nth-child(even)::after { left: -8px; }
+.timeline-item:hover::after { transform: scale(1.35); }
+```
+
+> Catatan: `.tahun`, `.berita-judul`, `.paragraf-kecil` tetap dipakai apa adanya — hanya layout-nya yang berubah.
+
+**Step 2: Pastikan HTML `cerita-band.html` sesuai**
+
+Struktur yang sudah ada **sudah cocok** (CSS bekerja via urutan `:nth-child`), cukup pastikan judul section memakai teks Indonesia & kelas tetap:
+```html
+<h2 class="section-title tengah mb">Tonggak Sejarah</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <span class="tahun">1997</span>
+    <h3 class="berita-judul">Terbentuknya Topi</h3>
+    <p class="paragraf-kecil">Cikal bakal NOAH yang dibentuk di Bandung, mengawali perjalanan dari kafe ke kafe.</p>
+  </div>
+  <!-- 2000, 2004, 2012, 2024 — urutan menentukan sisi (ganjil=kiri, genap=kanan) -->
+</div>
+```
+Urutan entri (1997, 2000, 2004, 2012, 2024) menghasilkan pola kiri-kanan-kiri-kanan-kiri, sama seperti mockup.
+
+**Step 3: Tambah aturan responsif (HP) di blok `@media (max-width: 768px)`**
+
+```css
+/* timeline tengah → menumpuk 1 sisi di layar kecil */
+.timeline::before { left: 8px; }
+.timeline-item,
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+  width: 100%;
+  left: 0;
+  text-align: left;
+  padding: 0 0 40px 35px;
+}
+.timeline-item:nth-child(odd)::after,
+.timeline-item:nth-child(even)::after {
+  left: 0;
+  right: auto;
+}
+```
+
+**Step 4: Verifikasi**
+
+Buka `cerita-band.html` di browser (lebar desktop). Pastikan:
+- Garis vertikal **di tengah**.
+- 1997 di kiri (teks rata kanan), 2000 di kanan (teks rata kiri), 2004 kiri, 2012 kanan, 2024 kiri — **zigzag** seperti mockup.
+- Tiap entri punya **titik merah** di garis tengah; titik membesar halus saat hover.
+- Perkecil window < 768px → semua entri menumpuk rapi di kiri (garis pindah ke kiri).
+
+**Step 5: Commit**
+
+```bash
+git add cerita-band.html style.css
+git commit -m "feat(cerita-band): timeline Tonggak Sejarah jadi tengah/alternating sesuai mockup"
+```
+
+---
+
+## Task 13: Dokumentasi terstruktur + verifikasi akhir (requirement #9)
 
 **Files:**
 - Create: `grid.md` (analog dengan `flex.md` yang sudah ada)
@@ -829,6 +1012,10 @@ D. Halaman Media
 
 E. Embed
   .map-wrap → teknik padding-top 56.25% (rasio 16:9 tanpa JS)
+
+F. Halaman Cerita Band
+  .timeline / .timeline-item → timeline tengah alternating via :nth-child(odd/even)
+    + ::before (garis tengah) + ::after (titik) — tanpa JS
 ```
 
 Sertakan catatan singkat perbedaan Flexbox vs Grid (1 paragraf) untuk presentasi.
@@ -837,7 +1024,7 @@ Sertakan catatan singkat perbedaan Flexbox vs Grid (1 paragraf) untuk presentasi
 
 Checklist final (buka tiap halaman & cek):
 - [ ] Navbar di 7 halaman: label **Event** & **Media**, link aktif benar.
-- [ ] Footer di 7 halaman **identik**, 6 link nav lengkap (termasuk Media & Event).
+- [ ] Footer **kontekstual**: di tiap halaman, link halaman itu sendiri tidak muncul (mis. di Media tak ada link "Media"); di beranda 6 link lengkap. Sumber HTML footer identik di semua file.
 - [ ] Tidak ada `<button>` navigasi yang mati (semua CTA = `<a>` atau submit form).
 - [ ] Tidak ada teks Inggris tersisa: `rg -ni "read more|download|active members|all rights|privacy policy|terms of service" *.html` → 0 hasil.
 - [ ] Setlist Event: dropdown `<details>` berfungsi + animasi + chevron berputar.
@@ -845,6 +1032,7 @@ Checklist final (buka tiap halaman & cek):
 - [ ] Hover kartu/gambar/tombol halus.
 - [ ] Tanpa JS: `rg -n "<script|onclick=|javascript:" *.html` → 0 hasil.
 - [ ] Grid: 4 halaman target memakai `display:grid` untuk layout utama (cek `rg -n "display: ?flex" style.css` — pastikan sisa flex hanya navbar/kontrol kecil yang memang wajar).
+- [ ] Tonggak Sejarah (`cerita-band.html`): timeline **tengah/alternating** dengan titik, zigzag seperti mockup; menumpuk rapi di layar HP.
 
 **Step 3: Commit**
 
@@ -863,8 +1051,9 @@ git commit -m "docs: tambah grid.md (dokumentasi terstruktur) + checklist verifi
 | 2 | Linkkan semua CTA | Task 4 |
 | 3 | Page event/media/sahabat/toko full GRID | Task 6, 7, 8, 9 |
 | 4 | Embed musik & maps | Task 10 |
-| 5 | Perbaikan mega footer (nav tiap halaman tidak hilang) | Task 3 |
+| 5 | Mega footer kontekstual: nama halaman aktif tidak muncul di nav footer (CSS, tanpa JS) | Task 3 |
 | 6 | Efek di dropdown arsip setlist | Task 6 |
 | 7 | Inggris → full Indonesia | Task 3 (footer) + Task 5 (body) |
 | 8 | Poles efek yang masih native | Task 11 |
-| 9 | Tetap HTML/CSS native tanpa JS + dokumentasi terstruktur + simpel | Task 12 + dijaga di semua task |
+| 9 | Tetap HTML/CSS native tanpa JS + dokumentasi terstruktur + simpel | Task 13 + dijaga di semua task |
+| 10 | Tonggak Sejarah timeline tengah (alternating) sesuai mockup | Task 12 |
