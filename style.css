@@ -1017,6 +1017,35 @@ img {
 }
 
 
+/* ===== EMBED (musik & maps) ===== */
+.embed-section {
+  padding: 60px 0;
+}
+
+.embed-musik iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* peta rasio 16:9 responsif tanpa JS */
+.map-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
 /* ===== FORM (booking, kirim cerita) ===== */
 .form input,
 .form select,
