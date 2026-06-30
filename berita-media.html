@@ -20,6 +20,17 @@
         <a href="sahabat-noah.html">Sahabat NOAH</a>
         <a href="toko.html">Toko</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <div class="mobile-menu-panel">
+          <a href="cerita-band.html">Cerita Band</a>
+          <a href="diskografi.html">Diskografi</a>
+          <a href="tur-event.html">Event</a>
+          <a href="berita-media.html">Media</a>
+          <a href="sahabat-noah.html">Sahabat NOAH</a>
+          <a href="toko.html">Toko</a>
+        </div>
+      </details>
       <div class="navbar-kanan">
         <details class="search-box">
           <summary class="search-icon" aria-label="Buka pencarian"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
@@ -42,48 +53,48 @@
   </header>
 
   <!-- ===== ARTIKEL UTAMA (HERO) ===== -->
-  <section class="berita-hero">
+  <section id="artikel-hiatus" class="berita-hero">
     <div class="container">
       <span class="pill-merah">Pengumuman</span>
       <h1 class="hero-judul">NOAH Umumkan Hiatus: Apa yang Terjadi Selanjutnya?</h1>
       <p class="hero-subjudul-kiri">Setelah dekade penuh kesuksesan, Ariel dan kawan-kawan memutuskan untuk mengambil jeda panjang untuk eksplorasi kreatif baru.</p>
       <div class="hero-meta">
         <span class="teks-abu">15 Januari 2024</span>
-        <a class="btn btn-merah" href="#">Baca Selengkapnya</a>
+        <a class="btn btn-merah" href="#berita-terbaru">Baca Selengkapnya</a>
       </div>
     </div>
   </section>
 
   <!-- ===== BERITA TERBARU ===== -->
-  <section class="container section">
+  <section id="berita-terbaru" class="container section">
     <h2 class="section-title judul-garis mb">Berita Terbaru</h2>
     <div class="grid-auto">
       <!-- Berita 1 -->
-      <article class="card card-border-merah">
+      <article id="berita-orkestra" class="card card-border-merah">
         <div class="berita-gambar"><img src="images/news-1.jpg" alt="Berita Musik"></div>
         <span class="pill">Musik</span>
         <h3 class="berita-judul">Kolaborasi Spesial NOAH dengan Orkestra Nasional</h3>
         <p class="berita-tanggal">12 Januari 2024</p>
         <p class="paragraf-kecil mb">Sebuah mahakarya baru yang menggabungkan elemen rock alternatif dengan kemegahan simfoni klasik.</p>
-        <a href="#" class="link-merah">Baca Selengkapnya</a>
+        <a href="#berita-orkestra" class="link-merah">Baca Selengkapnya</a>
       </article>
       <!-- Berita 2 -->
-      <article class="card card-border-merah">
+      <article id="berita-final-show" class="card card-border-merah">
         <div class="berita-gambar"><img src="images/news-2.jpg" alt="Berita Konser"></div>
         <span class="pill">Konser</span>
         <h3 class="berita-judul">Tiket Konser 'The Final Show' Terjual Habis dalam 5 Menit</h3>
         <p class="berita-tanggal">08 Januari 2024</p>
         <p class="paragraf-kecil mb">Antusiasme penggemar memuncak menyambut pertunjukan terakhir sebelum masa hiatus resmi dimulai.</p>
-        <a href="#" class="link-merah">Baca Selengkapnya</a>
+        <a href="#berita-final-show" class="link-merah">Baca Selengkapnya</a>
       </article>
       <!-- Berita 3 -->
-      <article class="card card-border-merah">
+      <article id="berita-lirik" class="card card-border-merah">
         <div class="berita-gambar"><img src="images/news-3.jpg" alt="Berita Pribadi"></div>
         <span class="pill">Pribadi</span>
         <h3 class="berita-judul">Ariel Berbagi Cerita Dibalik Lirik Lagu Teranyar</h3>
         <p class="berita-tanggal">05 Januari 2024</p>
         <p class="paragraf-kecil mb">Wawancara eksklusif mengenai proses kreatif dan refleksi perjalanan karir musiknya.</p>
-        <a href="#" class="link-merah">Baca Selengkapnya</a>
+        <a href="#berita-lirik" class="link-merah">Baca Selengkapnya</a>
       </article>
     </div>
 
@@ -124,7 +135,7 @@
   </section>
 
   <!-- ===== GALERI FOTO ===== -->
-  <section class="container section">
+  <section id="galeri-foto" class="container section">
     <h2 class="section-title judul-garis mb">Galeri Foto</h2>
     <div class="filter-grup mb">
       <button class="filter-btn aktif">Semua</button>
@@ -146,7 +157,7 @@
   </section>
 
   <!-- ===== MATERI PERS ===== -->
-  <section class="container section">
+  <section id="materi-pers" class="container section">
     <h2 class="section-title judul-garis mb">Materi Pers &amp; Sumber Media</h2>
     <div class="card">
       <div class="presskit-baris">
@@ -154,21 +165,21 @@
           <h4 class="berita-judul">Biografi Resmi</h4>
           <p class="lagu-artis">PDF &bull; 2.4 MB</p>
         </div>
-        <a class="btn btn-merah" href="#" download>Unduh</a>
+        <a class="btn btn-merah" href="#materi-pers">Lihat Info</a>
       </div>
       <div class="presskit-baris">
         <div>
           <h4 class="berita-judul">Paket Foto Resolusi Tinggi</h4>
           <p class="lagu-artis">ZIP &bull; 145.0 MB</p>
         </div>
-        <a class="btn btn-merah" href="#" download>Unduh</a>
+        <a class="btn btn-merah" href="#materi-pers">Lihat Info</a>
       </div>
       <div class="presskit-baris">
         <div>
           <h4 class="berita-judul">Paket Logo</h4>
           <p class="lagu-artis">SVG/PNG &bull; 12.0 MB</p>
         </div>
-        <a class="btn btn-merah" href="#" download>Unduh</a>
+        <a class="btn btn-merah" href="#materi-pers">Lihat Info</a>
       </div>
     </div>
   </section>
@@ -203,18 +214,18 @@
     <div>
       <h4 class="footer-judul">Legal</h4>
       <ul>
-        <li><a href="#">Kebijakan Privasi</a></li>
-        <li><a href="#">Ketentuan Layanan</a></li>
-        <li><a href="#">Kontak</a></li>
-        <li><a href="#">Materi Pers</a></li>
+        <li><a href="index.html#kebijakan-privasi">Kebijakan Privasi</a></li>
+        <li><a href="index.html#ketentuan-layanan">Ketentuan Layanan</a></li>
+        <li><a href="tur-event.html#pemesanan-event">Kontak</a></li>
+        <li><a href="berita-media.html#materi-pers">Materi Pers</a></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bawah">
     <p>&copy; 2024 NOAH. Hak Cipta Dilindungi.</p>
     <div class="footer-ikon">
-      <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-      <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
     </div>
   </div>
 </footer>

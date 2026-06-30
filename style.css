@@ -29,6 +29,16 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(183,16,42,0.35);
+  outline-offset: 3px;
+}
+
 img {
   max-width: 100%;
 }
@@ -101,6 +111,52 @@ img {
 
 .menu a:hover {
   color: #b7102a;          /* berubah merah saat disentuh kursor */
+}
+
+.mobile-menu {
+  display: none;
+  position: relative;
+}
+
+.mobile-menu summary {
+  list-style: none;
+  cursor: pointer;
+  color: #5b403f;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 0;
+  width: min(260px, calc(100vw - 40px));
+  background-color: #ffffff;
+  border: 1px solid #f1d3d2;
+  border-left: 4px solid #b7102a;
+  box-shadow: 0 16px 35px rgba(29,29,29,0.16);
+  padding: 14px;
+  z-index: 150;
+  animation: search-muncul .22s ease;
+}
+
+.mobile-menu-panel a {
+  display: block;
+  color: #5b403f;
+  padding: 10px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mobile-menu-panel a:hover {
+  color: #b7102a;
+  background-color: #fff0ef;
 }
 
 .navbar-kanan {
@@ -597,6 +653,10 @@ img {
 
 .sosial-box {
   background-color: #2a2a2e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   font-size: 18px;
   cursor: pointer;
@@ -698,6 +758,10 @@ img {
 @media (max-width: 768px) {
   .menu {
     display: none;          /* sembunyikan menu panjang di HP */
+  }
+
+  .mobile-menu {
+    display: block;
   }
 
   .hero-judul {
