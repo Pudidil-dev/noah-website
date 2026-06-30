@@ -1438,3 +1438,86 @@ img {
     gap: 25px;
   }
 }
+
+
+/* ===== POLISH: transisi & hover halus ===== */
+.card,
+.event-card,
+.produk,
+.berita {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover,
+.event-card:hover,
+.produk:hover,
+.berita:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(29,29,29,0.15);
+}
+
+.berita-gambar,
+.album-cover,
+.produk-gambar,
+.galeri-item,
+.banner-gambar {
+  overflow: hidden;
+}
+
+.berita-gambar img,
+.album-cover img,
+.produk-gambar img,
+.galeri-item img,
+.banner-gambar img {
+  transition: transform .4s ease;
+}
+
+.berita-gambar:hover img,
+.album-cover:hover img,
+.produk-gambar:hover img,
+.galeri-item:hover img,
+.banner-gambar:hover img {
+  transform: scale(1.06);
+}
+
+.btn {
+  transition: background-color .2s ease, color .2s ease, transform .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.menu a {
+  transition: color .2s ease;
+}
+
+.link-merah {
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.footer ul li a {
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.footer ul li a:hover {
+  padding-left: 4px;
+}
+
+.sosial-box,
+.filter-btn,
+.page-btn,
+.kategori-list li {
+  transition: background-color .2s ease, color .2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
