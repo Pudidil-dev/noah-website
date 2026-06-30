@@ -319,6 +319,13 @@ img {
   align-items: center;
 }
 
+/* Grid kartu responsif - dipakai halaman Event/Media/Sahabat/Toko */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -422,6 +429,7 @@ img {
   display: inline-block;
   background-color: #ffe9e8;
   color: #b7102a;
+  text-decoration: none;
   font-size: 10px;
   font-weight: bold;
   text-transform: uppercase;
@@ -949,12 +957,21 @@ img {
 }
 
 
-/* ===== SETLIST (accordion sederhana) ===== */
+/* ===== SETLIST sebagai <details> (dropdown native + efek) ===== */
 .setlist {
   border: 1px solid #e4bebc;
   border-radius: 6px;
   margin-bottom: 15px;
   overflow: hidden;
+}
+
+.setlist summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.setlist summary::-webkit-details-marker {
+  display: none;
 }
 
 .setlist-head {
@@ -963,16 +980,33 @@ img {
   padding: 18px 24px;
   font-weight: bold;
   background-color: #ffe9e8;
+  transition: background-color .25s ease, padding-left .25s ease;
 }
 
-/* item yang tertutup tampil polos */
-.setlist-head.tertutup {
-  background-color: #ffffff;
-  color: #5b403f;
+.setlist-head:hover {
+  background-color: #ffd9d6;
+  padding-left: 28px;
+}
+
+.setlist-chevron {
+  transition: transform .3s ease;
+}
+
+.setlist[open] .setlist-chevron {
+  transform: rotate(180deg);
 }
 
 .setlist-body {
   padding: 30px 24px;
+}
+
+.setlist[open] .setlist-body {
+  animation: setlist-turun .3s ease;
+}
+
+@keyframes setlist-turun {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .detail-show {
