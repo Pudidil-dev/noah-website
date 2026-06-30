@@ -146,6 +146,7 @@ img {
 
 /* ===== TOMBOL ===== */
 .btn {
+  display: inline-block;
   padding: 14px 30px;
   border: none;
   font-size: 13px;
@@ -153,6 +154,8 @@ img {
   letter-spacing: 1px;
   cursor: pointer;
   border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .btn-merah {
