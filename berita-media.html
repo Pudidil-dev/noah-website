@@ -33,7 +33,7 @@
       </details>
       <div class="navbar-kanan">
         <details class="search-box">
-          <summary class="search-icon" aria-label="Buka pencarian"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
+          <summary class="search-icon" aria-label="Buka pencarian"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon pencarian</title><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
           <form class="search-panel" action="berita-media.html" method="get">
             <label for="search-media">Cari konten NOAH</label>
             <div class="search-input-baris">
@@ -100,10 +100,10 @@
 
     <!-- Pagination sederhana -->
     <div class="pagination">
-      <button class="page-btn aktif">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <button class="page-btn">Berikutnya</button>
+      <button type="button" class="page-btn aktif">1</button>
+      <button type="button" class="page-btn">2</button>
+      <button type="button" class="page-btn">3</button>
+      <button type="button" class="page-btn">Berikutnya</button>
     </div>
   </section>
 
@@ -137,22 +137,22 @@
   <!-- ===== GALERI FOTO ===== -->
   <section id="galeri-foto" class="container section">
     <h2 class="section-title judul-garis mb">Galeri Foto</h2>
-    <div class="filter-grup mb">
-      <button class="filter-btn aktif">Semua</button>
-      <button class="filter-btn">Peterpan Era</button>
-      <button class="filter-btn">NOAH Era</button>
-      <button class="filter-btn">Konser</button>
-      <button class="filter-btn">Studio</button>
+    <div id="filter-galeri" class="filter-grup mb">
+      <button type="button" class="filter-btn aktif" data-nilai="semua" aria-pressed="true">Semua</button>
+      <button type="button" class="filter-btn" data-nilai="peterpan" aria-pressed="false">Peterpan Era</button>
+      <button type="button" class="filter-btn" data-nilai="noah" aria-pressed="false">NOAH Era</button>
+      <button type="button" class="filter-btn" data-nilai="konser" aria-pressed="false">Konser</button>
+      <button type="button" class="filter-btn" data-nilai="studio" aria-pressed="false">Studio</button>
     </div>
     <div class="galeri-foto">
-      <div class="galeri-item"><img src="images/gallery-1.jpg" alt="Foto 1"></div>
-      <div class="galeri-item"><img src="images/gallery-2.jpg" alt="Foto 2"></div>
-      <div class="galeri-item"><img src="images/gallery-3.jpg" alt="Foto 3"></div>
-      <div class="galeri-item"><img src="images/gallery-4.jpg" alt="Foto 4"></div>
-      <div class="galeri-item"><img src="images/feed-1.jpg" alt="Foto 5"></div>
-      <div class="galeri-item"><img src="images/feed-2.jpg" alt="Foto 6"></div>
-      <div class="galeri-item"><img src="images/feed-3.jpg" alt="Foto 7"></div>
-      <div class="galeri-item"><img src="images/feed-4.jpg" alt="Foto 8"></div>
+      <div class="galeri-item" data-foto data-kategori="studio"><img src="images/gallery-1.jpg" alt="NOAH saat rekaman di studio"></div>
+      <div class="galeri-item" data-foto data-kategori="peterpan"><img src="images/gallery-2.jpg" alt="Penampilan pada era Peterpan"></div>
+      <div class="galeri-item" data-foto data-kategori="konser"><img src="images/gallery-3.jpg" alt="NOAH tampil di panggung konser"></div>
+      <div class="galeri-item" data-foto data-kategori="peterpan"><img src="images/gallery-4.jpg" alt="Dokumentasi perjalanan Peterpan"></div>
+      <div class="galeri-item" data-foto data-kategori="noah"><img src="images/feed-1.jpg" alt="Dokumentasi NOAH terbaru"></div>
+      <div class="galeri-item" data-foto data-kategori="konser"><img src="images/feed-2.jpg" alt="Suasana konser NOAH"></div>
+      <div class="galeri-item" data-foto data-kategori="studio"><img src="images/feed-3.jpg" alt="Kegiatan NOAH di studio"></div>
+      <div class="galeri-item" data-foto data-kategori="noah"><img src="images/feed-4.jpg" alt="Kegiatan para anggota NOAH"></div>
     </div>
   </section>
 
@@ -224,11 +224,12 @@
   <div class="container footer-bawah">
     <p>&copy; 2024 NOAH. Hak Cipta Dilindungi.</p>
     <div class="footer-ikon">
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon situs web</title><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon bagikan</title><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
     </div>
   </div>
 </footer>
 
+  <script src="app.js" defer></script>
 </body>
 </html>

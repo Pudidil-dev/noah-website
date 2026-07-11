@@ -33,7 +33,7 @@
       </details>
       <div class="navbar-kanan">
         <details class="search-box">
-          <summary class="search-icon" aria-label="Buka pencarian"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
+          <summary class="search-icon" aria-label="Buka pencarian"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
           <form class="search-panel" action="berita-media.html" method="get">
             <label for="search-toko">Cari konten NOAH</label>
             <div class="search-input-baris">
@@ -67,9 +67,9 @@
   <!-- ===== INFO PENGIRIMAN ===== -->
   <section class="info-bar">
     <div class="container info-isi">
-      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Gratis Ongkir di atas Rp 500.000</div>
-      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garansi Produk Resmi</div>
-      <div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 30 Hari Pengembalian</div>
+      <div><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Gratis Ongkir di atas Rp 500.000</div>
+      <div><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><polyline points="20 6 9 17 4 12"/></svg> Garansi Produk Resmi</div>
+      <div><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 30 Hari Pengembalian</div>
     </div>
   </section>
 
@@ -80,35 +80,32 @@
       <aside class="sidebar">
         <h3 class="berita-judul">Kategori</h3>
         <ul class="kategori-list">
-          <li class="aktif">Semua <span>42</span></li>
-          <li>Kaos <span>12</span></li>
-          <li>Hoodie <span>8</span></li>
-          <li>Jaket <span>5</span></li>
-          <li>Aksesoris <span>10</span></li>
-          <li>CD &amp; Vinyl <span>4</span></li>
-          <li>Edisi Terbatas <span>3</span></li>
+          <li><button type="button" class="aktif" data-kategori="semua" aria-pressed="true">Semua <span>6</span></button></li>
+          <li><button type="button" data-kategori="kaos" aria-pressed="false">Kaos <span>2</span></button></li>
+          <li><button type="button" data-kategori="hoodie" aria-pressed="false">Hoodie <span>1</span></button></li>
+          <li><button type="button" data-kategori="aksesoris" aria-pressed="false">Aksesoris <span>2</span></button></li>
+          <li><button type="button" data-kategori="musik" aria-pressed="false">CD &amp; Vinyl <span>1</span></button></li>
         </ul>
 
         <h3 class="berita-judul">Rentang Harga</h3>
-        <input type="range" min="0" max="2000000" class="range">
+        <input id="filter-harga" type="range" min="0" max="1500000" step="50000" value="1500000" class="range" aria-label="Harga maksimal">
         <div class="range-label">
           <span>Rp 0</span>
-          <span>Rp 2.000.000+</span>
+          <span id="harga-maksimal">Rp 1.500.000</span>
         </div>
 
         <h3 class="berita-judul">Urutkan</h3>
-        <select>
-          <option>Terbaru</option>
-          <option>Harga Terendah</option>
-          <option>Harga Tertinggi</option>
-          <option>Populer</option>
+        <select id="urut-produk" aria-label="Urutkan produk">
+          <option value="terbaru">Terbaru</option>
+          <option value="termurah">Harga Terendah</option>
+          <option value="termahal">Harga Tertinggi</option>
         </select>
       </aside>
 
       <!-- Grid produk -->
       <div id="produk" class="produk-grid">
         <!-- Produk 1 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="kaos" data-harga="250000" data-urutan="1">
           <div class="produk-gambar">
             <span class="badge-baru">Baru</span>
             <img src="images/product-1.jpg" alt="NOAH Logo Tee Black">
@@ -119,7 +116,7 @@
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
         <!-- Produk 2 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="kaos" data-harga="250000" data-urutan="2">
           <div class="produk-gambar"><img src="images/product-2.jpg" alt="NOAH Logo Tee White"></div>
           <h4 class="berita-judul">NOAH Logo Tee White</h4>
           <p class="paragraf-kecil">Varian warna putih ikonik untuk tampilan bersih.</p>
@@ -127,7 +124,7 @@
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
         <!-- Produk 3 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="hoodie" data-harga="550000" data-urutan="3">
           <div class="produk-gambar">
             <span class="badge-limited">Terbatas</span>
             <img src="images/product-3.jpg" alt="Anniversary Hoodie">
@@ -138,7 +135,7 @@
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
         <!-- Produk 4 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="aksesoris" data-harga="185000" data-urutan="4">
           <div class="produk-gambar"><img src="images/product-4.jpg" alt="NOAH Snapback Cap"></div>
           <h4 class="berita-judul">NOAH Snapback Cap</h4>
           <p class="paragraf-kecil">Topi snapback kualitas premium dengan bordir 3D.</p>
@@ -146,7 +143,7 @@
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
         <!-- Produk 5 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="musik" data-harga="450000" data-urutan="5">
           <div class="produk-gambar"><img src="images/product-5.jpg" alt="Keterkaitan Keterikatan Vinyl"></div>
           <h4 class="berita-judul">Keterkaitan Keterikatan Vinyl</h4>
           <p class="paragraf-kecil">Piringan hitam kualitas audiophile untuk kolektor.</p>
@@ -154,13 +151,14 @@
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
         <!-- Produk 6 -->
-        <div class="card card-border-merah produk">
+        <div class="card card-border-merah produk" data-produk data-kategori="aksesoris" data-harga="120000" data-urutan="6">
           <div class="produk-gambar"><img src="images/product-6.jpg" alt="NOAH Tote Bag"></div>
           <h4 class="berita-judul">NOAH Tote Bag</h4>
           <p class="paragraf-kecil">Tas kanvas tebal tahan lama untuk kegiatan sehari-hari.</p>
           <p class="harga">Rp 120.000</p>
           <a class="btn btn-merah lebar" href="#produk">Tambah ke Keranjang</a>
         </div>
+        <p id="produk-kosong" class="pesan-kosong" hidden>Tidak ada produk yang sesuai dengan filter.</p>
       </div>
     </div>
   </section>
@@ -241,11 +239,12 @@
   <div class="container footer-bawah">
     <p>&copy; 2024 NOAH. Hak Cipta Dilindungi.</p>
     <div class="footer-ikon">
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
     </div>
   </div>
 </footer>
 
+  <script src="app.js" defer></script>
 </body>
 </html>

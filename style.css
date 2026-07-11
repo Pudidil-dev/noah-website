@@ -906,9 +906,59 @@ img {
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 2px;
   transform: translateX(-50%);
   background-color: #e4bebc;
+}
+
+.timeline.timeline-mewah::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: var(--progres-timeline, 0%);
+  transform: translateX(-50%);
+  background: linear-gradient(#f0ba62, #b7102a);
+  box-shadow: 0 0 16px rgba(183, 16, 42, 0.45);
+  transition: height .2s linear;
+  z-index: 0;
+}
+
+.timeline-mewah .timeline-item {
+  z-index: 1;
+  opacity: 0;
+  filter: blur(5px);
+  transition: opacity .7s ease, transform .7s ease, filter .7s ease;
+}
+
+.timeline-mewah .timeline-item:nth-child(odd) {
+  transform: translateX(-50px);
+}
+
+.timeline-mewah .timeline-item:nth-child(even) {
+  transform: translateX(50px);
+}
+
+.timeline-mewah .timeline-item.timeline-terlihat {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.timeline-mewah .timeline-item.timeline-terlihat::after {
+  animation: titik-timeline 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 5px rgba(183, 16, 42, 0.12), 0 0 18px rgba(183, 16, 42, 0.45);
+}
+
+.timeline-mewah .timeline-terlihat .tahun {
+  text-shadow: 0 4px 18px rgba(183, 16, 42, 0.2);
+}
+
+@keyframes titik-timeline {
+  50% {
+    transform: scale(1.25);
+  }
 }
 
 .timeline-item {
@@ -1578,15 +1628,19 @@ img {
   list-style: none;
 }
 
-.kategori-list li {
+.kategori-list button {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
   color: #5b403f;
+  background: none;
+  border: 0;
+  font: inherit;
   cursor: pointer;
 }
 
-.kategori-list li.aktif {
+.kategori-list button.aktif {
   color: #b7102a;
   font-weight: bold;
 }
@@ -1802,8 +1856,56 @@ img {
 .sosial-box,
 .filter-btn,
 .page-btn,
-.kategori-list li {
+.kategori-list button {
   transition: background-color .2s ease, color .2s ease;
+}
+
+/* Animasi ini ditambahkan JavaScript saat elemen masuk ke layar. */
+.animasi-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.animasi-scroll.sudah-terlihat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.judul-animasi {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.judul-animasi.judul-muncul {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar {
+  transition: box-shadow .25s ease;
+}
+
+.navbar.navbar-scroll {
+  box-shadow: 0 5px 16px rgba(39, 23, 23, 0.14);
+}
+
+.tombol-diklik {
+  animation: tombol-pop .25s ease;
+}
+
+@keyframes tombol-pop {
+  50% {
+    transform: scale(0.94);
+  }
+}
+
+.pesan-kosong {
+  grid-column: 1 / -1;
+  padding: 30px;
+  text-align: center;
+  color: #5b403f;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1836,6 +1938,10 @@ img {
    ============================================ */
 @media (max-width: 768px) {
   .timeline::before {
+    left: 8px;
+  }
+
+  .timeline.timeline-mewah::after {
     left: 8px;
   }
 

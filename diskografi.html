@@ -33,7 +33,7 @@
       </details>
       <div class="navbar-kanan">
         <details class="search-box">
-          <summary class="search-icon" aria-label="Buka pencarian"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
+          <summary class="search-icon" aria-label="Buka pencarian"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></summary>
           <form class="search-panel" action="berita-media.html" method="get">
             <label for="search-diskografi">Cari konten NOAH</label>
             <div class="search-input-baris">
@@ -58,19 +58,18 @@
     <p class="page-sub mb">Koleksi Lengkap Musik NOAH dan Peterpan</p>
 
     <!-- Tombol filter sederhana -->
-    <div class="filter-bar">
-      <div class="filter-grup">
+    <div id="filter-diskografi" class="filter-bar">
+      <div class="filter-grup" data-filter-grup="era">
         <span class="filter-label">Era:</span>
-        <button class="filter-btn aktif">Semua</button>
-        <button class="filter-btn">Peterpan 2000-2008</button>
-        <button class="filter-btn">NOAH 2012-Kini</button>
+        <button type="button" class="filter-btn aktif" data-nilai="semua" aria-pressed="true">Semua</button>
+        <button type="button" class="filter-btn" data-nilai="peterpan" aria-pressed="false">Peterpan 2000-2008</button>
+        <button type="button" class="filter-btn" data-nilai="noah" aria-pressed="false">NOAH 2012-Kini</button>
       </div>
-      <div class="filter-grup">
+      <div class="filter-grup" data-filter-grup="tipe">
         <span class="filter-label">Tipe:</span>
-        <button class="filter-btn">Studio</button>
-        <button class="filter-btn">Lagu Tema</button>
-        <button class="filter-btn">Kompilasi</button>
-        <button class="filter-btn">Single</button>
+        <button type="button" class="filter-btn aktif" data-nilai="semua" aria-pressed="true">Semua Tipe</button>
+        <button type="button" class="filter-btn" data-nilai="studio" aria-pressed="false">Studio</button>
+        <button type="button" class="filter-btn" data-nilai="kompilasi" aria-pressed="false">Kompilasi</button>
       </div>
     </div>
   </section>
@@ -79,7 +78,7 @@
   <section class="container section-kecil">
     <div class="grid-3">
       <!-- Album 1 -->
-      <div id="album-keterkaitan-keterikatan" class="card card-border-merah">
+      <div id="album-keterkaitan-keterikatan" class="card card-border-merah" data-album data-era="noah" data-tipe="studio">
         <div class="album-cover"><img src="images/album-1.jpg" alt="Keterkaitan Keterikatan"></div>
         <div class="album-head">
           <div>
@@ -97,7 +96,7 @@
       </div>
 
       <!-- Album 2 -->
-      <div id="album-second-chance" class="card card-border-merah">
+      <div id="album-second-chance" class="card card-border-merah" data-album data-era="noah" data-tipe="studio">
         <div class="album-cover"><img src="images/album-2.jpg" alt="Second Chance"></div>
         <div class="album-head">
           <div>
@@ -115,7 +114,7 @@
       </div>
 
       <!-- Album 3 -->
-      <div id="album-sings-legends" class="card card-border-merah">
+      <div id="album-sings-legends" class="card card-border-merah" data-album data-era="noah" data-tipe="kompilasi">
         <div class="album-cover"><img src="images/album-3.jpg" alt="Sings Legends"></div>
         <div class="album-head">
           <div>
@@ -133,7 +132,7 @@
       </div>
 
       <!-- Album 4 -->
-      <div id="album-seperti-seharusnya" class="card card-border-merah">
+      <div id="album-seperti-seharusnya" class="card card-border-merah" data-album data-era="noah" data-tipe="studio">
         <div class="album-cover"><img src="images/album-cover.jpg" alt="Seperti Seharusnya"></div>
         <div class="album-head">
           <div>
@@ -151,7 +150,7 @@
       </div>
 
       <!-- Album 5 -->
-      <div id="album-bintang-di-surga" class="card card-border-merah">
+      <div id="album-bintang-di-surga" class="card card-border-merah" data-album data-era="peterpan" data-tipe="studio">
         <div class="album-cover"><img src="images/gallery-2.jpg" alt="Bintang di Surga"></div>
         <div class="album-head">
           <div>
@@ -169,7 +168,7 @@
       </div>
 
       <!-- Album 6 -->
-      <div id="album-sebuah-nama-sebuah-cerita" class="card card-border-merah">
+      <div id="album-sebuah-nama-sebuah-cerita" class="card card-border-merah" data-album data-era="peterpan" data-tipe="kompilasi">
         <div class="album-cover"><img src="images/gallery-4.jpg" alt="Sebuah Nama, Sebuah Cerita"></div>
         <div class="album-head">
           <div>
@@ -185,8 +184,9 @@
         </ul>
         <a class="btn btn-merah lebar" href="#album-sebuah-nama-sebuah-cerita">Lihat Album</a>
       </div>
-    </div>
-  </section>
+      </div>
+      <p id="album-kosong" class="pesan-kosong" hidden>Tidak ada album yang sesuai dengan filter.</p>
+    </section>
 
   <!-- ===== TABEL SINGLE ===== -->
   <section class="container section">
@@ -249,11 +249,12 @@
   <div class="container footer-bawah">
     <p>&copy; 2024 NOAH. Hak Cipta Dilindungi.</p>
     <div class="footer-ikon">
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-      <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <span aria-hidden="true"><svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Ikon dekoratif</title><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
     </div>
   </div>
 </footer>
 
+  <script src="app.js" defer></script>
 </body>
 </html>
