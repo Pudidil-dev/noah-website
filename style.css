@@ -870,6 +870,11 @@ img {
   max-width: 600px;
 }
 
+.page-sub.tengah {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* section dengan jarak lebih kecil */
 .section-kecil {
   padding: 20px 0;
