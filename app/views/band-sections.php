@@ -18,10 +18,6 @@ function band_sections(string $page,PDO $pdo,DOMXPath $xp):void
             break;
         case 'diskografi':
             view_replace($xp,'//section[contains(@class,"section-kecil")]//div[contains(concat(" ",normalize-space(@class)," ")," grid-3 ")]',view_html('album-cards',['albums'=>albums_for_grid($pdo)]));
-            $duplicateEmpty = $xp->query('//*[@id="album-kosong"]');
-            if ($duplicateEmpty->length > 1) {
-                $duplicateEmpty->item(1)->parentNode->removeChild($duplicateEmpty->item(1));
-            }
             view_replace($xp,'//table[contains(@class,"tabel")]/tbody',view_html('singles',['rows'=>singles($pdo)]));
             break;
         case 'tur-event':

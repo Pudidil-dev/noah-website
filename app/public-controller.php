@@ -32,10 +32,13 @@ function view_replace(DOMXPath $xpath,string $selector,string $html):void
 {
     $node=$xpath->query($selector)->item(0);
     if(!$node)return;
-    while($node->firstChild)$node->removeChild($node->firstChild);
     $fragment=new DOMDocument('1.0','UTF-8');
     $previous=libxml_use_internal_errors(true);
-    if (!$fragment->loadHTML('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div id="__fragment__">'.$html.'</div></body></html>')) {
+    $isTableBody = $node->nodeName === 'tbody';
+    $wrapper = $isTableBody
+        ? '<table><tbody id="__fragment__">'.$html.'</tbody></table>'
+        : '<div id="__fragment__">'.$html.'</div>';
+    if (!$fragment->loadHTML('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>'.$wrapper.'</body></html>')) {
         libxml_clear_errors();
         libxml_use_internal_errors($previous);
         throw new RuntimeException('Fragmen tampilan tidak valid.');
@@ -43,6 +46,7 @@ function view_replace(DOMXPath $xpath,string $selector,string $html):void
     libxml_clear_errors();libxml_use_internal_errors($previous);
     $container=$fragment->getElementById('__fragment__');
     if(!$container)throw new RuntimeException('Fragmen HTML tidak valid.');
+    while($node->firstChild)$node->removeChild($node->firstChild);
     foreach(iterator_to_array($container->childNodes) as $child)$node->appendChild($node->ownerDocument->importNode($child,true));
 }
 
