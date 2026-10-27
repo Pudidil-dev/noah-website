@@ -22,7 +22,7 @@ function group_setlists(array $rows):array
     foreach($rows as $row){
         $id=(int)$row['id'];
         $groups[$id]??=['title'=>$row['title'],'venue'=>$row['venue'],'start_at'=>$row['start_at'],'description'=>$row['description'],'main'=>[],'encore'=>[]];
-        $groups[$id][$row['is_encore']?'encore':'main'][]=['position'=>(int)$row['position'],'title'=>$row['track']];
+        $groups[$id][db_bool($row['is_encore'])?'encore':'main'][]=['position'=>(int)$row['position'],'title'=>$row['track']];
     }
     return array_values($groups);
 }

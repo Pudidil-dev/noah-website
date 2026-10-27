@@ -15,7 +15,7 @@ function render_field(string $name, array $rule, mixed $value, array $fk = []): 
     $required = !empty($rule['required']) && !in_array($type, ['image', 'slug'], true) ? ' required' : '';
     $v = e(is_scalar($value) && !is_bool($value) ? (string)$value : '');
     $html = '<label for="' . $id . '">' . $label . '</label>';
-    if ($type === 'bool') return $html . '<input type="checkbox" id="' . $id . '" name="' . $n . '" value="1"' . ($value ? ' checked' : '') . '>';
+    if ($type === 'bool') return $html . '<input type="checkbox" id="' . $id . '" name="' . $n . '" value="1"' . (db_bool($value) ? ' checked' : '') . '>';
     if ($type === 'textarea' || $type === 'json') return $html . '<textarea id="' . $id . '" name="' . $n . '" rows="5"' . $required . '>' . $v . '</textarea>';
     if ($type === 'enum' || $type === 'fk') {
         $options = $type === 'enum' ? array_combine($rule['options'], $rule['options']) : $fk;
@@ -48,7 +48,7 @@ function display_value(array $rule, mixed $value, array $fk = []): string
 {
     if ($value === null || $value === '') return '—';
     return match ($rule['type']) {
-        'bool' => $value ? 'Ya' : 'Tidak',
+        'bool' => db_bool($value) ? 'Ya' : 'Tidak',
         'money' => rupiah((string)$value),
         'fk' => $fk[(int)$value] ?? '#' . $value,
         'datetime' => (new DateTimeImmutable((string)$value))->format('d/m/Y H:i'),

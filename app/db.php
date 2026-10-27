@@ -40,6 +40,12 @@ function db_param(mixed $value): mixed
     return is_bool($value) ? ($value ? 't' : 'f') : $value;
 }
 
+/** PDO pgsql dapat mengembalikan BOOLEAN sebagai bool atau string 't'/'f'. */
+function db_bool(mixed $value): bool
+{
+    return in_array($value, [true, 1, '1', 't', 'true'], true);
+}
+
 function fetch_all(PDO $pdo, string $sql, array $params = []): array
 {
     $stmt = $pdo->prepare($sql);
