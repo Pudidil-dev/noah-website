@@ -1,6 +1,6 @@
 # Desain Panel Admin & Halaman Dinamis — NOAH Official Website
 
-- **Stack:** PHP 8.2 native + PDO `pgsql` (sudah aktif di XAMPP) + PostgreSQL 14+
+- **Stack:** PHP 8.2 native + PDO `pgsql` (sudah aktif di XAMPP) + PostgreSQL 16 (Docker)
 - **Skema DB:** [`database/schema.sql`](../../database/schema.sql) · [desain basis data](2026-10-27-database-draft-design.md)
 - **Pendekatan:** CRUD generik berbasis config + halaman custom untuk alur khusus
 - **Cakupan:** panel admin, form publik, dan konversi 7 halaman publik ke `.php`
@@ -54,7 +54,7 @@ Tipe field yang didukung: `text`, `textarea`, `slug` (otomatis dari field lain),
 - **Login:** `password_verify()` → `session_regenerate_id(true)`. Cookie `httponly` + `samesite=Lax`. Session habis setelah 2 jam idle.
 - **Batas percobaan:** 5 kali gagal per 15 menit.
 - **Role:** `editor` bisa CRUD konten. `super_admin` tambahan: menu Admin dan hapus pesanan tiket.
-- Admin awal dibuat lewat `seed.sql` dengan hash bcrypt. Tidak ada password di kode.
+- Admin awal dibuat lewat `database/create-admin.php` (CLI, password di-hash PHP). Tidak ada password di kode atau seed.
 - Semua query pakai PDO dengan `ERRMODE_EXCEPTION` dan `EMULATE_PREPARES=false`.
 - Semua output lewat `e()`. Isi berita berupa teks biasa yang ditampilkan dengan `nl2br(e())`.
 - Token CSRF di semua form POST. Error ke user berupa pesan umum, detailnya ke `error_log()`.
@@ -80,7 +80,7 @@ Tipe field yang didukung: `text`, `textarea`, `slug` (otomatis dari field lain),
 
 - Parameter `urut` divalidasi lewat whitelist (`terbaru`, `termurah`, `termahal`).
 - Header, footer, dan search dipindah ke `partials/`. Link `.html` diganti `.php`.
-- `seed.sql` berisi konten yang sekarang ada di HTML, jadi tampilan setelah konversi harus identik.
+- `seed.sql` berisi konten contoh dari HTML. Kartu dan data situs dibaca dari database, sehingga pembaruan admin langsung tercermin di halaman publik.
 
 ## 5. Pengujian
 
@@ -99,3 +99,11 @@ Tipe field yang didukung: `text`, `textarea`, `slug` (otomatis dari field lain),
 ## Di luar cakupan
 
 Keranjang/checkout toko, akun fans, rich text editor, dan pembayaran tiket online.
+
+## Catatan implementasi
+
+- Struktur MVC sederhana: `app/queries.php` dan `app/forms.php` sebagai model/query, `app/public-controller.php` serta `admin/core/controller.php` sebagai controller, dan `app/views/` serta `admin/views/` sebagai view. Template HTML band dipindah ke `app/views/band/` dan konten dinamis diganti saat render.
+- Filter toko, diskografi, dan galeri tetap menggunakan `app.js` dan atribut `data-*` yang sudah ada. Form publik memakai POST, token CSRF, validasi, throttle, dan pola redirect setelah submit.
+- Jadwal konser contoh pada seed memakai tahun 2027 karena tanggal 2026 pada HTML lama sudah lewat. Jadwal ini konten demonstrasi website fan, bukan pengumuman konser resmi.
+- Jalankan server pengembangan melalui `php -S localhost:8000 router.php` untuk menutup akses HTTP ke berkas internal; halaman PHP dan panel admin memerlukan hosting PHP/PostgreSQL dan tidak dapat berjalan di GitHub Pages.
+- `database/create-admin.php` membuat super admin melalui CLI. Kredensial pribadi tidak disimpan dalam repositori.

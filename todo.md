@@ -15,4 +15,4 @@
 - [x] Dokumentasi fitur native dibuat di `fitur-native.md`.
 - [x] Laporan highlight implementasi Grid dibuat di `laporan-grid-highlight.md`.
 
-Catatan: project tetap HTML/CSS native tanpa JavaScript.
+Catatan: tampilan band menggunakan template HTML/CSS dan filter app.js; data halaman serta panel admin memakai PHP 8.2 (MVC sederhana) dan PostgreSQL 16. Jalankan melalui server PHP, bukan GitHub Pages.
