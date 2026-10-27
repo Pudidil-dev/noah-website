@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); require_once __DIR__.'/app/public-controller.php'; public_page('tur-event');
