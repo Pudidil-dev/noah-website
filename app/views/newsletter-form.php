@@ -1,0 +1,1 @@
+<?= csrf_field() ?><?= honeypot_field() ?><input type="hidden" name="from" value="<?= e($from) ?>"><input type="email" name="email" placeholder="Alamat Email Anda" value="<?= e(old('langganan','email')) ?>" required><button type="submit" class="btn btn-merah">Berlangganan</button>
