@@ -1,0 +1,1 @@
+<?php foreach($rows as $award): ?><div class="stat"><span class="stat-angka"><?= e($award['badge']??(string)$award['year']) ?></span><p class="teks-abu"><?= e($award['title']) ?></p></div><?php endforeach; ?>
