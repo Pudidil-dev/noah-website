@@ -1,0 +1,1 @@
+<?php foreach($rows as $c): ?><div class="card card-border-merah"><h3 class="berita-judul"><?= e($c['city']) ?></h3><p>Anggota: <strong><?= e(number_format((int)$c['member_count'],0,',','.')) ?></strong></p><p>Koordinator: <?= e($c['leader_name']??'') ?></p><a href="#form-cerita" class="link-merah">Gabung Komunitas</a></div><?php endforeach; ?>
