@@ -1,0 +1,17 @@
+{
+  "name": "pudidil/noah-website",
+  "description": "Website fan NOAH dengan panel admin PHP + PostgreSQL",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "ext-pdo_pgsql": "*",
+    "ext-fileinfo": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}

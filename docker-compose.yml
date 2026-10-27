@@ -1,0 +1,14 @@
+# PostgreSQL untuk development lokal saja. Password ini bukan untuk produksi.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: noah
+      POSTGRES_PASSWORD: noah_dev
+      POSTGRES_DB: noah
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - noah_pg:/var/lib/postgresql/data
+volumes:
+  noah_pg:

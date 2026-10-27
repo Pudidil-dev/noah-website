@@ -1,3 +1,10 @@
 # tidak ada build tool — abaikan file OS
 Thumbs.db
 .DS_Store
+
+# PHP / Composer
+/vendor/
+/config.php
+/uploads/*
+!/uploads/.htaccess
+.phpunit.cache/

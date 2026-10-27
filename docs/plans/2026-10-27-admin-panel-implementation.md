@@ -66,7 +66,7 @@ services:
       POSTGRES_PASSWORD: noah_dev
       POSTGRES_DB: noah
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5433:5432"
     volumes:
       - noah_pg:/var/lib/postgresql/data
 volumes:
@@ -83,7 +83,7 @@ declare(strict_types=1);
 return [
     'db' => [
         'host' => '127.0.0.1',
-        'port' => 5432,
+        'port' => 5433,
         'name' => 'noah',
         'user' => 'noah',
         'pass' => 'noah_dev',
@@ -184,10 +184,12 @@ vendor/bin/phpunit
 
 Expected: container `db` jalan. PHPUnit menampilkan `No tests executed!` (belum ada test).
 
+**Penyesuaian saat implementasi:** PostgreSQL Docker diakses melalui `127.0.0.1:5433` karena port host `5432` sudah dipakai PostgreSQL lain di Windows (disetujui user). Port internal container tetap `5432`. Folder `tests/Unit` dan `tests/Integration` disertai `.gitkeep` agar suite PHPUnit tersedia sejak clone awal.
+
 **Step 8: Commit**
 
 ```bash
-git add docker-compose.yml config.example.php composer.json composer.lock phpunit.xml tests/bootstrap.php .gitignore
+git add docker-compose.yml config.example.php composer.json composer.lock phpunit.xml tests/bootstrap.php tests/Unit/.gitkeep tests/Integration/.gitkeep .gitignore docs/plans/2026-10-27-admin-panel-implementation.md
 git commit -m "chore: siapkan PostgreSQL docker, config, dan PHPUnit"
 ```
 
