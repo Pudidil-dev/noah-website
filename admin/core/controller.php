@@ -96,8 +96,8 @@ function admin_crud(string $key, array $res, string $action, array $admin): void
                 if ($errors === []) {
                     try {
                         if ($key === 'posts' && ($data['status'] ?? null) === 'published'
-                            && empty($data['published_at']) && empty($row['published_at'])) {
-                            $data['published_at'] = date('Y-m-d H:i:s');
+                            && empty($data['published_at'])) {
+                            $data['published_at'] = $row['published_at'] ?? date('Y-m-d H:i:s');
                         }
                         if ($id === null) crud_insert($pdo, $res, isset($res['owner']) ? $data + [$res['owner'] => $admin['id']] : $data);
                         else crud_update($pdo, $res, $id, $data);
