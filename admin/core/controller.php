@@ -21,7 +21,7 @@ function admin_post(): bool { return ($_SERVER['REQUEST_METHOD'] ?? 'GET') === '
 
 function admin_login_page(): never
 {
-    if (current_admin()) redirect('index.php');
+    if (verified_admin(db()) !== null) redirect('index.php');
     $email = '';
     $error = null;
     if (admin_post()) {

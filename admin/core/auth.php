@@ -50,9 +50,27 @@ function current_admin(?int $now = null): ?array
     return $admin;
 }
 
+function verified_admin(PDO $pdo): ?array
+{
+    $sessionAdmin = current_admin();
+    if ($sessionAdmin === null) {
+        return null;
+    }
+    $row = fetch_one($pdo, 'SELECT id, name, email, role FROM admins WHERE id = :id', [
+        'id' => $sessionAdmin['id'],
+    ]);
+    if ($row === null) {
+        logout_admin();
+        return null;
+    }
+    $admin = ['id' => (int)$row['id'], 'name' => $row['name'], 'email' => $row['email'], 'role' => $row['role']];
+    $_SESSION['admin'] = $admin;
+    return $admin;
+}
+
 function require_admin(): array
 {
-    return current_admin() ?? redirect('index.php?r=login');
+    return verified_admin(db()) ?? redirect('index.php?r=login');
 }
 
 function admin_can(array $admin, array $roles): bool
