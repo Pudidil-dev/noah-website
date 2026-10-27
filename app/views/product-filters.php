@@ -1,0 +1,1 @@
+<?php foreach(['semua'=>'Semua']+PRODUCT_CATEGORIES as $category=>$label): ?><li><button type="button" class="<?= $category==='semua'?'aktif':'' ?>" data-kategori="<?= e($category) ?>" aria-pressed="<?= $category==='semua'?'true':'false' ?>"><?= e($label) ?> <span><?= $category==='semua'?$total:($counts[$category]??0) ?></span></button></li><?php endforeach; ?>
