@@ -1965,3 +1965,10 @@ img {
     right: auto;
   }
 }
+/* Form dinamis berbasis PHP. Honeypot harus tak terlihat bagi pengunjung. */
+.hp{position:absolute!important;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+.form-feedback{max-width:1100px;margin:16px auto;padding:12px 16px;border-radius:6px}
+.form-feedback.ok{background:#e8f5e9;color:#20562c}
+.form-feedback.error{background:#fde9e9;color:#a31919}
+.pagination a.page-btn{display:inline-block;text-decoration:none}
+.berita-hero .hero-judul{max-width:920px}
