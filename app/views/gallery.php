@@ -1,0 +1,1 @@
+<?php foreach($rows as $item): $src=$item['file_url']??null; if(!$src)continue; ?><div class="galeri-item"<?= $filter?' data-foto data-kategori="'.e($item['tag']??'noah').'"':'' ?>><img src="<?= e($src) ?>" alt="<?= e($item['caption']??$item['title']??'Karya penggemar') ?>"></div><?php endforeach; ?>

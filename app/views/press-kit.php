@@ -1,0 +1,1 @@
+<?php foreach($rows as $item): ?><div class="presskit-baris"><div><h4 class="berita-judul"><?= e($item['title']) ?></h4><p class="lagu-artis"><?= e($item['caption']??'') ?></p></div><a class="btn btn-merah" href="<?= e($item['file_url']) ?>">Lihat Info</a></div><?php endforeach; ?>

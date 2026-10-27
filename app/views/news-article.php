@@ -1,0 +1,1 @@
+<a href="berita-media.php#berita-terbaru" class="link-merah">← Kembali ke berita</a><h1><?= e($post['title']) ?></h1><p><?= e(tanggal_id($post['published_at'])) ?></p><?php if($post['cover_url']): ?><img style="max-width:100%;max-height:450px" src="<?= e($post['cover_url']) ?>" alt="<?= e($post['title']) ?>"><?php endif; ?><p class="paragraf"><?= nl2br(e($post['body'])) ?></p>
