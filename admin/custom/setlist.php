@@ -5,8 +5,10 @@ if(admin_post()){
     csrf_require();
     if($eventId===null)admin_not_found();
     try{
-        if(($_POST['do']??'')==='remove')setlist_remove($pdo,$eventId,(int)($_POST['position']??0));
-        else setlist_add($pdo,$eventId,(int)($_POST['track_id']??0),!empty($_POST['is_encore']));
+        $action=$_POST['do']??null;
+        if($action==='remove')setlist_remove($pdo,$eventId,(int)($_POST['position']??0));
+        elseif($action==='add')setlist_add($pdo,$eventId,(int)($_POST['track_id']??0),!empty($_POST['is_encore']));
+        else throw new InvalidArgumentException('Aksi setlist tidak valid.');
         flash('ok','Setlist diperbarui.');
     }catch(PDOException | InvalidArgumentException){flash('error','Lagu atau event tidak valid.');}
     redirect('index.php?r=setlist&event_id='.$eventId);
