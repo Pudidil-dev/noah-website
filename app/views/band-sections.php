@@ -56,9 +56,30 @@ function band_sections(string $page,PDO $pdo,DOMXPath $xp):void
         case 'sahabat-noah':
             view_replace($xp,'//section[.//h2[text()="Cerita Sahabat"]]//div[contains(concat(" ",normalize-space(@class)," ")," grid-auto ")]',view_html('fan-stories',['rows'=>approved_submissions($pdo,'story',6)]));
             view_replace($xp,'//section[.//h2[text()="Karya Sahabat"]]//div[contains(concat(" ",normalize-space(@class)," ")," galeri-foto ")]',view_html('gallery',['rows'=>approved_submissions($pdo,'artwork',12),'filter'=>false]));
+            $coverSection=$xp->query('//*[@id="form-cerita"]')->item(0);
+            if ($coverSection !== null) {
+                $covers=approved_submissions($pdo,'cover',12);
+                if ($covers !== []) {
+                    $fragment=view_html('fan-covers',['rows'=>$covers]);
+                    $document=$coverSection->ownerDocument;
+                    $container=$document->createElement('section');
+                    $container->setAttribute('class','container section');
+                    $container->setAttribute('id','cover-sahabat');
+                    $heading=$document->createElement('h2','Cover Lagu Sahabat');
+                    $heading->setAttribute('class','section-title tengah mb');
+                    $container->appendChild($heading);
+                    $grid=$document->createElement('div');
+                    $grid->setAttribute('class','grid-auto');
+                    $container->appendChild($grid);
+                    $coverSection->parentNode->insertBefore($container,$coverSection);
+                    view_replace($xp,'//*[@id="cover-sahabat"]/div', $fragment);
+                }
+            }
             view_replace($xp,'//section[.//h2[text()="Komunitas Regional"]]//div[contains(concat(" ",normalize-space(@class)," ")," grid-auto ")]',view_html('community-cards',['rows'=>communities($pdo)]));
             view_replace($xp,'//section[.//h2[text()="Event Komunitas"]]//div[contains(concat(" ",normalize-space(@class)," ")," grid-auto ")]',view_html('community-events',['rows'=>upcoming_events($pdo,'community')]));
-            band_form($xp,'//*[@id="form-cerita"]//form',view_html('fan-form',[]),'actions/submit-fan.php');view_flash($xp,'cerita');
+            band_form($xp,'//*[@id="form-cerita"]//form',view_html('fan-form',['communities'=>communities($pdo)]),'actions/submit-fan.php');view_flash($xp,'cerita');
+            $fanForm=$xp->query('//*[@id="form-cerita"]//form')->item(0);
+            $fanForm?->setAttribute('enctype','multipart/form-data');
             break;
         case 'toko':
             $regular=products($pdo,false);

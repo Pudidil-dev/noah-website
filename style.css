@@ -1972,3 +1972,5 @@ img {
 .form-feedback.error{background:#fde9e9;color:#a31919}
 .pagination a.page-btn{display:inline-block;text-decoration:none}
 .berita-hero .hero-judul{max-width:920px}
+/* Cover lagu komunitas dapat diputar tanpa melebar di layar ponsel. */
+#cover-sahabat audio{display:block;width:100%;max-width:420px;margin-top:12px}
