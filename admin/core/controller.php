@@ -61,6 +61,9 @@ function admin_crud(string $key, array $res, string $action, array $admin): void
     $pdo = db();
     $rawId = $_GET['id'] ?? null;
     $id = is_string($rawId) && ctype_digit($rawId) ? (int)$rawId : null;
+    if ($action === 'create') {
+        $id = null;
+    }
     switch ($action) {
         case 'list':
             $q = mb_substr(trim(is_string($_GET['q'] ?? null) ? $_GET['q'] : ''), 0, 100);
