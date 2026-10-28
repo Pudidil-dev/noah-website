@@ -6,6 +6,7 @@ Website fan NOAH dengan tujuh halaman publik, panel admin CRUD, formulir tiket, 
 
 - PHP 8.2 dengan ekstensi `pdo_pgsql`, `fileinfo`, `mbstring`, dan `dom`
 - Composer, Docker Desktop (PostgreSQL 16), port lokal `5433`
+- Untuk cover lagu MP3 hingga 8 MB, atur `upload_max_filesize = 8M` (atau lebih) dan `post_max_size = 10M` (atau lebih) dalam `php.ini`, lalu mulai ulang server PHP. Berkas gambar dibatasi 2 MB.
 
 ## Menjalankan
 
@@ -48,5 +49,7 @@ Buka `http://localhost:8000/` untuk halaman band dan `http://localhost:8000/admi
 - `actions/`: endpoint POST dengan CSRF, honeypot, pembatasan percobaan, dan redirect.
 
 Filter album, galeri, dan toko tetap dijalankan oleh `app.js`. Pesanan tiket bersifat contoh dan tidak melakukan pembayaran; merchandise belum memiliki keranjang/checkout.
+
+Form Sahabat menerima cerita berupa teks, karya berupa JPG/PNG/WEBP, dan cover lagu berupa MP3. Komunitas boleh dipilih dari daftar yang tersimpan di database. Semua kiriman masuk antrian moderasi; hanya yang disetujui admin ditampilkan pada halaman Sahabat. Jika kiriman yang memiliki berkas unggahan lokal dihapus oleh admin, berkasnya juga dihapus.
 
 Untuk pengujian otomatis, jalankan `php vendor/bin/phpunit`. Test integrasi mereset skema **`noah_test`**, jadi jangan arahkan database tes ke database utama.

@@ -107,3 +107,4 @@ Keranjang/checkout toko, akun fans, rich text editor, dan pembayaran tiket onlin
 - Jadwal konser contoh pada seed memakai tahun 2027 karena tanggal 2026 pada HTML lama sudah lewat. Jadwal ini konten demonstrasi website fan, bukan pengumuman konser resmi.
 - Jalankan server pengembangan melalui `php -S localhost:8000 router.php` untuk menutup akses HTTP ke berkas internal; halaman PHP dan panel admin memerlukan hosting PHP/PostgreSQL dan tidak dapat berjalan di GitHub Pages.
 - `database/create-admin.php` membuat super admin melalui CLI. Kredensial pribadi tidak disimpan dalam repositori.
+- Form Sahabat: `community_id` opsional dan harus merujuk komunitas yang ada; `artwork` wajib berkas JPG/PNG/WEBP (maks. 2 MB), `cover` wajib MP3 (maks. 8 MB), sedangkan `story` boleh berupa teks saja. Unggahan disimpan di `uploads/fans/`, menunggu persetujuan admin; saat admin menghapus kiriman, berkas unggahan lokal turut dibersihkan.
