@@ -33,7 +33,12 @@ function band_sections(string $page,PDO $pdo,DOMXPath $xp):void
             break;
         case 'berita-media':
             $featured=featured_post($pdo);
-            if($featured)view_replace($xp,'//*[@id="artikel-hiatus"]',view_html('featured-post',['post'=>$featured]));
+            if($featured){
+                view_replace($xp,'//*[@id="artikel-hiatus"]',view_html('featured-post',['post'=>$featured]));
+            } else {
+                $hero=$xp->query('//*[@id="artikel-hiatus"]')->item(0);
+                $hero?->parentNode?->removeChild($hero);
+            }
             $q=is_string($_GET['q']??null)?trim($_GET['q']):'';
             $pageNo=is_string($_GET['p']??null)&&ctype_digit($_GET['p'])?min(1000000,max(1,(int)$_GET['p'])):1;
             view_replace($xp,'//*[@id="berita-terbaru"]//div[contains(concat(" ",normalize-space(@class)," ")," grid-auto ")]',view_html('news-cards',['posts'=>news_posts($pdo,NEWS_PER_PAGE,($pageNo-1)*NEWS_PER_PAGE,true)]));
