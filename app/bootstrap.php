@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 date_default_timezone_set('Asia/Jakarta');
-foreach (['db', 'helpers', 'csrf', 'validator', 'throttle', 'queries', 'forms'] as $module) {
+foreach (['db', 'helpers', 'csrf', 'validator', 'throttle', 'queries', 'fan-upload', 'forms'] as $module) {
     $file = __DIR__ . "/$module.php";
     if (is_file($file)) {
         require_once $file;

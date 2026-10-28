@@ -16,6 +16,7 @@ const FAN_FIELDS = [
     'email'=>['type'=>'email','label'=>'Email','required'=>true],
     'type'=>['type'=>'enum','label'=>'Kategori','required'=>true,'options'=>['story','artwork','cover']],
     'content'=>['type'=>'textarea','label'=>'Pesan','required'=>true,'max'=>2000],
+    'community_id'=>['type'=>'int','label'=>'Komunitas','min'=>1],
 ];
 function is_bot(array $input): bool {return trim(is_string($input['website']??null)?$input['website']:'')!=='';}
 function honeypot_field(): string {return '<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">';}
@@ -37,11 +38,33 @@ function order_ticket(PDO $pdo,array $input):array
         return ['ok'=>true,'errors'=>[],'order_id'=>(int)$stmt->fetchColumn()];
     });
 }
-function submit_fan(PDO $pdo,array $input):array
+function submit_fan(PDO $pdo,array $input,?array $file=null):array
 {
     [$data,$errors]=validate(FAN_FIELDS,$input);
-    if($errors)return ['ok'=>false,'errors'=>$errors];
-    $pdo->prepare('INSERT INTO fan_submissions(name,email,type,content) VALUES (:name,:email,:type,:content)')->execute($data);
+    if ($errors !== []) return ['ok'=>false,'errors'=>$errors];
+    if ($data['community_id'] !== null && fetch_one($pdo, 'SELECT id FROM communities WHERE id=:id', ['id'=>$data['community_id']]) === null) {
+        return ['ok'=>false,'errors'=>['community_id'=>'Komunitas tidak tersedia.']];
+    }
+    $type=$data['type'];
+    $needsFile=in_array($type,['artwork','cover'],true);
+    $hasFile=$file !== null && ($file['error']??UPLOAD_ERR_NO_FILE)!==UPLOAD_ERR_NO_FILE;
+    if ($needsFile && !$hasFile) return ['ok'=>false,'errors'=>['file_url'=>'Karya dan cover lagu wajib menyertakan berkas.']];
+    $path=null;
+    if ($hasFile) {
+        $config=config()['app'];
+        [$path,$error]=fan_upload_file($file,$type,$config['upload_dir'],$config['upload_url']);
+        if ($error !== null) return ['ok'=>false,'errors'=>['file_url'=>$error]];
+    }
+    try {
+        $pdo->prepare('INSERT INTO fan_submissions(community_id,name,email,type,content,file_url) VALUES (:community_id,:name,:email,:type,:content,:file_url)')
+            ->execute($data+['file_url'=>$path]);
+    } catch (Throwable $e) {
+        if ($path !== null) {
+            $config=config()['app'];
+            delete_fan_upload($path,$config['upload_dir'],$config['upload_url']);
+        }
+        throw $e;
+    }
     return ['ok'=>true,'errors'=>[]];
 }
 function subscribe(PDO $pdo,array $input):array

@@ -10,7 +10,7 @@ require $root . '/vendor/autoload.php';
 
 $files = [
     'app/db.php', 'app/helpers.php', 'app/csrf.php', 'app/validator.php', 'app/throttle.php',
-    'app/queries.php', 'app/forms.php',
+    'app/queries.php', 'app/fan-upload.php', 'app/forms.php',
     'admin/core/crud.php', 'admin/core/upload.php', 'admin/core/auth.php', 'admin/core/workflow.php',
     'tests/DbTestCase.php',
 ];
